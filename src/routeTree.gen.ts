@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root';
 import { Route as TitleBaseImport } from './routes/TitleBase';
+import { Route as StarStepImport } from './routes/StarStep';
 import { Route as PopupsImport } from './routes/Popups';
 import { Route as CountdownImport } from './routes/Countdown';
 import { Route as IndexImport } from './routes/index';
@@ -21,6 +22,12 @@ import { Route as IndexImport } from './routes/index';
 const TitleBaseRoute = TitleBaseImport.update({
   id: '/TitleBase',
   path: '/TitleBase',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const StarStepRoute = StarStepImport.update({
+  id: '/StarStep',
+  path: '/StarStep',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PopupsImport;
       parentRoute: typeof rootRoute;
     };
+    '/StarStep': {
+      id: '/StarStep';
+      path: '/StarStep';
+      fullPath: '/StarStep';
+      preLoaderRoute: typeof StarStepImport;
+      parentRoute: typeof rootRoute;
+    };
     '/TitleBase': {
       id: '/TitleBase';
       path: '/TitleBase';
@@ -83,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
   '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
 }
 
@@ -90,6 +105,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
   '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
 }
 
@@ -98,15 +114,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
   '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/Countdown' | '/Popups' | '/TitleBase';
+  fullPaths: '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/Countdown' | '/Popups' | '/TitleBase';
-  id: '__root__' | '/' | '/Countdown' | '/Popups' | '/TitleBase';
+  to: '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
+  id: '__root__' | '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
   fileRoutesById: FileRoutesById;
 }
 
@@ -114,6 +131,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   CountdownRoute: typeof CountdownRoute;
   PopupsRoute: typeof PopupsRoute;
+  StarStepRoute: typeof StarStepRoute;
   TitleBaseRoute: typeof TitleBaseRoute;
 }
 
@@ -121,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CountdownRoute: CountdownRoute,
   PopupsRoute: PopupsRoute,
+  StarStepRoute: StarStepRoute,
   TitleBaseRoute: TitleBaseRoute,
 };
 
@@ -135,6 +154,7 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/",
         "/Countdown",
         "/Popups",
+        "/StarStep",
         "/TitleBase"
       ]
     },
@@ -146,6 +166,9 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/Popups": {
       "filePath": "Popups.tsx"
+    },
+    "/StarStep": {
+      "filePath": "StarStep.tsx"
     },
     "/TitleBase": {
       "filePath": "TitleBase.tsx"

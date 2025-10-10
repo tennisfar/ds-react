@@ -1,0 +1,51 @@
+[
+  {
+    "weekDayNumber": 1,
+    "isPast": true,
+    "date": "2025-10-06T02:00:00+02:00",
+    "activity": true,
+    "activity_game": false
+  },
+  {
+    "weekDayNumber": 2,
+    "isPast": true,
+    "date": "2025-10-07T02:00:00+02:00",
+    "activity": false,
+    "activity_game": false
+  },
+  {
+    "weekDayNumber": 3,
+    "isPast": true,
+    "date": "2025-10-08T02:00:00+02:00",
+    "activity": true,
+    "activity_game": false
+  },
+  {
+    "weekDayNumber": 4,
+    "isPast": true,
+    "date": "2025-10-09T02:00:00+02:00",
+    "activity": true,
+    "activity_game": true
+  },
+  {
+    "weekDayNumber": 5,
+    "isPast": false,
+    "date": "2025-10-10T02:00:00+02:00",
+    "activity": false,
+    "activity_game": false
+  },
+  {
+    "weekDayNumber": 6,
+    "isPast": false,
+    "date": "2025-10-11T02:00:00+02:00",
+    "activity": false,
+    "activity_game": false
+  },
+  {
+    "weekDayNumber": 0,
+    "isPast": false,
+    "date": "2025-10-12T02:00:00+02:00",
+    "activity": false,
+    "activity_game": false
+  }
+]

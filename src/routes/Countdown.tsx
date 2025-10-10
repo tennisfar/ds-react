@@ -9,7 +9,7 @@ export const Route = createFileRoute('/Countdown')({
 function RouteComponent() {
   return (
     <div style={{ backgroundColor: '#c50005', padding: '20px', position: 'relative', zIndex: 1 }}>
-      <Countdown/>
+      <Countdown />
     </div>
   );
 }
