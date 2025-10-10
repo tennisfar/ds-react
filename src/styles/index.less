@@ -1,0 +1,77 @@
+@import 'ds-core/Default-page';
+@import 'ds-core/Grid';
+@import 'ds-core/Fonts';
+
+:root {
+  --header-height: calc(~'var(--navigation-compliance-bar-height, 0rem) + var(--navigation-main-menu-height, 0rem) + var(--navigation-sub-menu-height, 0rem)');
+}
+
+:root:has(.responsible-gaming__top) {
+  --navigation-compliance-bar-height: 3.2rem;
+
+  @media (min-width: 768px) {
+    --navigation-compliance-bar-height: 3.6rem;
+  }
+}
+
+:root:has(.ds-navigation) {
+  --navigation-main-menu-height: 6.8rem;
+
+  @media (min-width: 768px) {
+    --navigation-main-menu-height: 7.2rem;
+  }
+
+  @media (min-width: 1216px) {
+    --navigation-main-menu-height: 7.6rem;
+  }
+}
+
+body {
+  position: relative;
+  padding-top: var(--header-height, 0);
+  background: #fbfbfb;
+  min-height: 100vh;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer {
+  margin-top: 200px;
+  background: #c50005;
+  display: flex;
+  justify-content: center;
+
+  .footer__inner {
+    padding: 20px;
+    margin: 0 auto;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px 50px;
+    color: white;
+    font-size: 14px;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  a {
+    display: inline-flex;
+    position: relative;
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: fade(black, 20%);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.page-area {
+  min-height: 50rem;
+}

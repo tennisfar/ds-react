@@ -1,0 +1,23 @@
+.page-area:has(.app-toggle) {
+  padding-top: 41px; // height of the toggle
+}
+
+.app-toggle {
+  position: fixed;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 70px;
+  height: 41px;
+  background-color: #ddd;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 28px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://danskespil.dk/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DS React</title>
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector('body');
+      const pad = (num, size = 2) => String(num).padStart(size, '0');
+
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = pad(date.getMonth() + 1);
+      const day = pad(date.getDate());
+      const hours = pad(date.getHours());
+      const minutes = pad(date.getMinutes());
+      const seconds = pad(date.getSeconds());
+      const milliseconds = pad(date.getMilliseconds(), 3);
+      const timezoneOffset = -date.getTimezoneOffset();
+      const sign = timezoneOffset >= 0 ? '+' : '-';
+      const offsetHours = pad(Math.floor(Math.abs(timezoneOffset) / 60));
+      const offsetMinutes = pad(Math.abs(timezoneOffset) % 60);
+      const now = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}${sign}${offsetHours}:${offsetMinutes}`;
+
+      body.setAttribute('data-time-now', now);
+    </script>
+
+    <div id="wrapper">
+      <div class="page-box"></div>
+      <div class="page-area">
+        <div id="root"></div>
+      </div>
+    </div>
+
+    <script id="jackpot-info" type="application/json">
+      [
+        {
+          "GameId": "",
+          "PoolSizeDecimal": 0,
+          "PoolSizeFormatted": "0",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "0001-01-01T01:00:00+01:00",
+          "GameStopDate": "0001-01-01T01:00:00+01:00",
+          "GameUrl": "",
+          "IsOpen": true
+        },
+        {
+          "GameId": "altellerintet",
+          "PoolSizeDecimal": 50000000,
+          "PoolSizeFormatted": "50",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2021-07-14T20:30:00+02:00",
+          "GameStopDate": "2021-07-14T20:30:00+02:00",
+          "GameUrl": "/eurojackpot",
+          "IsOpen": false
+        },
+        {
+          "GameId": "eurojackpot",
+          "PoolSizeDecimal": 456000000,
+          "PoolSizeFormatted": "456",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2025-07-15T19:00:00+02:00",
+          "GameStopDate": "2025-07-15T19:00:00+02:00",
+          "GameUrl": "https://danskespil.dk/eurojackpot",
+          "IsOpen": true
+        },
+        {
+          "GameId": "jokerloerdag",
+          "PoolSizeDecimal": 0,
+          "PoolSizeFormatted": "0",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2025-07-12T20:00:00+02:00",
+          "GameStopDate": "2025-07-12T20:00:00+02:00",
+          "GameUrl": "https://danskespil.dk/lotto",
+          "IsOpen": false
+        },
+        {
+          "GameId": "lotto",
+          "PoolSizeDecimal": 10000000,
+          "PoolSizeFormatted": "10",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2025-07-19T20:00:00+02:00",
+          "GameStopDate": "2025-07-19T20:00:00+02:00",
+          "GameUrl": "https://danskespil.dk/lotto",
+          "IsOpen": true
+        },
+        {
+          "GameId": "maaljagt",
+          "PoolSizeDecimal": 0,
+          "PoolSizeFormatted": "0",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2023-03-06T18:55:00+01:00",
+          "GameStopDate": "2023-03-06T18:55:00+01:00",
+          "GameUrl": "https://danskespil.dk/oddset/maljagt?intcmp=kampagne_pulje_jackpot_maaljagt",
+          "IsOpen": false
+        },
+        {
+          "GameId": "jokeronsdag",
+          "PoolSizeDecimal": 37000000,
+          "PoolSizeFormatted": "37",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2025-07-16T18:00:00+02:00",
+          "GameStopDate": "2025-07-16T18:00:00+02:00",
+          "GameUrl": "",
+          "IsOpen": true
+        },
+        {
+          "GameId": "superpulje",
+          "PoolSizeDecimal": 5000000,
+          "PoolSizeFormatted": "5",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2017-05-10T20:00:00+02:00",
+          "GameStopDate": "2017-05-10T20:00:00+02:00",
+          "GameUrl": "",
+          "IsOpen": false
+        },
+        {
+          "GameId": "tips12",
+          "PoolSizeDecimal": 0,
+          "PoolSizeFormatted": "0",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2023-03-05T18:25:00+01:00",
+          "GameStopDate": "2023-03-05T18:25:00+01:00",
+          "GameUrl": "https://danskespil.dk/tips/tips12/spilnu.html?intcmp=kampagne_pulje_jackpot_tips12",
+          "IsOpen": false
+        },
+        {
+          "GameId": "tips13",
+          "PoolSizeDecimal": 0,
+          "PoolSizeFormatted": "0",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2023-03-07T20:40:00+01:00",
+          "GameStopDate": "2023-03-07T20:40:00+01:00",
+          "GameUrl": "https://danskespil.dk/tips/tips13/spilnu.html?intcmp=kampagne_pulje_jackpot_tips13",
+          "IsOpen": false
+        },
+        {
+          "GameId": "vikinglotto",
+          "PoolSizeDecimal": 49000000,
+          "PoolSizeFormatted": "49",
+          "SecondPrizePoolSizeDecimal": 0,
+          "SecondPrizePoolSizeFormatted": "0",
+          "DrawDate": "2025-07-16T18:00:00+02:00",
+          "GameStopDate": "2025-07-16T18:00:00+02:00",
+          "GameUrl": "https://danskespil.dk/vikinglotto",
+          "IsOpen": true
+        }
+      ]
+    </script>
+
+    <div class="footer">
+      <div class="footer__inner">
+        <a href="/Countdown">Countdown</a>
+        <a href="/Popups">Popups</a>
+        <a href="/TitleBase">TitleBase</a>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

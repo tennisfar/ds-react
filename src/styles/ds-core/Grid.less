@@ -1,0 +1,47 @@
+:root {
+  --grid-margin: 1.6rem;
+  --grid-gutter: 1.6rem;
+  --grid-min-width: calc(~'102.4rem - (var(--grid-margin)*2)');
+  --grid-max-width: 119.5rem;
+
+  // PostCSS cannot handle 3 or more CSS variables in a calc() function, so we need to nest them.
+  // See https://github.com/postcss/postcss-calc/issues/104 for more info.
+  --grid-columns-min-width: calc(~'min(calc(100vw - (var(--grid-margin)*2)), var(--grid-max-width))');
+  --grid-columns-max-width: calc(~'max(var(--grid-min-width), var(--grid-columns-min-width))');
+
+  --grid-columns-half: calc(~'var(--grid-columns-max-width) * (0.5 / 14)');
+  --grid-columns-1: calc(~'var(--grid-columns-max-width) * (1 / 14)');
+  --grid-columns-2: calc(~'var(--grid-columns-max-width) * (2 / 14)');
+  --grid-columns-3: calc(~'var(--grid-columns-max-width) * (3 / 14)');
+  --grid-columns-4: calc(~'var(--grid-columns-max-width) * (4 / 14)');
+  --grid-columns-5: calc(~'var(--grid-columns-max-width) * (5 / 14)');
+  --grid-columns-6: calc(~'var(--grid-columns-max-width) * (6 / 14)');
+  --grid-columns-7: calc(~'var(--grid-columns-max-width) * (7 / 14)');
+  --grid-columns-8: calc(~'var(--grid-columns-max-width) * (8 / 14)');
+  --grid-columns-9: calc(~'var(--grid-columns-max-width) * (9 / 14)');
+  --grid-columns-10: calc(~'var(--grid-columns-max-width) * (10 / 14)');
+  --grid-columns-11: calc(~'var(--grid-columns-max-width) * (11 / 14)');
+  --grid-columns-12: calc(~'var(--grid-columns-max-width) * (12 / 14)');
+  --grid-columns-14: calc(~'var(--grid-columns-max-width) * (14 / 14)');
+}
+
+.page-area {
+  --kl-component-max-width: 60rem;
+  --kl-component-space-below: 5.8rem;
+  --kl-page-white-space-top: 2rem;
+  --kl-page-white-space-bottom: 2rem;
+
+  padding: var(--kl-page-white-space-top) var(--grid-margin) var(--kl-page-white-space-bottom);
+
+  @media (min-width: 768px) {
+    --kl-component-max-width: 68rem;
+    --kl-page-white-space-top: 3rem;
+    --kl-page-white-space-bottom: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    --kl-component-max-width: var(--grid-columns-12);
+    --kl-page-white-space-top: 4rem;
+    --kl-page-white-space-bottom: 4rem;
+  }
+}
