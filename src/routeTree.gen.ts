@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root';
 import { Route as TitleBaseImport } from './routes/TitleBase';
 import { Route as StarStepImport } from './routes/StarStep';
 import { Route as PopupsImport } from './routes/Popups';
+import { Route as NewsSliderImport } from './routes/NewsSlider';
 import { Route as CountdownImport } from './routes/Countdown';
 import { Route as IndexImport } from './routes/index';
 
@@ -34,6 +35,12 @@ const StarStepRoute = StarStepImport.update({
 const PopupsRoute = PopupsImport.update({
   id: '/Popups',
   path: '/Popups',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const NewsSliderRoute = NewsSliderImport.update({
+  id: '/NewsSlider',
+  path: '/NewsSlider',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CountdownImport;
       parentRoute: typeof rootRoute;
     };
+    '/NewsSlider': {
+      id: '/NewsSlider';
+      path: '/NewsSlider';
+      fullPath: '/NewsSlider';
+      preLoaderRoute: typeof NewsSliderImport;
+      parentRoute: typeof rootRoute;
+    };
     '/Popups': {
       id: '/Popups';
       path: '/Popups';
@@ -96,6 +110,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
   '/Popups': typeof PopupsRoute;
   '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
@@ -104,6 +119,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
   '/Popups': typeof PopupsRoute;
   '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
@@ -113,6 +129,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute;
   '/': typeof IndexRoute;
   '/Countdown': typeof CountdownRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
   '/Popups': typeof PopupsRoute;
   '/StarStep': typeof StarStepRoute;
   '/TitleBase': typeof TitleBaseRoute;
@@ -120,16 +137,17 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
+  fullPaths: '/' | '/Countdown' | '/NewsSlider' | '/Popups' | '/StarStep' | '/TitleBase';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
-  id: '__root__' | '/' | '/Countdown' | '/Popups' | '/StarStep' | '/TitleBase';
+  to: '/' | '/Countdown' | '/NewsSlider' | '/Popups' | '/StarStep' | '/TitleBase';
+  id: '__root__' | '/' | '/Countdown' | '/NewsSlider' | '/Popups' | '/StarStep' | '/TitleBase';
   fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   CountdownRoute: typeof CountdownRoute;
+  NewsSliderRoute: typeof NewsSliderRoute;
   PopupsRoute: typeof PopupsRoute;
   StarStepRoute: typeof StarStepRoute;
   TitleBaseRoute: typeof TitleBaseRoute;
@@ -138,6 +156,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CountdownRoute: CountdownRoute,
+  NewsSliderRoute: NewsSliderRoute,
   PopupsRoute: PopupsRoute,
   StarStepRoute: StarStepRoute,
   TitleBaseRoute: TitleBaseRoute,
@@ -153,6 +172,7 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
       "children": [
         "/",
         "/Countdown",
+        "/NewsSlider",
         "/Popups",
         "/StarStep",
         "/TitleBase"
@@ -163,6 +183,9 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/Countdown": {
       "filePath": "Countdown.tsx"
+    },
+    "/NewsSlider": {
+      "filePath": "NewsSlider.tsx"
     },
     "/Popups": {
       "filePath": "Popups.tsx"
