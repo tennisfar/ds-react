@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Countdown } from '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Scripts/Components/Countdown/Countdown.tsx';
+// @ts-ignore
+import { Countdown } from '@KlubLotto/Scripts/Components/Countdown/Countdown.tsx';
 
 export const Route = createFileRoute('/Countdown')({
   component: RouteComponent,
@@ -8,7 +9,7 @@ export const Route = createFileRoute('/Countdown')({
 function RouteComponent() {
   return (
     <div style={{ backgroundColor: '#c50005', padding: '20px', position: 'relative', zIndex: 1 }}>
-      <Countdown />
+      <Countdown/>
     </div>
   );
 }

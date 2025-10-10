@@ -1,12 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  openPopupNewPrize,
-  openPopupWelcome,
-  openPopupSimple,
-} from '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Scripts/Utils/openPopup.ts';
-import { Button } from '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Scripts/Components/Button/Button.tsx';
-import Popup from '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Scripts/Components/Popup/Popup.tsx';
-import Overlay from '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Scripts/Components/Popup/Overlay.tsx';
+// @ts-ignore
+import { openPopupNewPrize, openPopupWelcome, openPopupSimple } from '@KlubLotto/Scripts/Utils/openPopup.ts';
+// @ts-ignore
+import { Button } from '@KlubLotto/Scripts/Components/Button/Button.tsx';
+// @ts-ignore
+import Popup from '@KlubLotto/Scripts/Components/Popup/Popup.tsx';
+// @ts-ignore
+import Overlay from '@KlubLotto/Scripts/Components/Popup/Overlay.tsx';
 
 export const Route = createFileRoute('/Popups')({
   component: RouteComponent,

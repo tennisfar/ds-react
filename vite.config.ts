@@ -6,9 +6,16 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [TanStackRouterVite(), viteReact(), tailwindcss()],
+  server: {
+    port: 5173,
+    fs: {
+      allow: ['..'],
+    },
+  },
   resolve: {
     alias: {
       '@Ensighten': path.resolve(__dirname, 'src/mocks/@Ensighten'),
+      '@KlubLotto': path.resolve(__dirname, '../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto'),
     },
   },
 });
