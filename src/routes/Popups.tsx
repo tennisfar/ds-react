@@ -46,11 +46,13 @@ function RouteComponent() {
           ctaLabel: 'successPopupCtaLabel',
           href: '/popups#clicked',
           cb: () => {
-            console.error('Simple popup triggered');
+            console.error('Simple popup button triggered');
           },
         },
       ],
-      overlayCloseTriggersFirstButton: true,
+      onOverlayClicked: () => {
+        console.error('Simple popup overlay clicked triggered');
+      },
     });
   };
 
