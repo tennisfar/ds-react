@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 // @ts-ignore
 import { StarStep } from '@KlubLotto/Scripts/Components/StarStep/StarStep.tsx';
 
-export const Route = createFileRoute('/klublotto/starstep')({
+export const Route = createFileRoute('/klublotto/StarStep')({
   component: RouteComponent,
 });
 

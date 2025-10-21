@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 // @ts-ignore
 import { TitleBase } from '@KlubLotto/Scripts/Components/Title/Title.tsx';
 
-export const Route = createFileRoute('/klublotto/title-base')({
+export const Route = createFileRoute('/klublotto/TitleBase')({
   component: RouteComponent,
 });
 

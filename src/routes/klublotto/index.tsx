@@ -13,7 +13,7 @@ function RouteComponent() {
       <Link className="dsr-routes__link dsr-routes__link--back" to="/">
         &larr;&nbsp; Back
       </Link>
-      <Link className="dsr-routes__link" to="/klublotto/countdown">
+      <Link className="dsr-routes__link" to="/klublotto/Countdown">
         Countdown
       </Link>
       <Link className="dsr-routes__link" to="/klublotto/LottoRowClaim-Receipt">
@@ -22,14 +22,14 @@ function RouteComponent() {
       <Link className="dsr-routes__link" to="/klublotto/NewsSlider">
         NewsSlider
       </Link>
-      <Link className="dsr-routes__link" to="/klublotto/popups">
+      <Link className="dsr-routes__link" to="/klublotto/Popups">
         Popups
       </Link>
-      <Link className="dsr-routes__link" to="/klublotto/starstep">
-        Starstep
+      <Link className="dsr-routes__link" to="/klublotto/StarStep">
+        StarStep
       </Link>
-      <Link className="dsr-routes__link" to="/klublotto/title-base">
-        Title Base
+      <Link className="dsr-routes__link" to="/klublotto/TitleBase">
+        TitleBase
       </Link>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useLocation } from '@tanstack/react-router';
-import { WebSpecifics } from '../WebSpecifics/WebSpecifics.tsx';
 import { Footer } from '../Footer/Footer.tsx';
+import { Header } from '../Header/Header.tsx';
 
 const getThemeByRoute = (pathname: string) => {
   if (pathname.startsWith('/klublotto')) return 'klublotto';
@@ -18,7 +18,7 @@ export const Navigations = ({ children }: { children: React.ReactNode }) => {
         <div className="page-box">
           <div className="outer-container">
             <div className="container">
-              <WebSpecifics theme={theme} />
+              <Header theme={theme} />
             </div>
           </div>
         </div>

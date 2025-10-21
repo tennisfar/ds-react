@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 // @ts-ignore
 import { Countdown } from '@KlubLotto/Scripts/Components/Countdown/Countdown.tsx';
 
-export const Route = createFileRoute('/klublotto/countdown')({
+export const Route = createFileRoute('/klublotto/Countdown')({
   component: RouteComponent,
 });
 
