@@ -7,9 +7,6 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
   return (
     <div className="dsr-routes">
-      <Link to="/feature-components" className="dsr-routes__link dsr-routes__link--main">
-        Feature Components
-      </Link>
       <Link to="/klublotto" className="dsr-routes__link dsr-routes__link--main">
         Klublotto
       </Link>

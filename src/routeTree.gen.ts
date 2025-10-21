@@ -13,14 +13,12 @@
 import { Route as rootRoute } from './routes/__root';
 import { Route as IndexImport } from './routes/index';
 import { Route as KlublottoIndexImport } from './routes/klublotto/index';
-import { Route as FeatureComponentsIndexImport } from './routes/feature-components/index';
 import { Route as KlublottoTitleBaseImport } from './routes/klublotto/title-base';
 import { Route as KlublottoStarstepImport } from './routes/klublotto/starstep';
 import { Route as KlublottoPopupsImport } from './routes/klublotto/popups';
 import { Route as KlublottoCountdownImport } from './routes/klublotto/countdown';
 import { Route as KlublottoNewsSliderImport } from './routes/klublotto/NewsSlider';
 import { Route as KlublottoLottoRowClaimReceiptImport } from './routes/klublotto/LottoRowClaim-Receipt';
-import { Route as FeatureComponentsBrandWheelImport } from './routes/feature-components/brand-wheel';
 
 // Create/Update Routes
 
@@ -33,12 +31,6 @@ const IndexRoute = IndexImport.update({
 const KlublottoIndexRoute = KlublottoIndexImport.update({
   id: '/klublotto/',
   path: '/klublotto/',
-  getParentRoute: () => rootRoute,
-} as any);
-
-const FeatureComponentsIndexRoute = FeatureComponentsIndexImport.update({
-  id: '/feature-components/',
-  path: '/feature-components/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -78,12 +70,6 @@ const KlublottoLottoRowClaimReceiptRoute = KlublottoLottoRowClaimReceiptImport.u
   getParentRoute: () => rootRoute,
 } as any);
 
-const FeatureComponentsBrandWheelRoute = FeatureComponentsBrandWheelImport.update({
-  id: '/feature-components/brand-wheel',
-  path: '/feature-components/brand-wheel',
-  getParentRoute: () => rootRoute,
-} as any);
-
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -93,13 +79,6 @@ declare module '@tanstack/react-router' {
       path: '/';
       fullPath: '/';
       preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    '/feature-components/brand-wheel': {
-      id: '/feature-components/brand-wheel';
-      path: '/feature-components/brand-wheel';
-      fullPath: '/feature-components/brand-wheel';
-      preLoaderRoute: typeof FeatureComponentsBrandWheelImport;
       parentRoute: typeof rootRoute;
     };
     '/klublotto/LottoRowClaim-Receipt': {
@@ -144,13 +123,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlublottoTitleBaseImport;
       parentRoute: typeof rootRoute;
     };
-    '/feature-components/': {
-      id: '/feature-components/';
-      path: '/feature-components';
-      fullPath: '/feature-components';
-      preLoaderRoute: typeof FeatureComponentsIndexImport;
-      parentRoute: typeof rootRoute;
-    };
     '/klublotto/': {
       id: '/klublotto/';
       path: '/klublotto';
@@ -165,41 +137,35 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
-  '/feature-components/brand-wheel': typeof FeatureComponentsBrandWheelRoute;
   '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute;
   '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute;
   '/klublotto/countdown': typeof KlublottoCountdownRoute;
   '/klublotto/popups': typeof KlublottoPopupsRoute;
   '/klublotto/starstep': typeof KlublottoStarstepRoute;
   '/klublotto/title-base': typeof KlublottoTitleBaseRoute;
-  '/feature-components': typeof FeatureComponentsIndexRoute;
   '/klublotto': typeof KlublottoIndexRoute;
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
-  '/feature-components/brand-wheel': typeof FeatureComponentsBrandWheelRoute;
   '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute;
   '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute;
   '/klublotto/countdown': typeof KlublottoCountdownRoute;
   '/klublotto/popups': typeof KlublottoPopupsRoute;
   '/klublotto/starstep': typeof KlublottoStarstepRoute;
   '/klublotto/title-base': typeof KlublottoTitleBaseRoute;
-  '/feature-components': typeof FeatureComponentsIndexRoute;
   '/klublotto': typeof KlublottoIndexRoute;
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute;
   '/': typeof IndexRoute;
-  '/feature-components/brand-wheel': typeof FeatureComponentsBrandWheelRoute;
   '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute;
   '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute;
   '/klublotto/countdown': typeof KlublottoCountdownRoute;
   '/klublotto/popups': typeof KlublottoPopupsRoute;
   '/klublotto/starstep': typeof KlublottoStarstepRoute;
   '/klublotto/title-base': typeof KlublottoTitleBaseRoute;
-  '/feature-components/': typeof FeatureComponentsIndexRoute;
   '/klublotto/': typeof KlublottoIndexRoute;
 }
 
@@ -207,65 +173,55 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | '/'
-    | '/feature-components/brand-wheel'
     | '/klublotto/LottoRowClaim-Receipt'
     | '/klublotto/NewsSlider'
     | '/klublotto/countdown'
     | '/klublotto/popups'
     | '/klublotto/starstep'
     | '/klublotto/title-base'
-    | '/feature-components'
     | '/klublotto';
   fileRoutesByTo: FileRoutesByTo;
   to:
     | '/'
-    | '/feature-components/brand-wheel'
     | '/klublotto/LottoRowClaim-Receipt'
     | '/klublotto/NewsSlider'
     | '/klublotto/countdown'
     | '/klublotto/popups'
     | '/klublotto/starstep'
     | '/klublotto/title-base'
-    | '/feature-components'
     | '/klublotto';
   id:
     | '__root__'
     | '/'
-    | '/feature-components/brand-wheel'
     | '/klublotto/LottoRowClaim-Receipt'
     | '/klublotto/NewsSlider'
     | '/klublotto/countdown'
     | '/klublotto/popups'
     | '/klublotto/starstep'
     | '/klublotto/title-base'
-    | '/feature-components/'
     | '/klublotto/';
   fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
-  FeatureComponentsBrandWheelRoute: typeof FeatureComponentsBrandWheelRoute;
   KlublottoLottoRowClaimReceiptRoute: typeof KlublottoLottoRowClaimReceiptRoute;
   KlublottoNewsSliderRoute: typeof KlublottoNewsSliderRoute;
   KlublottoCountdownRoute: typeof KlublottoCountdownRoute;
   KlublottoPopupsRoute: typeof KlublottoPopupsRoute;
   KlublottoStarstepRoute: typeof KlublottoStarstepRoute;
   KlublottoTitleBaseRoute: typeof KlublottoTitleBaseRoute;
-  FeatureComponentsIndexRoute: typeof FeatureComponentsIndexRoute;
   KlublottoIndexRoute: typeof KlublottoIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  FeatureComponentsBrandWheelRoute: FeatureComponentsBrandWheelRoute,
   KlublottoLottoRowClaimReceiptRoute: KlublottoLottoRowClaimReceiptRoute,
   KlublottoNewsSliderRoute: KlublottoNewsSliderRoute,
   KlublottoCountdownRoute: KlublottoCountdownRoute,
   KlublottoPopupsRoute: KlublottoPopupsRoute,
   KlublottoStarstepRoute: KlublottoStarstepRoute,
   KlublottoTitleBaseRoute: KlublottoTitleBaseRoute,
-  FeatureComponentsIndexRoute: FeatureComponentsIndexRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,
 };
 
@@ -278,22 +234,17 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/feature-components/brand-wheel",
         "/klublotto/LottoRowClaim-Receipt",
         "/klublotto/NewsSlider",
         "/klublotto/countdown",
         "/klublotto/popups",
         "/klublotto/starstep",
         "/klublotto/title-base",
-        "/feature-components/",
         "/klublotto/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
-    },
-    "/feature-components/brand-wheel": {
-      "filePath": "feature-components/brand-wheel.tsx"
     },
     "/klublotto/LottoRowClaim-Receipt": {
       "filePath": "klublotto/LottoRowClaim-Receipt.tsx"
@@ -312,9 +263,6 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/klublotto/title-base": {
       "filePath": "klublotto/title-base.tsx"
-    },
-    "/feature-components/": {
-      "filePath": "feature-components/index.tsx"
     },
     "/klublotto/": {
       "filePath": "klublotto/index.tsx"
