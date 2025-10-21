@@ -10,14 +10,14 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as TitleBaseImport } from './routes/TitleBase'
-import { Route as StarStepImport } from './routes/StarStep'
-import { Route as PopupsImport } from './routes/Popups'
-import { Route as NewsSliderImport } from './routes/NewsSlider'
-import { Route as LottoRowClaimReceiptImport } from './routes/LottoRowClaimReceipt'
-import { Route as CountdownImport } from './routes/Countdown'
-import { Route as IndexImport } from './routes/index'
+import { Route as rootRoute } from './routes/__root';
+import { Route as TitleBaseImport } from './routes/TitleBase';
+import { Route as StarStepImport } from './routes/StarStep';
+import { Route as PopupsImport } from './routes/Popups';
+import { Route as NewsSliderImport } from './routes/NewsSlider';
+import { Route as LottoRowClaimReceiptImport } from './routes/LottoRowClaimReceipt';
+import { Route as CountdownImport } from './routes/Countdown';
+import { Route as IndexImport } from './routes/index';
 
 // Create/Update Routes
 
@@ -25,152 +25,138 @@ const TitleBaseRoute = TitleBaseImport.update({
   id: '/TitleBase',
   path: '/TitleBase',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const StarStepRoute = StarStepImport.update({
   id: '/StarStep',
   path: '/StarStep',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const PopupsRoute = PopupsImport.update({
   id: '/Popups',
   path: '/Popups',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const NewsSliderRoute = NewsSliderImport.update({
   id: '/NewsSlider',
   path: '/NewsSlider',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const LottoRowClaimReceiptRoute = LottoRowClaimReceiptImport.update({
   id: '/LottoRowClaimReceipt',
   path: '/LottoRowClaimReceipt',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const CountdownRoute = CountdownImport.update({
   id: '/Countdown',
   path: '/Countdown',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
     '/Countdown': {
-      id: '/Countdown'
-      path: '/Countdown'
-      fullPath: '/Countdown'
-      preLoaderRoute: typeof CountdownImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/Countdown';
+      path: '/Countdown';
+      fullPath: '/Countdown';
+      preLoaderRoute: typeof CountdownImport;
+      parentRoute: typeof rootRoute;
+    };
     '/LottoRowClaimReceipt': {
-      id: '/LottoRowClaimReceipt'
-      path: '/LottoRowClaimReceipt'
-      fullPath: '/LottoRowClaimReceipt'
-      preLoaderRoute: typeof LottoRowClaimReceiptImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/LottoRowClaimReceipt';
+      path: '/LottoRowClaimReceipt';
+      fullPath: '/LottoRowClaimReceipt';
+      preLoaderRoute: typeof LottoRowClaimReceiptImport;
+      parentRoute: typeof rootRoute;
+    };
     '/NewsSlider': {
-      id: '/NewsSlider'
-      path: '/NewsSlider'
-      fullPath: '/NewsSlider'
-      preLoaderRoute: typeof NewsSliderImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/NewsSlider';
+      path: '/NewsSlider';
+      fullPath: '/NewsSlider';
+      preLoaderRoute: typeof NewsSliderImport;
+      parentRoute: typeof rootRoute;
+    };
     '/Popups': {
-      id: '/Popups'
-      path: '/Popups'
-      fullPath: '/Popups'
-      preLoaderRoute: typeof PopupsImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/Popups';
+      path: '/Popups';
+      fullPath: '/Popups';
+      preLoaderRoute: typeof PopupsImport;
+      parentRoute: typeof rootRoute;
+    };
     '/StarStep': {
-      id: '/StarStep'
-      path: '/StarStep'
-      fullPath: '/StarStep'
-      preLoaderRoute: typeof StarStepImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/StarStep';
+      path: '/StarStep';
+      fullPath: '/StarStep';
+      preLoaderRoute: typeof StarStepImport;
+      parentRoute: typeof rootRoute;
+    };
     '/TitleBase': {
-      id: '/TitleBase'
-      path: '/TitleBase'
-      fullPath: '/TitleBase'
-      preLoaderRoute: typeof TitleBaseImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/TitleBase';
+      path: '/TitleBase';
+      fullPath: '/TitleBase';
+      preLoaderRoute: typeof TitleBaseImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/Countdown': typeof CountdownRoute
-  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute
-  '/NewsSlider': typeof NewsSliderRoute
-  '/Popups': typeof PopupsRoute
-  '/StarStep': typeof StarStepRoute
-  '/TitleBase': typeof TitleBaseRoute
+  '/': typeof IndexRoute;
+  '/Countdown': typeof CountdownRoute;
+  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
+  '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
+  '/TitleBase': typeof TitleBaseRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/Countdown': typeof CountdownRoute
-  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute
-  '/NewsSlider': typeof NewsSliderRoute
-  '/Popups': typeof PopupsRoute
-  '/StarStep': typeof StarStepRoute
-  '/TitleBase': typeof TitleBaseRoute
+  '/': typeof IndexRoute;
+  '/Countdown': typeof CountdownRoute;
+  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
+  '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
+  '/TitleBase': typeof TitleBaseRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/Countdown': typeof CountdownRoute
-  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute
-  '/NewsSlider': typeof NewsSliderRoute
-  '/Popups': typeof PopupsRoute
-  '/StarStep': typeof StarStepRoute
-  '/TitleBase': typeof TitleBaseRoute
+  __root__: typeof rootRoute;
+  '/': typeof IndexRoute;
+  '/Countdown': typeof CountdownRoute;
+  '/LottoRowClaimReceipt': typeof LottoRowClaimReceiptRoute;
+  '/NewsSlider': typeof NewsSliderRoute;
+  '/Popups': typeof PopupsRoute;
+  '/StarStep': typeof StarStepRoute;
+  '/TitleBase': typeof TitleBaseRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/Countdown'
-    | '/LottoRowClaimReceipt'
-    | '/NewsSlider'
-    | '/Popups'
-    | '/StarStep'
-    | '/TitleBase'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/Countdown'
-    | '/LottoRowClaimReceipt'
-    | '/NewsSlider'
-    | '/Popups'
-    | '/StarStep'
-    | '/TitleBase'
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: '/' | '/Countdown' | '/LottoRowClaimReceipt' | '/NewsSlider' | '/Popups' | '/StarStep' | '/TitleBase';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/Countdown' | '/LottoRowClaimReceipt' | '/NewsSlider' | '/Popups' | '/StarStep' | '/TitleBase';
   id:
     | '__root__'
     | '/'
@@ -179,18 +165,18 @@ export interface FileRouteTypes {
     | '/NewsSlider'
     | '/Popups'
     | '/StarStep'
-    | '/TitleBase'
-  fileRoutesById: FileRoutesById
+    | '/TitleBase';
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  CountdownRoute: typeof CountdownRoute
-  LottoRowClaimReceiptRoute: typeof LottoRowClaimReceiptRoute
-  NewsSliderRoute: typeof NewsSliderRoute
-  PopupsRoute: typeof PopupsRoute
-  StarStepRoute: typeof StarStepRoute
-  TitleBaseRoute: typeof TitleBaseRoute
+  IndexRoute: typeof IndexRoute;
+  CountdownRoute: typeof CountdownRoute;
+  LottoRowClaimReceiptRoute: typeof LottoRowClaimReceiptRoute;
+  NewsSliderRoute: typeof NewsSliderRoute;
+  PopupsRoute: typeof PopupsRoute;
+  StarStepRoute: typeof StarStepRoute;
+  TitleBaseRoute: typeof TitleBaseRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -201,11 +187,9 @@ const rootRouteChildren: RootRouteChildren = {
   PopupsRoute: PopupsRoute,
   StarStepRoute: StarStepRoute,
   TitleBaseRoute: TitleBaseRoute,
-}
+};
 
-export const routeTree = rootRoute
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
