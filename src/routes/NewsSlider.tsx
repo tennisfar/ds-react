@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { NewsSlider } from '@KlubLotto/Scripts/Components/NewsSlider/NewsSlider.tsx';
 // @ts-ignore
 import { SliderIndicator } from '@KlubLotto/Scripts/Components/SliderIndicator/SliderIndicator.tsx';
+import nextArrow from '@KlubLotto/Graphics/News/next-arrow.svg';
 
 export const Route = createFileRoute('/NewsSlider')({
   component: RouteComponent,
@@ -60,10 +61,10 @@ function RouteComponent() {
 
       <div className="relative">
         <div className="kl-news-slider__navigation kl-news-slider__navigation--left kl-news-slider__navigation--hidden">
-          <img src="/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/next-arrow.svg" alt="Forrige" />
+          <img src={nextArrow} alt="Forrige" />
         </div>
         <div className="kl-news-slider__navigation kl-news-slider__navigation--right kl-news-slider__navigation--hidden">
-          <img src="/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/next-arrow.svg" alt="Næste" />
+          <img src={nextArrow} alt="Næste" />
         </div>
 
         <div className="kl-news-slider__inner">
