@@ -1,13 +1,14 @@
 import './web-specifics.less';
 import burger from './burger.svg';
-import logo from './logo.svg';
+import dsLogo from './logo-ds.svg';
+import klublottoLogo from './logo-klublotto.svg';
 import middle from './middle.svg';
 import user from './user.svg';
 import { useUrlParam } from '../../hooks/useUrlParam.ts';
 import { useNavigate } from '@tanstack/react-router';
 import React from 'react';
 
-export const WebSpecifics = () => {
+export const WebSpecifics = ({ theme }: { theme: string }) => {
   const hasAppParam = useUrlParam('app');
   const navigate = useNavigate();
 
@@ -30,11 +31,13 @@ export const WebSpecifics = () => {
     });
   };
 
+  const logo = theme === 'klublotto' ? klublottoLogo : dsLogo;
+
   return (
     <>
       <div className="responsible-gaming__top" onClick={handleNavigationClick}></div>
 
-      <div className="ds-navigation" onClick={handleNavigationClick}>
+      <div className={`ds-navigation ds-navigation--${theme}`} onClick={handleNavigationClick}>
         <div className="ds-navigation-main-menu">
           <img src={burger} className="ds-navigation__burger" alt="" />
           <img src={logo} className="ds-navigation__logo" alt="" />

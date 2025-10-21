@@ -8,7 +8,7 @@ import Popup from '@KlubLotto/Scripts/Components/Popup/Popup.tsx';
 // @ts-ignore
 import Overlay from '@KlubLotto/Scripts/Components/Popup/Overlay.tsx';
 
-export const Route = createFileRoute('/Popups')({
+export const Route = createFileRoute('/klublotto/popups')({
   component: RouteComponent,
 });
 

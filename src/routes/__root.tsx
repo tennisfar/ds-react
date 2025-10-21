@@ -1,14 +1,15 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router';
-import { WebSpecifics } from '../components/WebSpecifics/WebSpecifics.tsx';
 import { AppToggle } from '../components/AppToggle/AppToggle.tsx';
+import { Navigations } from '../components/Navigations/Navigations.tsx';
 // import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 export const Route = createRootRoute({
   component: () => (
     <>
-      <WebSpecifics />
       <AppToggle />
-      <Outlet />
+      <Navigations>
+        <Outlet />
+      </Navigations>
       {/*<TanStackRouterDevtools />*/}
     </>
   ),

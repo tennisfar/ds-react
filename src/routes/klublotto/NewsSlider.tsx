@@ -5,7 +5,7 @@ import { NewsSlider } from '@KlubLotto/Scripts/Components/NewsSlider/NewsSlider.
 import { SliderIndicator } from '@KlubLotto/Scripts/Components/SliderIndicator/SliderIndicator.tsx';
 import nextArrow from '@KlubLotto/Graphics/News/next-arrow.svg';
 
-export const Route = createFileRoute('/NewsSlider')({
+export const Route = createFileRoute('/klublotto/NewsSlider')({
   component: RouteComponent,
 });
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 // @ts-ignore
 import { Receipt } from '@KlubLotto/Scripts/Components/LottoRowClaim/_Receipt.tsx';
-export const Route = createFileRoute('/LottoRowClaimReceipt')({
+export const Route = createFileRoute('/klublotto/LottoRowClaim-Receipt')({
   component: RouteComponent,
 });
 

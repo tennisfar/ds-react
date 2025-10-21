@@ -1,0 +1,36 @@
+.global-footer {
+  background: #004b32;
+  display: flex;
+  justify-content: center;
+
+  &--klublotto {
+    background: #c50005;
+  }
+}
+
+.global-footer__inner {
+  padding: 2rem;
+  margin: 0 auto;
+  height: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px 20px;
+  color: white;
+  font-size: 14px;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.global-footer__link {
+  display: inline-flex;
+  position: relative;
+  padding: 7px 17px;
+  border-radius: 50px;
+  background: fade(black, 20%);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

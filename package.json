@@ -8,6 +8,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate:klublotto:styles": "node ./src/ds-imports/klublotto-style-imports.js",
+    "generate:routes": "node ./src/ds-imports/route-index-generator.js",
+    "generate:footer": "node ./src/ds-imports/generate-footer.js",
     "prettier": "prettier --write ."
   },
   "dependencies": {
