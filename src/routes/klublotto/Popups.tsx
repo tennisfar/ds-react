@@ -7,6 +7,7 @@ import { Button } from '@KlubLotto/Scripts/Components/Button/Button.tsx';
 import Popup from '@KlubLotto/Scripts/Components/Popup/Popup.tsx';
 // @ts-ignore
 import Overlay from '@KlubLotto/Scripts/Components/Popup/Overlay.tsx';
+import gift from '@KlubLotto/Graphics/MyRewards/gift.svg';
 
 export const Route = createFileRoute('/klublotto/Popups')({
   component: RouteComponent,
@@ -23,7 +24,7 @@ function RouteComponent() {
   const handleOpenPopupNewPrize = () => {
     openPopupNewPrize({
       title: 'Ny præmie til dig!',
-      image: '/src/components/Popups/gift.svg',
+      image: gift,
       buttons: [
         {
           variant: 'secondary',
