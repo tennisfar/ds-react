@@ -14,9 +14,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@Ensighten': path.resolve(__dirname, 'src/mocks/@Ensighten'),
+      '@Ensighten': path.resolve(__dirname, 'src/mocks/@Ensighten'), // Changed to mocks
       '@SharedScripts': path.resolve(__dirname, 'src/mocks/@SharedScripts'), // Changed to mocks
-      '@ErrorHandling': path.resolve(__dirname, 'src/mocks/@ErrorHandling'),
+      '@ErrorHandling': path.resolve(__dirname, 'src/mocks/@ErrorHandling'), // Changed to mocks
       '@KlubLotto': path.resolve(
         __dirname,
         'C:/Projects/danskespil-website/develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto'

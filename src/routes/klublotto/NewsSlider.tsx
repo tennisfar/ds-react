@@ -17,9 +17,7 @@ function RouteComponent() {
         desktopImageSrc: 'https://picsum.photos/801/800',
         tabletImageSrc: 'https://picsum.photos/801/800',
         mobileImageSrc: 'https://picsum.photos/801/800',
-        brandLogoWhite: (
-          <img src={'/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/lotto-white.svg'} alt={''} />
-        ),
+        brandLogoWhite: <img src={'/graphics/klublotto/newsslider/lotto-white.svg'} alt={''} />,
         link: 'NewsSlider#slide1',
       },
       {
@@ -27,9 +25,7 @@ function RouteComponent() {
         desktopImageSrc: 'https://picsum.photos/802/800',
         tabletImageSrc: 'https://picsum.photos/802/800',
         mobileImageSrc: 'https://picsum.photos/802/800',
-        brandLogoWhite: (
-          <img src={'/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/lotto-white.svg'} alt={''} />
-        ),
+        brandLogoWhite: <img src={'/graphics/klublotto/newsslider/lotto-white.svg'} alt={''} />,
         link: 'NewsSlider#slide2',
       },
       {
@@ -37,9 +33,7 @@ function RouteComponent() {
         desktopImageSrc: 'https://picsum.photos/803/800',
         tabletImageSrc: 'https://picsum.photos/803/800',
         mobileImageSrc: 'https://picsum.photos/803/800',
-        brandLogoWhite: (
-          <img src={'/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/lotto-white.svg'} alt={''} />
-        ),
+        brandLogoWhite: <img src={'/graphics/klublotto/newsslider/lotto-white.svg'} alt={''} />,
         link: 'NewsSlider#slide3',
       },
       {
@@ -47,9 +41,7 @@ function RouteComponent() {
         desktopImageSrc: 'https://picsum.photos/804/800',
         tabletImageSrc: 'https://picsum.photos/804/800',
         mobileImageSrc: 'https://picsum.photos/804/800',
-        brandLogoWhite: (
-          <img src={'/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/News/lotto-white.svg'} alt={''} />
-        ),
+        brandLogoWhite: <img src={'/graphics/klublotto/newsslider/lotto-white.svg'} alt={''} />,
         link: 'NewsSlider#slide4',
       },
     ],
