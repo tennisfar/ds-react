@@ -2,16 +2,14 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { PATHS } from '../../config.js';
 
 // These are needed to replicate __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 📁 Path to the folder containing your LESS files
-const stylesDir = path.resolve(
-  __dirname,
-  '../../../develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/Styles'
-);
+const stylesDir = path.resolve(__dirname, PATHS.KLUBLOTTO + '/Styles');
 
 // 📄 Path to the output file (that you'll import into your React app)
 const outputFile = path.resolve(__dirname, '../../src/styles/klublotto.less');

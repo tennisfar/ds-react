@@ -19,6 +19,9 @@ function RouteComponent() {
       <Link className="dsr-routes__link" to="/klublotto/LottoRowClaim-Receipt">
         LottoRowClaim Receipt
       </Link>
+      <Link className="dsr-routes__link" to="/klublotto/NewsOverview">
+        NewsOverview
+      </Link>
       <Link className="dsr-routes__link" to="/klublotto/NewsSlider">
         NewsSlider
       </Link>

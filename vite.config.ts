@@ -3,6 +3,7 @@ import viteReact from '@vitejs/plugin-react';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import { PATHS } from './config.js';
 
 export default defineConfig({
   plugins: [TanStackRouterVite(), viteReact(), tailwindcss()],
@@ -17,10 +18,7 @@ export default defineConfig({
       '@Ensighten': path.resolve(__dirname, 'src/mocks/@Ensighten'), // Changed to mocks
       '@SharedScripts': path.resolve(__dirname, 'src/mocks/@SharedScripts'), // Changed to mocks
       '@ErrorHandling': path.resolve(__dirname, 'src/mocks/@ErrorHandling'), // Changed to mocks
-      '@KlubLotto': path.resolve(
-        __dirname,
-        'C:/Projects/danskespil-website/develop/Website/Components/DanskeSpil/Domain/Feature.KlubLotto'
-      ),
+      '@KlubLotto': path.resolve(__dirname, PATHS.KLUBLOTTO),
     },
   },
 });
