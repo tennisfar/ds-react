@@ -13,11 +13,32 @@ function RouteComponent() {
       <Link className="dsr-routes__link dsr-routes__link--back" to="/">
         &larr;&nbsp; Back
       </Link>
-      <Link className="dsr-routes__link" to="/klublotto/Countdown">
-        Countdown
+      <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Claim">
+        FreePrizeClaim Claim
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Expired">
+        FreePrizeClaim Expired
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Receipt">
+        FreePrizeClaim Receipt
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Redeemed">
+        FreePrizeClaim Redeemed
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/LottoRowClaim-Claim">
+        LottoRowClaim Claim
       </Link>
       <Link className="dsr-routes__link" to="/klublotto/LottoRowClaim-Receipt">
         LottoRowClaim Receipt
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/LottoRowClaim">
+        LottoRowClaim
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/MonthlyCompetition">
+        MonthlyCompetition
+      </Link>
+      <Link className="dsr-routes__link" to="/klublotto/NewsArticle">
+        NewsArticle
       </Link>
       <Link className="dsr-routes__link" to="/klublotto/NewsOverview">
         NewsOverview

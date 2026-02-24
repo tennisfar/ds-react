@@ -6,10 +6,11 @@ export const Route = createFileRoute('/klublotto/LottoRowClaim-Receipt')({
 });
 
 function RouteComponent() {
-  const couponData = {
+  const lottoCouponData = {
     couponId: '1234567890',
     transactionDate: new Date().toISOString(),
     primaryGame: {
+      gameType: 'Lotto',
       drawInfo: [
         {
           drawDate: new Date(Date.now() + 86400000).toISOString(), // Tomorrow
@@ -19,15 +20,16 @@ function RouteComponent() {
     },
   };
 
-  const receiptProps = {
+  const lottoReceiptProps = {
     title: 'Tillykke! Du har vundet en præmie i Klub Lotto',
     text: 'Du har nu chancen for at vinde {lottoPoolSize} millioner kroner i næste uges Lotto trækning!',
     disclaimer: 'Husk at tjekke dine numre og deltag i næste uges trækning.',
+    brand: 'lotto',
   };
 
   return (
     <div>
-      <Receipt couponData={couponData} receiptProps={receiptProps} />
+      <Receipt couponData={lottoCouponData} receiptProps={lottoReceiptProps} />
     </div>
   );
 }
