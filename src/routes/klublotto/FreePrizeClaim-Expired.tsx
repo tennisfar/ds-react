@@ -29,7 +29,7 @@ function RouteComponent() {
     claimStatus: 'NotRedeemed',
   };
 
-  const sitecorePropsExpired = {
+  const expiredProps = {
     title: 'Præmie er desværre udløbet',
   };
 
@@ -38,7 +38,7 @@ function RouteComponent() {
   return (
     <>
       <PageHeader title="Dine præmier" />
-      <Expired ticket={ticket} numberGamesType={numberGamesType} sitecorePropsExpired={sitecorePropsExpired} />
+      <Expired ticket={ticket} numberGamesType={numberGamesType} expiredProps={expiredProps} />
     </>
   );
 }

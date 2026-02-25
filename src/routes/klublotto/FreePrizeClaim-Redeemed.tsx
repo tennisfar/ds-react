@@ -22,7 +22,7 @@ function RouteComponent() {
     claimStatus: 'Redeemed',
   };
 
-  const sitecorePropsRedeemed = {
+  const redeemedProps = {
     title: 'Præmie er allerede indløst',
   };
 
@@ -31,7 +31,7 @@ function RouteComponent() {
   return (
     <>
       <PageHeader title="Dine præmier" />
-      <Redeemed ticket={ticket} numberGamesType={numberGamesType} sitecorePropsRedeemed={sitecorePropsRedeemed} />
+      <Redeemed ticket={ticket} numberGamesType={numberGamesType} redeemedProps={redeemedProps} />
     </>
   );
 }

@@ -51,7 +51,7 @@ function RouteComponent() {
         canRebuy: true,
         rebuyCostPrice: 10,
       },
-      receiptTexts: {
+      receiptProps: {
         title: 'Dit køb er gennemført',
         text: 'Du er nu med i Alt eller Intet trækningen om {poolsize}&nbsp;&nbsp;kr. ',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -159,7 +159,7 @@ function RouteComponent() {
         canRebuy: true,
         rebuyCostPrice: 25,
       },
-      receiptTexts: {
+      receiptProps: {
         title: 'Dit køb er gennemført',
         text: 'Du er nu med i Keno trækningen om {poolsize}&nbsp;mio.&nbsp;kr. ',
         disclaimer: 'Udbydes af Danske Lotteri Spil A/S',
@@ -238,7 +238,7 @@ function RouteComponent() {
         canRebuy: true,
         rebuyCostPrice: 14,
       },
-      receiptTexts: {
+      receiptProps: {
         title: 'Dit køb er gennemført',
         text: 'Du er nu med i Lotto trækningen om {poolsize}&nbsp;mio.&nbsp;kr. ',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -305,7 +305,7 @@ function RouteComponent() {
         canRebuy: true,
         rebuyCostPrice: 14,
       },
-      receiptTexts: {
+      receiptProps: {
         title: 'Dit køb er gennemført',
         text: 'Du er nu med i Vikinglotto trækningen om {poolsize}&nbsp;mio.&nbsp;kr. ',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -387,7 +387,7 @@ function RouteComponent() {
         canRebuy: true,
         rebuyCostPrice: 55,
       },
-      receiptTexts: {
+      receiptProps: {
         title: 'Dit køb er gennemført',
         text: 'Du er nu med i Eurojackpot trækningen om {poolsize}&nbsp;mio.&nbsp;kr. ',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -768,7 +768,7 @@ function RouteComponent() {
       <PageHeader title="Dine præmier" />
       <Receipt
         couponData={props[gameType].couponData}
-        receiptTexts={props[gameType].receiptTexts}
+        receiptProps={props[gameType].receiptProps}
         numberGamesType={props[gameType].numberGamesType}
         poolFeed={props[gameType].poolFeed}
       />

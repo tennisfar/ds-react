@@ -12,7 +12,7 @@ function RouteComponent() {
   const props = {
     allornothing: {
       numberGamesType: 'allornothing',
-      claimTexts: {
+      claimProps: {
         title: 'En gratis Alt eller Intet',
         text: 'Præmien dækker én gratis Alt eller Intet, som gælder til førstkommende trækning - klik herunder for at indløse den.',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -35,7 +35,7 @@ function RouteComponent() {
     },
     keno: {
       numberGamesType: 'keno',
-      claimTexts: {
+      claimProps: {
         title: 'En gratis Keno',
         text: 'Præmien dækker én gratis Keno, som gælder til førstkommende trækning - klik herunder for at indløse den.',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -58,7 +58,7 @@ function RouteComponent() {
     },
     lotto: {
       numberGamesType: 'lotto',
-      claimTexts: {
+      claimProps: {
         title: 'En gratis Lotto række',
         text: 'Præmien dækker én gratis Lotto række, som gælder til førstkommende trækning - klik herunder for at indløse den.',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -81,7 +81,7 @@ function RouteComponent() {
     },
     vikinglotto: {
       numberGamesType: 'vikinglotto',
-      claimTexts: {
+      claimProps: {
         title: 'Tre gratis Vikinglotto række',
         text: 'Præmien dækker tre gratis Vikinglotto rækker, som gælder til førstkommende trækning - klik herunder for at indløse dem.',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -104,7 +104,7 @@ function RouteComponent() {
     },
     eurojackpot: {
       numberGamesType: 'eurojackpot',
-      claimTexts: {
+      claimProps: {
         title: 'To Eurojackpot rækker',
         text: 'Præmien er to gratis Eurojackpot rækker, som gælder til førstkommende trækning - klik herunder for at indløse dem.',
         disclaimer: 'Spillet udbydes af Danske Lotteri Spil A/S. <a href="#">Se vilkår og spilleregler</a>',
@@ -132,8 +132,8 @@ function RouteComponent() {
   // const gameType = 'allornothing';
   // const gameType = 'keno';
   // const gameType = 'lotto';
-  const gameType = 'vikinglotto';
-  // const gameType = 'eurojackpot';
+  // const gameType = 'vikinglotto';
+  const gameType = 'eurojackpot';
 
   return (
     <div>
@@ -142,7 +142,7 @@ function RouteComponent() {
         ticket={props[gameType].ticket}
         numberGamesType={props[gameType].numberGamesType}
         gameRows={props[gameType].gameRows}
-        claimTexts={props[gameType].claimTexts}
+        claimProps={props[gameType].claimProps}
         handleRedeem={handleRedeem}
       />
     </div>
