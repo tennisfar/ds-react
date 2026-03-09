@@ -1,0 +1,9 @@
+﻿{
+  "PageErrorMessages": {
+    "TryAgainError": {
+      "ctaLabelHome": "Forside",
+      "ctaLabelTryAgain": "Prøv igen",
+      "title": "Der skete en fejl. Prøv igen. Hvis fejlen fortsætter bedes du kontakte vores Kundecenter på tlf. 3672 8080."
+    }
+  }
+}

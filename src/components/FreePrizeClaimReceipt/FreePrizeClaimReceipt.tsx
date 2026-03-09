@@ -1,19 +1,13 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { getUrlParam } from '../../Utils/urlParams';
 import useNumberGamesCouponData from '../../Hooks/useNumberGamesCouponData';
-// import useRedeemAwardData from '../../Hooks/useRedeemAwardData';
-// import useWalletListData from '../../Hooks/useWalletListData';
 import { Spinner } from '../Spinner/Spinner';
 import { ErrorDefaultOutput } from '../ErrorDefaultOutput/ErrorDefaultOutput';
-// import { WalletListAwardApiResponse, WalletListAwardClaimType } from '../../Types/ApiResponse/accounts';
 import { CouponApiResponse } from '../../Types/ApiResponse/numberGames';
 import { getNumberGamesType, NumberGamesType } from '../../Utils/numberGamesType.ts';
 import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
-// import { FreePrizeClaimDataSettings } from '../../Types/DataSettings/freePrizeClaim';
-// import { getPoolByGameId, PoolInfo } from '../../Utils/poolFeed';
-// import { NumberGamesType, getNumberGamesType } from '../../Utils/numberGamesType';
-// import { getGameRows } from '../../Utils/gameRows';
 import { NumberGamesTypeCountdown } from '../NumberGamesTypeCountdown/NumberGamesTypeCountdown';
+import { getDefaultPoolSizeFormatted, PoolInfo } from '../../Utils/poolFeed.ts';
 
 type Props = {
   dataComponents: [
@@ -23,45 +17,47 @@ type Props = {
       text: string;
       disclaimer: string;
     }
-  ]
+  ],
+  poolFeed: PoolInfo[];
 }
 
-export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
+export const FreePrizeClaimReceipt = ({ dataComponents, poolFeed }: Props) => {
   const couponId = getUrlParam('coupon') || '';
-  const awardClaimType = getUrlParam('type') as WalletListAwardClaimType;
-
-
+  const awardClaimType = getUrlParam('award') as WalletListAwardClaimType;
+  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>('unknown');
+  const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>('unknown');
+  const [title, setTitle] = useState<string>('');
+  const [text, setText] = useState<string>('');
+  const [disclaimer, setDisclaimer] = useState<string>('');
 
-  // const [poolFeed, setPoolFeed] = useState<PoolInfo | undefined>(undefined);
-  // const [gameRows, setGameRows] = useState<number>(0);
-  // const [ticket, setTicket] = useState<WalletListAwardApiResponse | null>(null);
-  const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
-  // const [type, setType] = useState<WalletListAwardClaimType | null>(null);
-  // const numberGamesCouponData = useNumberGamesCouponData(couponId);
-  const [receiptProps, setReceiptProps] = useState<{
-    title: string;
-    text: string;
-    disclaimer: string;
-  }>({ title: '', text: '', disclaimer: '' });
-
-  const { data: numberGamesCouponData, isLoading, isError } = useNumberGamesCouponData(couponId);
-
+  const {
+    data: numberGamesCouponData,
+    isLoading: isLoadingNumberGamesCouponData,
+    isError: isErrorNumberGamesCouponData,
+  } = useNumberGamesCouponData(couponId);
 
   useEffect(() => {
-    if (!couponId || !awardClaimType) {
+    setLoading(isLoadingNumberGamesCouponData);
+  }, [isLoadingNumberGamesCouponData]);
+
+  useEffect(() => {
+    if (!couponId || !awardClaimType || isErrorNumberGamesCouponData) {
       setLoading(false);
       setError(true);
+      return;
     }
 
     setNumberGamesType(getNumberGamesType(awardClaimType));
-  }, [couponId, awardClaimType]);
-
+  }, [couponId, awardClaimType, isErrorNumberGamesCouponData]);
 
   useEffect(() => {
+    if (loading || error || numberGamesType === 'unknown') {
+      return;
+    }
+
     const typeData = dataComponents?.find((data) => data.type === awardClaimType);
 
     if (!typeData) {
@@ -70,26 +66,19 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
       setError(true);
       return;
     }
-
-    const { title, text, disclaimer } = typeData;
-    setReceiptProps({ title, text, disclaimer });
-  }, []);
-
-  useEffect(() => {
-    setLoading(isLoading);
-    setError(isError);
-  }, [isLoading, isError]);
-
+    
+    const pool = poolFeed.find((pool) => pool.gameId === getNumberGamesType(awardClaimType));
+    const modifiedText = typeData.text.replace('{poolsize}', pool?.poolSizeFormatted || getDefaultPoolSizeFormatted(getNumberGamesType(awardClaimType)));
+    setTitle(typeData.title);
+    setText(modifiedText);
+    setDisclaimer(typeData.disclaimer);
+  }, [loading, error, numberGamesType, couponId, awardClaimType]);
 
   useEffect(() => {
-    if (!numberGamesCouponData) return;
-
-    setLoading(false);
-    setError(false);
+    if (!numberGamesCouponData) {
+      return
+    }
     setCouponData(numberGamesCouponData);
-
-    // console.error('numberGamesCouponData', numberGamesCouponData)
-
   }, [numberGamesCouponData]);
 
   if (loading) {
@@ -121,8 +110,8 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
         drawDate={drawDate}/>
 
       <div>
-        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: receiptProps.title }}/>
-        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: receiptProps.text }}/>
+        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
+        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: text }}/>
       </div>
 
       <div className={'kl-free-prize-claim__receipt'}>
@@ -172,7 +161,6 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
                       </>
                     ) : null}
 
-
                   </div>
                 </div>
               );
@@ -184,7 +172,7 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
             <div className={'kl-free-prize-claim__total-price'}>0 kr.</div>
           </div>
 
-          <div className={'kl-free-prize-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: receiptProps.disclaimer }}/>
+          <div className={'kl-free-prize-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }}/>
 
         </div>
       </div>
