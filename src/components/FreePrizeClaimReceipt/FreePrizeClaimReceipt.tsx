@@ -13,6 +13,7 @@ import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
 // import { getPoolByGameId, PoolInfo } from '../../Utils/poolFeed';
 // import { NumberGamesType, getNumberGamesType } from '../../Utils/numberGamesType';
 // import { getGameRows } from '../../Utils/gameRows';
+import { NumberGamesTypeCountdown } from '../NumberGamesTypeCountdown/NumberGamesTypeCountdown';
 
 type Props = {
   dataComponents: [
@@ -52,11 +53,8 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
 
   useEffect(() => {
     if (!couponId || !awardClaimType) {
-
-
       setLoading(false);
       setError(true);
-      // numberGamesCouponData.mutate(couponId);
     }
 
     setNumberGamesType(getNumberGamesType(awardClaimType));
@@ -108,52 +106,88 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
 
   const logoUrl = `/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/${numberGamesType}.svg`;
 
+  const { primaryGame, transactionDate } = couponData;
+  const { drawInfo, rows } = primaryGame;
+  const drawDate = drawInfo[0]?.drawDate || '';
+
   return (
     <div className={`kl-free-prize-claim kl-free-prize-claim--${numberGamesType}`}>
 
       <img src={logoUrl} alt='' className={'kl-free-prize-claim__game-type-logo'}/>
 
+      <NumberGamesTypeCountdown
+        numberGamesType={numberGamesType}
+        className={'kl-free-prize-claim__numbergames-countdown'}
+        drawDate={drawDate}/>
 
-      <div>awardClaimType: {awardClaimType}</div>
-      <div>loading: {loading ? 'true' : 'false'}</div>
-      <div>error: {error ? 'true' : 'false'}</div>
-
-
-      <div>couponData: {couponData ? 'yes' : 'no'}</div>
-      <div>React: {React ? 'true' : 'false'}</div>
-      <div></div>
-      <div></div>
-      <div>dataComponents.length: {dataComponents?.length}</div>
-      <div>numberGamesCouponData.couponId: {numberGamesCouponData?.couponId}</div>
-
-      <br/>
-      <div>{receiptProps.title}</div>
-      <div>{receiptProps.text}</div>
-      <div>{receiptProps.disclaimer}</div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
-  /*
-
-  if (couponData) {
-
-    console.error('couponData', couponData)
-
-    return (
-      <div className={'kl-free-prize-claim__receipt'}>
-        {couponData.couponId} {receiptProps.title} {receiptProps.text} {receiptProps.disclaimer}
+      <div>
+        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: receiptProps.title }}/>
+        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: receiptProps.text }}/>
       </div>
-    );
-  }
 
-  return (
-    <div className={'kl-lotto-row-claim__loading'}>
-      <Spinner/>
+      <div className={'kl-free-prize-claim__receipt'}>
+        <div className={'kl-free-prize-claim__receipt-paper'}>
+          <img src={logoUrl} alt={''} className={'kl-free-prize-claim__receipt-logo'}/>
+
+          <div className={'kl-free-prize-claim__receipt-date'}>
+            {transactionDate
+              ? new Date(transactionDate).toLocaleDateString('da-DK', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              }) +
+              ' kl.' +
+              new Date(transactionDate).toLocaleTimeString('da-DK', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+              })
+              : ''}
+          </div>
+
+          <div className={'kl-free-prize-claim__receipt-coupon-id'}>Kupon: {couponId}</div>
+
+          <div className={'kl-free-prize-claim__receipt-rows'}>
+            {rows.map((row, index) => {
+              const rowNumbers = row.numbers || [];
+              const rowExtraNumbers = row.extraNumbers || [];
+              return (
+                <div className={'kl-free-prize-claim__receipt-row'} key={index}>
+                  <div className={'kl-free-prize-claim__receipt-row-prefix'}>{index + 1}.</div>
+                  <div className={'kl-free-prize-claim__receipt-row-numbers'}>
+                    {rowNumbers.map((rowNumber) => (
+                      <div key={rowNumber} className={'kl-free-prize-claim__receipt-row-number'}>
+                        {rowNumber}
+                      </div>
+                    ))}
+
+                    {rowExtraNumbers.length ? (
+                      <>
+                        <div className={'kl-free-prize-claim__receipt-row-seperator'}>+</div>
+                        {rowExtraNumbers.map((rowExtraNumber) => (
+                          <div key={rowExtraNumber} className={'kl-free-prize-claim__receipt-row-extra-number'}>
+                            {rowExtraNumber}
+                          </div>
+                        ))}
+                      </>
+                    ) : null}
+
+
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className={'kl-free-prize-claim__total'}>
+            <div className={'kl-free-prize-claim__total-text'}>Samlet v&aelig;rdi</div>
+            <div className={'kl-free-prize-claim__total-price'}>0 kr.</div>
+          </div>
+
+          <div className={'kl-free-prize-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: receiptProps.disclaimer }}/>
+
+        </div>
+      </div>
     </div>
   );
-  
-   */
-
 };

@@ -14,6 +14,12 @@ function RouteComponent() {
       title: 'LOTTO_LIGHTNING',
       text: 'Du har vundet en gratis LOTTO Lightning række. Spil den inden for 24 timer.',
       disclaimer: 'Tilbuddet gælder i 24 timer efter modtagelse. Tilbuddet kan ikke kombineres med andre tilbud. Tilbuddet kan ikke overdrages eller ombyttes til kontanter.'
+    },
+    {
+      type: '1_EUROJACKPOT_LIGHTNING',
+      title: 'EUROJACKPOT_LIGHTNING',
+      text: 'Du har vundet en gratis EUROJACKPOT Lightning række. Spil den inden for 24 timer.',
+      disclaimer: 'Tilbuddet gælder i 24 timer efter modtagelse. Tilbuddet kan ikke kombineres med andre tilbud. Tilbuddet kan ikke overdrages eller ombyttes til kontanter.'
     }
   ]
   
