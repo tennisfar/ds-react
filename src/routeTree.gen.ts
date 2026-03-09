@@ -10,239 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
-import { Route as KlublottoTitleBaseRouteImport } from './routes/klublotto/TitleBase'
-import { Route as KlublottoStarStepRouteImport } from './routes/klublotto/StarStep'
-import { Route as KlublottoPopupsRouteImport } from './routes/klublotto/Popups'
-import { Route as KlublottoNewsSliderRouteImport } from './routes/klublotto/NewsSlider'
-import { Route as KlublottoNewsOverviewRouteImport } from './routes/klublotto/NewsOverview'
-import { Route as KlublottoNewsArticleRouteImport } from './routes/klublotto/NewsArticle'
-import { Route as KlublottoMonthlyCompetitionRouteImport } from './routes/klublotto/MonthlyCompetition'
-import { Route as KlublottoLottoRowClaimReceiptRouteImport } from './routes/klublotto/LottoRowClaim-Receipt'
-import { Route as KlublottoLottoRowClaimClaimRouteImport } from './routes/klublotto/LottoRowClaim-Claim'
-import { Route as KlublottoLottoRowClaimRouteImport } from './routes/klublotto/LottoRowClaim'
-import { Route as KlublottoFreePrizeClaimRedeemedRouteImport } from './routes/klublotto/FreePrizeClaim-Redeemed'
-import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaim-Receipt'
-import { Route as KlublottoFreePrizeClaimExpiredRouteImport } from './routes/klublotto/FreePrizeClaim-Expired'
-import { Route as KlublottoFreePrizeClaimClaimRouteImport } from './routes/klublotto/FreePrizeClaim-Claim'
+import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KlublottoIndexRoute = KlublottoIndexRouteImport.update({
-  id: '/klublotto/',
-  path: '/klublotto/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoTitleBaseRoute = KlublottoTitleBaseRouteImport.update({
-  id: '/klublotto/TitleBase',
-  path: '/klublotto/TitleBase',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoStarStepRoute = KlublottoStarStepRouteImport.update({
-  id: '/klublotto/StarStep',
-  path: '/klublotto/StarStep',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoPopupsRoute = KlublottoPopupsRouteImport.update({
-  id: '/klublotto/Popups',
-  path: '/klublotto/Popups',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoNewsSliderRoute = KlublottoNewsSliderRouteImport.update({
-  id: '/klublotto/NewsSlider',
-  path: '/klublotto/NewsSlider',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoNewsOverviewRoute = KlublottoNewsOverviewRouteImport.update({
-  id: '/klublotto/NewsOverview',
-  path: '/klublotto/NewsOverview',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoNewsArticleRoute = KlublottoNewsArticleRouteImport.update({
-  id: '/klublotto/NewsArticle',
-  path: '/klublotto/NewsArticle',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoMonthlyCompetitionRoute =
-  KlublottoMonthlyCompetitionRouteImport.update({
-    id: '/klublotto/MonthlyCompetition',
-    path: '/klublotto/MonthlyCompetition',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const KlublottoLottoRowClaimReceiptRoute =
-  KlublottoLottoRowClaimReceiptRouteImport.update({
-    id: '/klublotto/LottoRowClaim-Receipt',
-    path: '/klublotto/LottoRowClaim-Receipt',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const KlublottoLottoRowClaimClaimRoute =
-  KlublottoLottoRowClaimClaimRouteImport.update({
-    id: '/klublotto/LottoRowClaim-Claim',
-    path: '/klublotto/LottoRowClaim-Claim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const KlublottoLottoRowClaimRoute = KlublottoLottoRowClaimRouteImport.update({
-  id: '/klublotto/LottoRowClaim',
-  path: '/klublotto/LottoRowClaim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoFreePrizeClaimRedeemedRoute =
-  KlublottoFreePrizeClaimRedeemedRouteImport.update({
-    id: '/klublotto/FreePrizeClaim-Redeemed',
-    path: '/klublotto/FreePrizeClaim-Redeemed',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const KlublottoFreePrizeClaimReceiptRoute =
   KlublottoFreePrizeClaimReceiptRouteImport.update({
-    id: '/klublotto/FreePrizeClaim-Receipt',
-    path: '/klublotto/FreePrizeClaim-Receipt',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const KlublottoFreePrizeClaimExpiredRoute =
-  KlublottoFreePrizeClaimExpiredRouteImport.update({
-    id: '/klublotto/FreePrizeClaim-Expired',
-    path: '/klublotto/FreePrizeClaim-Expired',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const KlublottoFreePrizeClaimClaimRoute =
-  KlublottoFreePrizeClaimClaimRouteImport.update({
-    id: '/klublotto/FreePrizeClaim-Claim',
-    path: '/klublotto/FreePrizeClaim-Claim',
+    id: '/klublotto/FreePrizeClaimReceipt',
+    path: '/klublotto/FreePrizeClaimReceipt',
     getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
-  '/klublotto/FreePrizeClaim-Expired': typeof KlublottoFreePrizeClaimExpiredRoute
-  '/klublotto/FreePrizeClaim-Receipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto/FreePrizeClaim-Redeemed': typeof KlublottoFreePrizeClaimRedeemedRoute
-  '/klublotto/LottoRowClaim': typeof KlublottoLottoRowClaimRoute
-  '/klublotto/LottoRowClaim-Claim': typeof KlublottoLottoRowClaimClaimRoute
-  '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute
-  '/klublotto/MonthlyCompetition': typeof KlublottoMonthlyCompetitionRoute
-  '/klublotto/NewsArticle': typeof KlublottoNewsArticleRoute
-  '/klublotto/NewsOverview': typeof KlublottoNewsOverviewRoute
-  '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute
-  '/klublotto/Popups': typeof KlublottoPopupsRoute
-  '/klublotto/StarStep': typeof KlublottoStarStepRoute
-  '/klublotto/TitleBase': typeof KlublottoTitleBaseRoute
-  '/klublotto': typeof KlublottoIndexRoute
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
-  '/klublotto/FreePrizeClaim-Expired': typeof KlublottoFreePrizeClaimExpiredRoute
-  '/klublotto/FreePrizeClaim-Receipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto/FreePrizeClaim-Redeemed': typeof KlublottoFreePrizeClaimRedeemedRoute
-  '/klublotto/LottoRowClaim': typeof KlublottoLottoRowClaimRoute
-  '/klublotto/LottoRowClaim-Claim': typeof KlublottoLottoRowClaimClaimRoute
-  '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute
-  '/klublotto/MonthlyCompetition': typeof KlublottoMonthlyCompetitionRoute
-  '/klublotto/NewsArticle': typeof KlublottoNewsArticleRoute
-  '/klublotto/NewsOverview': typeof KlublottoNewsOverviewRoute
-  '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute
-  '/klublotto/Popups': typeof KlublottoPopupsRoute
-  '/klublotto/StarStep': typeof KlublottoStarStepRoute
-  '/klublotto/TitleBase': typeof KlublottoTitleBaseRoute
-  '/klublotto': typeof KlublottoIndexRoute
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
-  '/klublotto/FreePrizeClaim-Expired': typeof KlublottoFreePrizeClaimExpiredRoute
-  '/klublotto/FreePrizeClaim-Receipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto/FreePrizeClaim-Redeemed': typeof KlublottoFreePrizeClaimRedeemedRoute
-  '/klublotto/LottoRowClaim': typeof KlublottoLottoRowClaimRoute
-  '/klublotto/LottoRowClaim-Claim': typeof KlublottoLottoRowClaimClaimRoute
-  '/klublotto/LottoRowClaim-Receipt': typeof KlublottoLottoRowClaimReceiptRoute
-  '/klublotto/MonthlyCompetition': typeof KlublottoMonthlyCompetitionRoute
-  '/klublotto/NewsArticle': typeof KlublottoNewsArticleRoute
-  '/klublotto/NewsOverview': typeof KlublottoNewsOverviewRoute
-  '/klublotto/NewsSlider': typeof KlublottoNewsSliderRoute
-  '/klublotto/Popups': typeof KlublottoPopupsRoute
-  '/klublotto/StarStep': typeof KlublottoStarStepRoute
-  '/klublotto/TitleBase': typeof KlublottoTitleBaseRoute
-  '/klublotto/': typeof KlublottoIndexRoute
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/klublotto/FreePrizeClaim-Claim'
-    | '/klublotto/FreePrizeClaim-Expired'
-    | '/klublotto/FreePrizeClaim-Receipt'
-    | '/klublotto/FreePrizeClaim-Redeemed'
-    | '/klublotto/LottoRowClaim'
-    | '/klublotto/LottoRowClaim-Claim'
-    | '/klublotto/LottoRowClaim-Receipt'
-    | '/klublotto/MonthlyCompetition'
-    | '/klublotto/NewsArticle'
-    | '/klublotto/NewsOverview'
-    | '/klublotto/NewsSlider'
-    | '/klublotto/Popups'
-    | '/klublotto/StarStep'
-    | '/klublotto/TitleBase'
-    | '/klublotto'
+  fullPaths: '/' | '/klublotto/FreePrizeClaimReceipt'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/klublotto/FreePrizeClaim-Claim'
-    | '/klublotto/FreePrizeClaim-Expired'
-    | '/klublotto/FreePrizeClaim-Receipt'
-    | '/klublotto/FreePrizeClaim-Redeemed'
-    | '/klublotto/LottoRowClaim'
-    | '/klublotto/LottoRowClaim-Claim'
-    | '/klublotto/LottoRowClaim-Receipt'
-    | '/klublotto/MonthlyCompetition'
-    | '/klublotto/NewsArticle'
-    | '/klublotto/NewsOverview'
-    | '/klublotto/NewsSlider'
-    | '/klublotto/Popups'
-    | '/klublotto/StarStep'
-    | '/klublotto/TitleBase'
-    | '/klublotto'
-  id:
-    | '__root__'
-    | '/'
-    | '/klublotto/FreePrizeClaim-Claim'
-    | '/klublotto/FreePrizeClaim-Expired'
-    | '/klublotto/FreePrizeClaim-Receipt'
-    | '/klublotto/FreePrizeClaim-Redeemed'
-    | '/klublotto/LottoRowClaim'
-    | '/klublotto/LottoRowClaim-Claim'
-    | '/klublotto/LottoRowClaim-Receipt'
-    | '/klublotto/MonthlyCompetition'
-    | '/klublotto/NewsArticle'
-    | '/klublotto/NewsOverview'
-    | '/klublotto/NewsSlider'
-    | '/klublotto/Popups'
-    | '/klublotto/StarStep'
-    | '/klublotto/TitleBase'
-    | '/klublotto/'
+  to: '/' | '/klublotto/FreePrizeClaimReceipt'
+  id: '__root__' | '/' | '/klublotto/FreePrizeClaimReceipt'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  KlublottoFreePrizeClaimClaimRoute: typeof KlublottoFreePrizeClaimClaimRoute
-  KlublottoFreePrizeClaimExpiredRoute: typeof KlublottoFreePrizeClaimExpiredRoute
   KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute
-  KlublottoFreePrizeClaimRedeemedRoute: typeof KlublottoFreePrizeClaimRedeemedRoute
-  KlublottoLottoRowClaimRoute: typeof KlublottoLottoRowClaimRoute
-  KlublottoLottoRowClaimClaimRoute: typeof KlublottoLottoRowClaimClaimRoute
-  KlublottoLottoRowClaimReceiptRoute: typeof KlublottoLottoRowClaimReceiptRoute
-  KlublottoMonthlyCompetitionRoute: typeof KlublottoMonthlyCompetitionRoute
-  KlublottoNewsArticleRoute: typeof KlublottoNewsArticleRoute
-  KlublottoNewsOverviewRoute: typeof KlublottoNewsOverviewRoute
-  KlublottoNewsSliderRoute: typeof KlublottoNewsSliderRoute
-  KlublottoPopupsRoute: typeof KlublottoPopupsRoute
-  KlublottoStarStepRoute: typeof KlublottoStarStepRoute
-  KlublottoTitleBaseRoute: typeof KlublottoTitleBaseRoute
-  KlublottoIndexRoute: typeof KlublottoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -254,109 +59,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/klublotto/': {
-      id: '/klublotto/'
-      path: '/klublotto'
-      fullPath: '/klublotto'
-      preLoaderRoute: typeof KlublottoIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/TitleBase': {
-      id: '/klublotto/TitleBase'
-      path: '/klublotto/TitleBase'
-      fullPath: '/klublotto/TitleBase'
-      preLoaderRoute: typeof KlublottoTitleBaseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/StarStep': {
-      id: '/klublotto/StarStep'
-      path: '/klublotto/StarStep'
-      fullPath: '/klublotto/StarStep'
-      preLoaderRoute: typeof KlublottoStarStepRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/Popups': {
-      id: '/klublotto/Popups'
-      path: '/klublotto/Popups'
-      fullPath: '/klublotto/Popups'
-      preLoaderRoute: typeof KlublottoPopupsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/NewsSlider': {
-      id: '/klublotto/NewsSlider'
-      path: '/klublotto/NewsSlider'
-      fullPath: '/klublotto/NewsSlider'
-      preLoaderRoute: typeof KlublottoNewsSliderRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/NewsOverview': {
-      id: '/klublotto/NewsOverview'
-      path: '/klublotto/NewsOverview'
-      fullPath: '/klublotto/NewsOverview'
-      preLoaderRoute: typeof KlublottoNewsOverviewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/NewsArticle': {
-      id: '/klublotto/NewsArticle'
-      path: '/klublotto/NewsArticle'
-      fullPath: '/klublotto/NewsArticle'
-      preLoaderRoute: typeof KlublottoNewsArticleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/MonthlyCompetition': {
-      id: '/klublotto/MonthlyCompetition'
-      path: '/klublotto/MonthlyCompetition'
-      fullPath: '/klublotto/MonthlyCompetition'
-      preLoaderRoute: typeof KlublottoMonthlyCompetitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/LottoRowClaim-Receipt': {
-      id: '/klublotto/LottoRowClaim-Receipt'
-      path: '/klublotto/LottoRowClaim-Receipt'
-      fullPath: '/klublotto/LottoRowClaim-Receipt'
-      preLoaderRoute: typeof KlublottoLottoRowClaimReceiptRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/LottoRowClaim-Claim': {
-      id: '/klublotto/LottoRowClaim-Claim'
-      path: '/klublotto/LottoRowClaim-Claim'
-      fullPath: '/klublotto/LottoRowClaim-Claim'
-      preLoaderRoute: typeof KlublottoLottoRowClaimClaimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/LottoRowClaim': {
-      id: '/klublotto/LottoRowClaim'
-      path: '/klublotto/LottoRowClaim'
-      fullPath: '/klublotto/LottoRowClaim'
-      preLoaderRoute: typeof KlublottoLottoRowClaimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/FreePrizeClaim-Redeemed': {
-      id: '/klublotto/FreePrizeClaim-Redeemed'
-      path: '/klublotto/FreePrizeClaim-Redeemed'
-      fullPath: '/klublotto/FreePrizeClaim-Redeemed'
-      preLoaderRoute: typeof KlublottoFreePrizeClaimRedeemedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/FreePrizeClaim-Receipt': {
-      id: '/klublotto/FreePrizeClaim-Receipt'
-      path: '/klublotto/FreePrizeClaim-Receipt'
-      fullPath: '/klublotto/FreePrizeClaim-Receipt'
+    '/klublotto/FreePrizeClaimReceipt': {
+      id: '/klublotto/FreePrizeClaimReceipt'
+      path: '/klublotto/FreePrizeClaimReceipt'
+      fullPath: '/klublotto/FreePrizeClaimReceipt'
       preLoaderRoute: typeof KlublottoFreePrizeClaimReceiptRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/FreePrizeClaim-Expired': {
-      id: '/klublotto/FreePrizeClaim-Expired'
-      path: '/klublotto/FreePrizeClaim-Expired'
-      fullPath: '/klublotto/FreePrizeClaim-Expired'
-      preLoaderRoute: typeof KlublottoFreePrizeClaimExpiredRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/klublotto/FreePrizeClaim-Claim': {
-      id: '/klublotto/FreePrizeClaim-Claim'
-      path: '/klublotto/FreePrizeClaim-Claim'
-      fullPath: '/klublotto/FreePrizeClaim-Claim'
-      preLoaderRoute: typeof KlublottoFreePrizeClaimClaimRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -364,21 +71,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  KlublottoFreePrizeClaimClaimRoute: KlublottoFreePrizeClaimClaimRoute,
-  KlublottoFreePrizeClaimExpiredRoute: KlublottoFreePrizeClaimExpiredRoute,
   KlublottoFreePrizeClaimReceiptRoute: KlublottoFreePrizeClaimReceiptRoute,
-  KlublottoFreePrizeClaimRedeemedRoute: KlublottoFreePrizeClaimRedeemedRoute,
-  KlublottoLottoRowClaimRoute: KlublottoLottoRowClaimRoute,
-  KlublottoLottoRowClaimClaimRoute: KlublottoLottoRowClaimClaimRoute,
-  KlublottoLottoRowClaimReceiptRoute: KlublottoLottoRowClaimReceiptRoute,
-  KlublottoMonthlyCompetitionRoute: KlublottoMonthlyCompetitionRoute,
-  KlublottoNewsArticleRoute: KlublottoNewsArticleRoute,
-  KlublottoNewsOverviewRoute: KlublottoNewsOverviewRoute,
-  KlublottoNewsSliderRoute: KlublottoNewsSliderRoute,
-  KlublottoPopupsRoute: KlublottoPopupsRoute,
-  KlublottoStarStepRoute: KlublottoStarStepRoute,
-  KlublottoTitleBaseRoute: KlublottoTitleBaseRoute,
-  KlublottoIndexRoute: KlublottoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

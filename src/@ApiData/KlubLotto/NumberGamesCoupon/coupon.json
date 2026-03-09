@@ -1,0 +1,108 @@
+﻿{
+  "couponId": "4310257030434016800",
+  "playType": "Lightning",
+  "transactionDate": "2026-01-31T02:54:58+00:00",
+  "price": 55,
+  "state": "Normal",
+  "primaryGame": {
+    "gameType": "Eurojackpot",
+    "rows": [
+      {
+        "numbers": [
+          5,
+          12,
+          13,
+          20,
+          31
+        ],
+        "extraNumbers": [
+          7,
+          8
+        ]
+      },
+      {
+        "numbers": [
+          4,
+          13,
+          34,
+          35,
+          36
+        ],
+        "extraNumbers": [
+          2,
+          4
+        ]
+      },
+      {
+        "numbers": [
+          2,
+          6,
+          7,
+          26,
+          37
+        ],
+        "extraNumbers": [
+          1,
+          5
+        ]
+      }
+    ],
+    "drawInfo": [
+      {
+        "drawNo": 926,
+        "drawInProgress": false,
+        "drawDate": "2026-03-06T18:00:00.000+00:00",
+        "bundle": 1
+      }
+    ]
+  },
+  "secondaryGames": [
+    {
+      "gameType": "JokerWednesday",
+      "rows": [
+        {
+          "numbers": [
+            8,
+            3,
+            7,
+            7,
+            4,
+            3,
+            1
+          ],
+          "extraNumbers": []
+        },
+        {
+          "numbers": [
+            4,
+            5,
+            5,
+            5,
+            1,
+            8,
+            1
+          ],
+          "extraNumbers": []
+        }
+      ],
+      "drawInfo": [
+        {
+          "drawNo": 901,
+          "drawInProgress": false,
+          "drawDate": "2026-02-04T17:05:00+00:00",
+          "bundle": 1
+        }
+      ]
+    }
+  ],
+  "campaignGames": [],
+  "rebuyInfo": {
+    "rebuyCostPrice": 55,
+    "draws": [
+      "Regular"
+    ],
+    "validUntil": "2026-05-12T17:00:00+00:00"
+  },
+  "canRebuy": true,
+  "rebuyCostPrice": 55
+}
