@@ -7,6 +7,8 @@ import { Spinner } from '../Spinner/Spinner';
 import { ErrorDefaultOutput } from '../ErrorDefaultOutput/ErrorDefaultOutput';
 // import { WalletListAwardApiResponse, WalletListAwardClaimType } from '../../Types/ApiResponse/accounts';
 import { CouponApiResponse } from '../../Types/ApiResponse/numberGames';
+import { getNumberGamesType, NumberGamesType } from '../../Utils/numberGamesType.ts';
+import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
 // import { FreePrizeClaimDataSettings } from '../../Types/DataSettings/freePrizeClaim';
 // import { getPoolByGameId, PoolInfo } from '../../Utils/poolFeed';
 // import { NumberGamesType, getNumberGamesType } from '../../Utils/numberGamesType';
@@ -15,7 +17,7 @@ import { CouponApiResponse } from '../../Types/ApiResponse/numberGames';
 type Props = {
   dataComponents: [
     {
-      // type: WalletListAwardClaimType;
+      type: WalletListAwardClaimType;
       title: string;
       text: string;
       disclaimer: string;
@@ -25,11 +27,14 @@ type Props = {
 
 export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
   const couponId = getUrlParam('coupon') || '';
-  const awardClaimType = getUrlParam('type') || '';
+  const awardClaimType = getUrlParam('type') as WalletListAwardClaimType;
 
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>('unknown');
+
   // const [poolFeed, setPoolFeed] = useState<PoolInfo | undefined>(undefined);
   // const [gameRows, setGameRows] = useState<number>(0);
   // const [ticket, setTicket] = useState<WalletListAwardApiResponse | null>(null);
@@ -47,10 +52,14 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
 
   useEffect(() => {
     if (!couponId || !awardClaimType) {
+
+
       setLoading(false);
       setError(true);
       // numberGamesCouponData.mutate(couponId);
     }
+
+    setNumberGamesType(getNumberGamesType(awardClaimType));
   }, [couponId, awardClaimType]);
 
 
@@ -97,8 +106,14 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
     return <ErrorDefaultOutput className={'kl-lotto-row-claim__error'} variant={'dark'}/>;
   }
 
+  const logoUrl = `/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/${numberGamesType}.svg`;
+
   return (
-    <>
+    <div className={`kl-free-prize-claim kl-free-prize-claim--${numberGamesType}`}>
+
+      <img src={logoUrl} alt='' className={'kl-free-prize-claim__game-type-logo'}/>
+
+
       <div>awardClaimType: {awardClaimType}</div>
       <div>loading: {loading ? 'true' : 'false'}</div>
       <div>error: {error ? 'true' : 'false'}</div>
@@ -118,7 +133,7 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
       <div></div>
       <div></div>
       <div></div>
-    </>
+    </div>
   );
   /*
 
