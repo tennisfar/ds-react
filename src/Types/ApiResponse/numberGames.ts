@@ -1,4 +1,9 @@
-﻿export type CouponApiResponse = {
+﻿export type CouponApiPrimaryGameRowResponse = {
+  numbers: number[];
+  extraNumbers: number[];
+}
+
+export type CouponApiResponse = {
   couponId: string;
   playType: string;
   transactionDate: string;
@@ -6,10 +11,7 @@
   state: string;
   primaryGame: {
     gameType: string;
-    rows: Array<{
-      numbers: number[];
-      extraNumbers: number[];
-    }>;
+    rows: Array<CouponApiPrimaryGameRowResponse>;
     drawInfo: Array<{
       drawNo: number;
       drawInProgress: boolean;

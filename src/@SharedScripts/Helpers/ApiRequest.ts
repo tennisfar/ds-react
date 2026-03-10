@@ -2,7 +2,7 @@
 import couponData from '../../@ApiData/KlubLotto/NumberGamesCoupon/coupon.json';
 import PageErrorMessages from '../../@ApiData/KlubLotto/NumberGamesCoupon/PageErrorMessages.json';
 
-const ApiRequest = async ({ url, withCredentials, timeout = 20 }: { url: string, withCredentials: boolean, timeout: number }) => {
+const ApiRequest = async ({ url, withCredentials, timeout = 20 }: { url: string, withCredentials?: boolean, timeout?: number }) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   // if (url) console.error('url', url)
