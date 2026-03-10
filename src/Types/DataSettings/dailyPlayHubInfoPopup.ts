@@ -2,4 +2,4 @@
   infoPopupCtaLabel: string;
   infoPopupText: string;
   infoPopupTitle: string;
-}
+};

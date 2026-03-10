@@ -11,10 +11,7 @@ export type GamePostMessageState =
   | 'gameEvent'
   | 'gameClose';
 
-export type Platform =
-  | 'web'
-  | 'ios'
-  | 'android';
+export type Platform = 'web' | 'ios' | 'android';
 
 export type QuizGameContentProps = {
   // FIXME: [KlubLotto] specify correct type
@@ -30,7 +27,7 @@ export type QuizGameContentProps = {
   linkBack: SitecoreGenericLink;
   successLottie: SitecoreFile;
   submitQuizAnswerCtaLabel: string;
-}
+};
 
 export type GameType = GameDataSettings['gameType'];
 

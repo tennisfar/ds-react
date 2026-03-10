@@ -6,4 +6,4 @@ export type StarStepDataSettings = {
   disclaimer: string;
   lotGained: SitecoreImage;
   lotNotGained: SitecoreImage;
-}
+};

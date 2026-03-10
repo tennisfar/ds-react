@@ -1,7 +1,13 @@
 import ApiRequest from '@SharedScripts/Helpers/ApiRequest';
 import { GameType, Platform } from '../Types/game';
 import { isDevEnvironment } from '../Utils/environment';
-import { DailyLotApiResponse, GameHistoryApiResponse, GameLauncherApiResponse, GamesApiResponse, MarkGameCompletedApiResponse } from '../Types/ApiResponse/games';
+import {
+  DailyLotApiResponse,
+  GameHistoryApiResponse,
+  GameLauncherApiResponse,
+  GamesApiResponse,
+  MarkGameCompletedApiResponse,
+} from '../Types/ApiResponse/games';
 
 const baseUrl = DS.Config.KLUBLOTTO_API_URL;
 const withCredentials = isDevEnvironment();
@@ -21,7 +27,11 @@ export const getLotDaily = async (): Promise<DailyLotApiResponse> => {
   return await ApiRequest({ url, withCredentials });
 };
 
-export const getGameLauncher = async (gameId: GameType, platform: Platform, gameDate?: string): Promise<GameLauncherApiResponse> => {
+export const getGameLauncher = async (
+  gameId: GameType,
+  platform: Platform,
+  gameDate?: string
+): Promise<GameLauncherApiResponse> => {
   let url = `${baseUrl}/games/${gameId}/gamelauncher/${platform}`;
   if (gameDate) {
     url += `?date=${encodeURIComponent(gameDate)}`;
@@ -29,7 +39,12 @@ export const getGameLauncher = async (gameId: GameType, platform: Platform, game
   return await ApiRequest({ url, withCredentials });
 };
 
-export const markGameAsCompleted = async (gameId: GameType, success: boolean, launchGameId: string, launchGameDate: string): Promise<MarkGameCompletedApiResponse> => {
+export const markGameAsCompleted = async (
+  gameId: GameType,
+  success: boolean,
+  launchGameId: string,
+  launchGameDate: string
+): Promise<MarkGameCompletedApiResponse> => {
   return await ApiRequest({
     url: `${baseUrl}/games/${gameId}/completed`,
     method: 'PUT' as const,

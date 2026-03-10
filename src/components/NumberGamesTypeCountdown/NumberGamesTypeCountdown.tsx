@@ -15,7 +15,9 @@ export const NumberGamesTypeCountdown = ({ className, drawDate, numberGamesType 
   return (
     <div className={className}>
       <div className={'kl-numbergames-countdown'}>
-        <div className={'kl-numbergames-countdown__header'}>Næste {getNumberGamesTypeLabel(numberGamesType)} trækning</div>
+        <div className={'kl-numbergames-countdown__header'}>
+          Næste {getNumberGamesTypeLabel(numberGamesType)} trækning
+        </div>
         <div className={'kl-numbergames-countdown__time'}>
           {timeLeft.d !== '00' && (
             <>

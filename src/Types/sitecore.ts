@@ -8,7 +8,7 @@ export type SitecoreFile = {
   title: string;
   width: number;
   height: number;
-}
+};
 
 export type SitecoreGenericLink = {
   anchor: string;
@@ -21,7 +21,7 @@ export type SitecoreGenericLink = {
   title: string;
   type: number;
   url: string;
-}
+};
 
 export type SitecoreImage = {
   alt: string;
@@ -33,4 +33,4 @@ export type SitecoreImage = {
   title: string;
   width: number;
   height: number;
-}
+};

@@ -8,43 +8,16 @@
     "gameType": "Eurojackpot",
     "rows": [
       {
-        "numbers": [
-          5,
-          12,
-          13,
-          20,
-          31
-        ],
-        "extraNumbers": [
-          7,
-          8
-        ]
+        "numbers": [5, 12, 13, 20, 31],
+        "extraNumbers": [7, 8]
       },
       {
-        "numbers": [
-          4,
-          13,
-          34,
-          35,
-          36
-        ],
-        "extraNumbers": [
-          2,
-          4
-        ]
+        "numbers": [4, 13, 34, 35, 36],
+        "extraNumbers": [2, 4]
       },
       {
-        "numbers": [
-          2,
-          6,
-          7,
-          26,
-          37
-        ],
-        "extraNumbers": [
-          1,
-          5
-        ]
+        "numbers": [2, 6, 7, 26, 37],
+        "extraNumbers": [1, 5]
       }
     ],
     "drawInfo": [
@@ -61,27 +34,11 @@
       "gameType": "JokerWednesday",
       "rows": [
         {
-          "numbers": [
-            8,
-            3,
-            7,
-            7,
-            4,
-            3,
-            1
-          ],
+          "numbers": [8, 3, 7, 7, 4, 3, 1],
           "extraNumbers": []
         },
         {
-          "numbers": [
-            4,
-            5,
-            5,
-            5,
-            1,
-            8,
-            1
-          ],
+          "numbers": [4, 5, 5, 5, 1, 8, 1],
           "extraNumbers": []
         }
       ],
@@ -98,9 +55,7 @@
   "campaignGames": [],
   "rebuyInfo": {
     "rebuyCostPrice": 55,
-    "draws": [
-      "Regular"
-    ],
+    "draws": ["Regular"],
     "validUntil": "2026-05-12T17:00:00+00:00"
   },
   "canRebuy": true,

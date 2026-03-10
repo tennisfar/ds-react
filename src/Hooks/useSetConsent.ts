@@ -6,7 +6,7 @@ export const useSetConsent = () => {
     mutationFn: async ({ consentIds, accepted }: { consentIds: number[]; accepted: boolean }) => {
       return (await setConsent({
         consentItems: consentIds.map((id) => ({ id, accepted })),
-        reference: 'klublotto-consent'
+        reference: 'klublotto-consent',
       })) as { success: boolean };
     },
   });

@@ -11,8 +11,8 @@ export type FreePrizeClaimDataProps = {
   receiptDisclaimer: string;
   expiredTitle: string;
   redeemedTitle: string;
-}
+};
 
 export type FreePrizeClaimDataSettings = {
   dataComponents: FreePrizeClaimDataProps[];
-}
+};

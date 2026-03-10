@@ -6,7 +6,15 @@ export type PopupButtonProps = {
   ctaLabel: string;
 } & ButtonLayoutProps;
 
-export type PopupVariantProps = 'basic' | 'welcome' | 'error' | 'simple' | 'firstLot' | 'newPrize' | 'prizeExpires' | undefined;
+export type PopupVariantProps =
+  | 'basic'
+  | 'welcome'
+  | 'error'
+  | 'simple'
+  | 'firstLot'
+  | 'newPrize'
+  | 'prizeExpires'
+  | undefined;
 
 export type PopupDataProps = {
   region: 'klublotto';

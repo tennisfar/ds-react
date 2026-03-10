@@ -13,4 +13,4 @@ export type LottoRowClaimDataSettings = {
   receiptTitle: string;
   redeemedImage: SitecoreImage;
   redeemedTitle: string;
-}
+};

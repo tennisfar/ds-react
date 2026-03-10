@@ -6,7 +6,7 @@ const useWalletListData = () => {
   const { data, isLoading, isError, refetch } = useQuery<WalletListApiResponse>({
     queryKey: ['walletListData'],
     queryFn: async () => {
-      return (await getWalletList());
+      return await getWalletList();
     },
   });
 
