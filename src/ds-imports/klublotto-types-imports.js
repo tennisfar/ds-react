@@ -6,7 +6,7 @@ import { PATHS } from '../../config.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const sourceDir = path.resolve(__dirname, PATHS.KLUBLOTTO + '/Scripts/Types');
+const sourceDir = path.resolve(__dirname, PATHS.KlubLotto + '/Scripts/Types');
 const destDir = path.resolve(__dirname, '../DanskeSpil/KlubLotto/Scripts/Types');
 
 function copyTsFiles(src, dest) {

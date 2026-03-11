@@ -10,10 +10,11 @@
     "generate:styles": "npm run generate:styles:klublotto",
     "generate:styles:klublotto": "node ./src/ds-imports/klublotto-style-imports.js",
     "generate:routes": "node ./src/ds-imports/route-index-generator.js",
-    "klublotto:copy:scripts": "npm run klublotto:copy:scripts:components && npm run klublotto:copy:scripts:hooks && npm run klublotto:copy:scripts:types && npm run klublotto:copy:scripts:utils && npm run klublotto:copy:scripts:api",
+    "klublotto:copy:scripts": "npm run klublotto:copy:scripts:components && npm run klublotto:copy:scripts:hooks && npm run klublotto:copy:scripts:types && npm run klublotto:copy:scripts:utils && npm run klublotto:copy:scripts:api && npm run klublotto:copy:scripts:modules",
     "klublotto:copy:scripts:api": "node ./src/ds-imports/klublotto-api-imports.js",
     "klublotto:copy:scripts:components": "node ./src/ds-imports/klublotto-component-imports.js",
     "klublotto:copy:scripts:hooks": "node ./src/ds-imports/klublotto-hooks-imports.js",
+    "klublotto:copy:scripts:modules": "node ./src/ds-imports/klublotto-modules-imports.js",
     "klublotto:copy:scripts:types": "node ./src/ds-imports/klublotto-types-imports.js",
     "klublotto:copy:scripts:utils": "node ./src/ds-imports/klublotto-utils-imports.js",
     "prettier": "prettier --write ."

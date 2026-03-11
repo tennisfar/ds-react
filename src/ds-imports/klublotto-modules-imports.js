@@ -6,8 +6,8 @@ import { PATHS } from '../../config.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const sourceDir = path.resolve(__dirname, PATHS.KlubLotto + '/Scripts/Hooks');
-const destDir = path.resolve(__dirname, '../DanskeSpil/KlubLotto/Scripts/Hooks');
+const sourceDir = path.resolve(__dirname, PATHS.KlubLotto + '/Scripts/modules');
+const destDir = path.resolve(__dirname, '../DanskeSpil/KlubLotto/Scripts/modules');
 
 function copyTsFiles(src, dest) {
   if (!fs.existsSync(src)) {
@@ -28,7 +28,7 @@ function copyTsFiles(src, dest) {
 
     if (entry.isDirectory()) {
       count += copyTsFiles(srcPath, destPath);
-    } else if (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx')) {
+    } else if (entry.name.endsWith('.entry.tsx')) {
       fs.copyFileSync(srcPath, destPath);
       count++;
     }
@@ -38,4 +38,4 @@ function copyTsFiles(src, dest) {
 }
 
 const fileCount = copyTsFiles(sourceDir, destDir);
-console.log(`✅ Copied ${fileCount} .ts/.tsx files to ${destDir}`);
+console.log(`✅ Copied ${fileCount} .entry.tsx files to ${destDir}`);
