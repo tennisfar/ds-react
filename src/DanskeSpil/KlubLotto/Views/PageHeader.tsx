@@ -11,5 +11,5 @@
 </div>
 `;
 
-  return <div dangerouslySetInnerHTML={{ __html: html }}/>
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 };

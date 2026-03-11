@@ -4,10 +4,10 @@ import { useNumberGamesCouponGetData } from '../../Hooks/useNumberGamesCouponDat
 import { Spinner } from '../Spinner/Spinner';
 import { ErrorDefaultOutput } from '../ErrorDefaultOutput/ErrorDefaultOutput';
 import { CouponApiResponse, CouponApiPrimaryGameRowResponse } from '../../Types/ApiResponse/numberGames';
-import { getNumberGamesType, NumberGamesType } from '../../Utils/numberGamesType.ts';
-import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
+import { getNumberGamesType, NumberGamesType } from '../../Utils/numberGamesType';
+import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts';
 import { NumberGamesTypeCountdown } from '../NumberGamesTypeCountdown/NumberGamesTypeCountdown';
-import { getDefaultPoolSizeFormatted, getPoolByGameId } from '../../Utils/poolFeed.ts';
+import { getDefaultPoolSizeFormatted, getPoolByGameId } from '../../Utils/poolFeed';
 
 // --- Types ---
 

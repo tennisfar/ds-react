@@ -1,12 +1,13 @@
-﻿// @ts-ignore
+﻿// @ts-nocheck
 import ticketsData from '@ApiData/KlubLotto/accounts/tickets.json';
-// @ts-ignore
 import couponData from '@ApiData/KlubLotto/NumberGamesCoupon/coupon.json';
-// @ts-ignore
 import PageErrorMessages from '@ApiData/KlubLotto/NumberGamesCoupon/PageErrorMessages.json';
 
-// @ts-ignore
-const ApiRequest = async ({ url, withCredentials, timeout = 20 }: {
+const ApiRequest = async ({
+  url,
+  withCredentials,
+  timeout = 20,
+}: {
   url: string;
   withCredentials?: boolean;
   timeout?: number;
@@ -14,7 +15,7 @@ const ApiRequest = async ({ url, withCredentials, timeout = 20 }: {
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   if (url) console.error('url', url);
-  debugger
+  debugger;
 
   if (url.includes('/accounts/tickets')) {
     return ticketsData;

@@ -43,9 +43,9 @@ function RouteComponent() {
     <>
       <PageHeader>Dine præmier</PageHeader>
 
-      <CrossSaleSpot/>
+      <CrossSaleSpot />
 
-      <FreePrizeClaimReceipt dataComponents={dataComponents}/>
+      <FreePrizeClaimReceipt dataComponents={dataComponents} />
     </>
   );
 }

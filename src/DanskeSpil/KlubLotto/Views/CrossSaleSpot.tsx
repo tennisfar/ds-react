@@ -12,5 +12,5 @@
 `;
 
 export const CrossSaleSpot = () => {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
 };

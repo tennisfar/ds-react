@@ -8,9 +8,9 @@ import { Navigations } from '@Mock/Navigations/Navigations.tsx';
 export const Route = createRootRoute({
   component: () => (
     <>
-      <AppToggle/>
+      <AppToggle />
       <Navigations>
-        <Outlet/>
+        <Outlet />
       </Navigations>
       {/*<TanStackRouterDevtools />*/}
     </>
