@@ -23,9 +23,6 @@
     "noUncheckedSideEffectImports": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {
-      "@Ensighten/*": ["src/mocks/@Ensighten/*"]
-    }
   },
   "include": ["src"]
 }

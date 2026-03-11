@@ -1,205 +1,213 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <base href="/" />
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://danskespil.dk/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <base href="/"/>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="https://danskespil.dk/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>DS React</title>
-  </head>
-  <body class="region-klublotto">
-    <script>
-      const body = document.querySelector('body');
-      const pad = (num, size = 2) => String(num).padStart(size, '0');
+</head>
+<body class="region-klublotto">
+<script>
+  const body = document.querySelector('body');
+  const pad = (num, size = 2) => String(num).padStart(size, '0');
 
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = pad(date.getMonth() + 1);
-      const day = pad(date.getDate());
-      const hours = pad(date.getHours());
-      const minutes = pad(date.getMinutes());
-      const seconds = pad(date.getSeconds());
-      const milliseconds = pad(date.getMilliseconds(), 3);
-      const timezoneOffset = -date.getTimezoneOffset();
-      const sign = timezoneOffset >= 0 ? '+' : '-';
-      const offsetHours = pad(Math.floor(Math.abs(timezoneOffset) / 60));
-      const offsetMinutes = pad(Math.abs(timezoneOffset) % 60);
-      const now = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}${sign}${offsetHours}:${offsetMinutes}`;
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = pad(date.getMonth() + 1);
+  const day = pad(date.getDate());
+  const hours = pad(date.getHours());
+  const minutes = pad(date.getMinutes());
+  const seconds = pad(date.getSeconds());
+  const milliseconds = pad(date.getMilliseconds(), 3);
+  const timezoneOffset = -date.getTimezoneOffset();
+  const sign = timezoneOffset >= 0 ? '+' : '-';
+  const offsetHours = pad(Math.floor(Math.abs(timezoneOffset) / 60));
+  const offsetMinutes = pad(Math.abs(timezoneOffset) % 60);
+  const now = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}${sign}${offsetHours}:${offsetMinutes}`;
 
-      body.setAttribute('data-time-now', now);
-    </script>
+  body.setAttribute('data-time-now', now);
+</script>
 
-    <div class="page-area" style="--page-width: 112rem">
-      <main class="theme-klublotto">
+<script>
+  window.DS = {
+    Config: {
+      ENV: 'dev',
+    },
+  };
+</script>
+
+<div class="page-area" style="--page-width: 112rem">
+    <main class="theme-klublotto">
         <div data-component="PageHeader" class="group w-full" data-tracking="PageHeader">
-          <div
-            class="relative w-full min-h-50 -mt-[2rem] mx-[auto] mb-28 pt-12 px-20 pb-6 flex items-center justify-center hover:no-underline"
-          >
-            <div class="text-[#1A1A1A] text-center text-[2.4rem] italic font-bold leading-[1.1] tracking-[-0.48px]">
-              Dine præmier
+            <div
+                    class="relative w-full min-h-50 -mt-[2rem] mx-[auto] mb-28 pt-12 px-20 pb-6 flex items-center justify-center hover:no-underline"
+            >
+                <div class="text-[#1A1A1A] text-center text-[2.4rem] italic font-bold leading-[1.1] tracking-[-0.48px]">
+                    Dine præmier
+                </div>
             </div>
-          </div>
         </div>
 
         <a
-          href="/eurojackpot"
-          class="kl-cross-sale-spot kl-cross-sale-spot--eurojackpot"
-          data-tracking-label="cta: /eurojackpot"
-          data-tracking="CrossSaleSpot"
-          style="background-color: black; background-image: url()"
+                href="/eurojackpot"
+                class="kl-cross-sale-spot kl-cross-sale-spot--eurojackpot"
+                data-tracking-label="cta: /eurojackpot"
+                data-tracking="CrossSaleSpot"
+                style="background-color: black; background-image: url()"
         >
-          <img
-            src="/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/eurojackpot-white.svg"
-            alt=""
-            class="kl-cross-sale-spot__logo"
-          />
-          <div class="kl-cross-sale-spot__content-eurojackpot">
-            <div class="kl-cross-sale-spot__content-eurojackpot-prefix">Min.</div>
-            <div class="kl-cross-sale-spot__content-eurojackpot-poolsize">95</div>
-            <div class="kl-cross-sale-spot__content-eurojackpot-postfix">millioner</div>
-            <div class="kl-cross-sale-spot__content-eurojackpot-description">1. præmiepuljen</div>
-          </div>
-          <div class="kl-cross-sale-spot__cta">Køb flere rækker</div>
+            <img
+                    src="/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/eurojackpot-white.svg"
+                    alt=""
+                    class="kl-cross-sale-spot__logo"
+            />
+            <div class="kl-cross-sale-spot__content-eurojackpot">
+                <div class="kl-cross-sale-spot__content-eurojackpot-prefix">Min.</div>
+                <div class="kl-cross-sale-spot__content-eurojackpot-poolsize">95</div>
+                <div class="kl-cross-sale-spot__content-eurojackpot-postfix">millioner</div>
+                <div class="kl-cross-sale-spot__content-eurojackpot-description">1. præmiepuljen</div>
+            </div>
+            <div class="kl-cross-sale-spot__cta">Køb flere rækker</div>
         </a>
 
         <div id="root"></div>
-      </main>
-    </div>
+    </main>
+</div>
 
-    <script>
-      window.DS = {
-        Config: {
-          KLUBLOTTO_API_URL: null,
-        },
-      };
-    </script>
+<script>
+  window.DS = {
+    Config: {
+      ENV: 'dev'
+    },
+  };
+</script>
 
-    <script id="jackpot-info" type="application/json">
-      [
+<script id="jackpot-info" type="application/json">
+    [
         {
-          "gameId": "",
-          "poolSizeDecimal": 0,
-          "poolSizeFormatted": "0",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "0001-01-01T01:00:00+01:00",
-          "gameStopDate": "0001-01-01T01:00:00+01:00",
-          "gameUrl": "",
-          "isOpen": true
+            "gameId": "",
+            "poolSizeDecimal": 0,
+            "poolSizeFormatted": "0",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "0001-01-01T01:00:00+01:00",
+            "gameStopDate": "0001-01-01T01:00:00+01:00",
+            "gameUrl": "",
+            "isOpen": true
         },
         {
-          "gameId": "altellerintet",
-          "poolSizeDecimal": 50000000,
-          "poolSizeFormatted": "50",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2021-07-14T20:30:00+02:00",
-          "gameStopDate": "2021-07-14T20:30:00+02:00",
-          "gameUrl": "/eurojackpot",
-          "isOpen": false
+            "gameId": "altellerintet",
+            "poolSizeDecimal": 50000000,
+            "poolSizeFormatted": "50",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2021-07-14T20:30:00+02:00",
+            "gameStopDate": "2021-07-14T20:30:00+02:00",
+            "gameUrl": "/eurojackpot",
+            "isOpen": false
         },
         {
-          "gameId": "eurojackpot",
-          "poolSizeDecimal": 95000000,
-          "poolSizeFormatted": "95",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2026-03-10T19:00:00+01:00",
-          "gameStopDate": "2026-03-10T19:00:00+01:00",
-          "gameUrl": "https://danskespil.dk/eurojackpot",
-          "isOpen": true
+            "gameId": "eurojackpot",
+            "poolSizeDecimal": 95000000,
+            "poolSizeFormatted": "95",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2026-03-10T19:00:00+01:00",
+            "gameStopDate": "2026-03-10T19:00:00+01:00",
+            "gameUrl": "https://danskespil.dk/eurojackpot",
+            "isOpen": true
         },
         {
-          "gameId": "jokerloerdag",
-          "poolSizeDecimal": 0,
-          "poolSizeFormatted": "0",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2026-03-07T20:00:00+01:00",
-          "gameStopDate": "2026-03-07T20:00:00+01:00",
-          "gameUrl": "https://danskespil.dk/lotto",
-          "isOpen": false
+            "gameId": "jokerloerdag",
+            "poolSizeDecimal": 0,
+            "poolSizeFormatted": "0",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2026-03-07T20:00:00+01:00",
+            "gameStopDate": "2026-03-07T20:00:00+01:00",
+            "gameUrl": "https://danskespil.dk/lotto",
+            "isOpen": false
         },
         {
-          "gameId": "lotto",
-          "poolSizeDecimal": 10000000,
-          "poolSizeFormatted": "10",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2026-03-14T20:00:00+01:00",
-          "gameStopDate": "2026-03-14T20:00:00+01:00",
-          "gameUrl": "https://danskespil.dk/lotto",
-          "isOpen": true
+            "gameId": "lotto",
+            "poolSizeDecimal": 10000000,
+            "poolSizeFormatted": "10",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2026-03-14T20:00:00+01:00",
+            "gameStopDate": "2026-03-14T20:00:00+01:00",
+            "gameUrl": "https://danskespil.dk/lotto",
+            "isOpen": true
         },
         {
-          "gameId": "maaljagt",
-          "poolSizeDecimal": 0,
-          "poolSizeFormatted": "0",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2023-03-06T18:55:00+01:00",
-          "gameStopDate": "2023-03-06T18:55:00+01:00",
-          "gameUrl": "https://danskespil.dk/oddset/maljagt?intcmp=kampagne_pulje_jackpot_maaljagt",
-          "isOpen": false
+            "gameId": "maaljagt",
+            "poolSizeDecimal": 0,
+            "poolSizeFormatted": "0",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2023-03-06T18:55:00+01:00",
+            "gameStopDate": "2023-03-06T18:55:00+01:00",
+            "gameUrl": "https://danskespil.dk/oddset/maljagt?intcmp=kampagne_pulje_jackpot_maaljagt",
+            "isOpen": false
         },
         {
-          "gameId": "jokeronsdag",
-          "poolSizeDecimal": 7000000,
-          "poolSizeFormatted": "7",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2026-03-11T18:00:00+01:00",
-          "gameStopDate": "2026-03-11T18:00:00+01:00",
-          "gameUrl": "",
-          "isOpen": true
+            "gameId": "jokeronsdag",
+            "poolSizeDecimal": 7000000,
+            "poolSizeFormatted": "7",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2026-03-11T18:00:00+01:00",
+            "gameStopDate": "2026-03-11T18:00:00+01:00",
+            "gameUrl": "",
+            "isOpen": true
         },
         {
-          "gameId": "superpulje",
-          "poolSizeDecimal": 5000000,
-          "poolSizeFormatted": "5",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2017-05-10T20:00:00+02:00",
-          "gameStopDate": "2017-05-10T20:00:00+02:00",
-          "gameUrl": "",
-          "isOpen": false
+            "gameId": "superpulje",
+            "poolSizeDecimal": 5000000,
+            "poolSizeFormatted": "5",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2017-05-10T20:00:00+02:00",
+            "gameStopDate": "2017-05-10T20:00:00+02:00",
+            "gameUrl": "",
+            "isOpen": false
         },
         {
-          "gameId": "tips12",
-          "poolSizeDecimal": 0,
-          "poolSizeFormatted": "0",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2023-03-05T18:25:00+01:00",
-          "gameStopDate": "2023-03-05T18:25:00+01:00",
-          "gameUrl": "https://danskespil.dk/tips/tips12/spilnu.html?intcmp=kampagne_pulje_jackpot_tips12",
-          "isOpen": false
+            "gameId": "tips12",
+            "poolSizeDecimal": 0,
+            "poolSizeFormatted": "0",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2023-03-05T18:25:00+01:00",
+            "gameStopDate": "2023-03-05T18:25:00+01:00",
+            "gameUrl": "https://danskespil.dk/tips/tips12/spilnu.html?intcmp=kampagne_pulje_jackpot_tips12",
+            "isOpen": false
         },
         {
-          "gameId": "tips13",
-          "poolSizeDecimal": 0,
-          "poolSizeFormatted": "0",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2023-03-07T20:40:00+01:00",
-          "gameStopDate": "2023-03-07T20:40:00+01:00",
-          "gameUrl": "https://danskespil.dk/tips/tips13/spilnu.html?intcmp=kampagne_pulje_jackpot_tips13",
-          "isOpen": false
+            "gameId": "tips13",
+            "poolSizeDecimal": 0,
+            "poolSizeFormatted": "0",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2023-03-07T20:40:00+01:00",
+            "gameStopDate": "2023-03-07T20:40:00+01:00",
+            "gameUrl": "https://danskespil.dk/tips/tips13/spilnu.html?intcmp=kampagne_pulje_jackpot_tips13",
+            "isOpen": false
         },
         {
-          "gameId": "vikinglotto",
-          "poolSizeDecimal": 95000000,
-          "poolSizeFormatted": "95",
-          "secondPrizePoolSizeDecimal": 0,
-          "secondPrizePoolSizeFormatted": "0",
-          "drawDate": "2026-03-11T18:00:00+01:00",
-          "gameStopDate": "2026-03-11T18:00:00+01:00",
-          "gameUrl": "https://danskespil.dk/vikinglotto",
-          "isOpen": true
+            "gameId": "vikinglotto",
+            "poolSizeDecimal": 95000000,
+            "poolSizeFormatted": "95",
+            "secondPrizePoolSizeDecimal": 0,
+            "secondPrizePoolSizeFormatted": "0",
+            "drawDate": "2026-03-11T18:00:00+01:00",
+            "gameStopDate": "2026-03-11T18:00:00+01:00",
+            "gameUrl": "https://danskespil.dk/vikinglotto",
+            "isOpen": true
         }
-      ]
-    </script>
+    ]
+</script>
 
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

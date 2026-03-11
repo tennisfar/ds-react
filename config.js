@@ -1,6 +1,11 @@
-const basePath = 'C:/Projects/danskespil-website/';
+const dsPath = 'C:/Projects/danskespil-website/';
+const repPath = 'C:/Projects/ds-react/';
 
 export const PATHS = {
-  KLUBLOTTO: basePath + 'Website/Components/DanskeSpil/Domain/Feature.KlubLotto',
-  SharedScripts: 'C:/Projects/ds-react/src/SharedScripts',
+  ApiData: repPath + 'src/@ApiData',
+  Ensighten: repPath + 'src/DanskeSpil/@Ensighten',
+  ErrorHandling: repPath + 'src/DanskeSpil/@ErrorHandling',
+  KlubLotto: dsPath + 'Website/Components/DanskeSpil/Domain/Feature.KlubLotto',
+  Mock: repPath + 'src/@Mock',
+  SharedScripts: repPath + 'src/DanskeSpil/@SharedScripts',
 };

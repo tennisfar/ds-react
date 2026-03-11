@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { FreePrizeClaimReceipt } from '../../Components/FreePrizeClaimReceipt/FreePrizeClaimReceipt.tsx';
+import { FreePrizeClaimReceipt } from '../../DanskeSpil/KlubLotto/Scripts/Components/FreePrizeClaimReceipt/FreePrizeClaimReceipt.tsx';
 import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaimReceipt')({
