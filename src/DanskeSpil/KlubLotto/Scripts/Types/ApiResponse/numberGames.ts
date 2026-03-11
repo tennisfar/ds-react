@@ -1,7 +1,7 @@
 ﻿export type CouponApiPrimaryGameRowResponse = {
   numbers: number[];
   extraNumbers: number[];
-}
+};
 
 export type CouponApiResponse = {
   couponId: string;

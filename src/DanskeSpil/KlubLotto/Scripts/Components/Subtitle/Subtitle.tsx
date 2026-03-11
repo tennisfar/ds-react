@@ -1,8 +1,8 @@
 import React from 'react';
 
 type SubtitleBaseProps = {
-    children: React.ReactNode;
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 };
 
 export const SubtitleBase = ({ children, className = '' }: SubtitleBaseProps) => {

@@ -13,7 +13,20 @@ import { LottoRowClaimDataSettings } from '../../Types/DataSettings/lottoRowClai
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';
 import { CouponApiResponse } from '../../Types/ApiResponse/numberGames';
 
-export const LottoRowClaim = ({ claimCtaLabel, claimDisclaimer, claimImage, claimText, claimTitle, expiredImage, expiredTitle, receiptDisclaimer, receiptText, receiptTitle, redeemedImage, redeemedTitle }: LottoRowClaimDataSettings) => {
+export const LottoRowClaim = ({
+  claimCtaLabel,
+  claimDisclaimer,
+  claimImage,
+  claimText,
+  claimTitle,
+  expiredImage,
+  expiredTitle,
+  receiptDisclaimer,
+  receiptText,
+  receiptTitle,
+  redeemedImage,
+  redeemedTitle,
+}: LottoRowClaimDataSettings) => {
   const claimProps = {
     title: claimTitle,
     text: claimText,
@@ -46,12 +59,18 @@ export const LottoRowClaim = ({ claimCtaLabel, claimDisclaimer, claimImage, clai
   const [ticket, setTicket] = useState<WalletListAwardApiResponse | null>(null);
   const { data: walletList, isLoading: isLoadingWalletList, isError: isErrorWalletList } = useWalletListData();
   const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
-  const { data: redeemData, isLoading: isLoadingRedeemAward, isError: isErrorRedeemAward } = useRedeemAwardData(ticketAwardId, redeem && !!ticketAwardId);
+  const {
+    data: redeemData,
+    isLoading: isLoadingRedeemAward,
+    isError: isErrorRedeemAward,
+  } = useRedeemAwardData(ticketAwardId, redeem && !!ticketAwardId);
   const numberGamesCouponData = useNumberGamesCouponData();
 
   useEffect(() => {
     if (!ticket && !isLoadingWalletList && (walletList?.length ?? 0) > 0) {
-      const ticketWithAwardId = (walletList ?? []).find((ticket: WalletListAwardApiResponse) => ticket.id === ticketAwardId);
+      const ticketWithAwardId = (walletList ?? []).find(
+        (ticket: WalletListAwardApiResponse) => ticket.id === ticketAwardId
+      );
       if (ticketWithAwardId) {
         setTicket(ticketWithAwardId);
       } else {
@@ -107,26 +126,28 @@ export const LottoRowClaim = ({ claimCtaLabel, claimDisclaimer, claimImage, clai
   };
 
   if (error) {
-    return <ErrorDefaultOutput className={'kl-lotto-row-claim__error'} variant={'dark'}/>;
+    return <ErrorDefaultOutput className={'kl-lotto-row-claim__error'} variant={'dark'} />;
   }
 
   if (couponData) {
-    return <Receipt couponData={couponData} receiptProps={receiptProps}/>;
+    return <Receipt couponData={couponData} receiptProps={receiptProps} />;
   }
 
   if (loading || !ticket) {
     return (
       <div className={'kl-lotto-row-claim__loading'}>
-        <Spinner/>
+        <Spinner />
       </div>
     );
   }
 
   return (
     <div className={'kl-lotto-row-claim'}>
-      {ticket.claimStatus === 'NotRedeemed' && <Claim ticket={ticket} claimProps={claimProps} handleRedeem={handleRedeem}/>}
-      {ticket.claimStatus === 'Expired' && <Expired ticket={ticket} expiredProps={expiredProps}/>}
-      {ticket.claimStatus === 'Redeemed' && <Redeemed ticket={ticket} redeemedProps={redeemedProps}/>}
+      {ticket.claimStatus === 'NotRedeemed' && (
+        <Claim ticket={ticket} claimProps={claimProps} handleRedeem={handleRedeem} />
+      )}
+      {ticket.claimStatus === 'Expired' && <Expired ticket={ticket} expiredProps={expiredProps} />}
+      {ticket.claimStatus === 'Redeemed' && <Redeemed ticket={ticket} redeemedProps={redeemedProps} />}
     </div>
   );
 };

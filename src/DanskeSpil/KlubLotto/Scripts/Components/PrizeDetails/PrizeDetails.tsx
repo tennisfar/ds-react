@@ -31,9 +31,7 @@ export const PrizeDetails = () => {
       <div className={'kl-prize__background'}></div>
 
       <div className={'kl-prize__image'}>
-        {prizeDetails?.sprite && (
-          <img src={prizeDetails.sprite} alt={prizeDetails.title || ''}/>
-        )}
+        {prizeDetails?.sprite && <img src={prizeDetails.sprite} alt={prizeDetails.title || ''} />}
       </div>
 
       {prizeDetails?.title && <div className={'kl-prize__title'}>{prizeDetails.title}</div>}

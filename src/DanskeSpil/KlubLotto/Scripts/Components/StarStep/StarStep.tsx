@@ -111,7 +111,7 @@ export const StarStep = ({ title, text, disclaimer, lotGained, lotNotGained }: S
         {generateStars(tickets)}
         <div className={'kl-star-step__text'}>{text}</div>
       </div>
-      <div className={'kl-star-step__terms'} dangerouslySetInnerHTML={{ __html: disclaimer }}/>
+      <div className={'kl-star-step__terms'} dangerouslySetInnerHTML={{ __html: disclaimer }} />
     </div>
   );
 };

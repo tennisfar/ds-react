@@ -47,7 +47,7 @@ export const YourRewards = () => {
           trackEvent({
             action: 'navigate',
             label: data.metadata?.from || 'unknown',
-            value: data.metadata?.to || 'unknown'
+            value: data.metadata?.to || 'unknown',
           });
         }
 
@@ -55,7 +55,7 @@ export const YourRewards = () => {
           trackEvent({
             action: 'prize_redemption',
             label: data.metadata?.text || 'unknown',
-            value: data.metadata?.value || 'unknown'
+            value: data.metadata?.value || 'unknown',
           });
         }
       }
@@ -71,7 +71,7 @@ export const YourRewards = () => {
   if (isLoading) {
     return (
       <div className={'kl-your-rewards'}>
-        <Spinner className={'kl-your-rewards__spinner'}/>
+        <Spinner className={'kl-your-rewards__spinner'} />
       </div>
     );
   }
@@ -79,7 +79,7 @@ export const YourRewards = () => {
   if (isError) {
     return (
       <div className={'kl-your-rewards'}>
-        <ErrorDefaultOutput className={'kl-your-rewards__error'} variant={'dark'}/>
+        <ErrorDefaultOutput className={'kl-your-rewards__error'} variant={'dark'} />
       </div>
     );
   }

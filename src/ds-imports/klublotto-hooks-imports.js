@@ -38,4 +38,4 @@ function copyTsFiles(src, dest) {
 }
 
 const fileCount = copyTsFiles(sourceDir, destDir);
-console.log(`✅ Copied ${fileCount} .ts/.tsx files to ${destDir}`)
+console.log(`✅ Copied ${fileCount} .ts/.tsx files to ${destDir}`);

@@ -14,7 +14,7 @@ export const useQuizQuestion = (key?: number, answer?: number, gameDate?: string
     queryKey: ['useQuizQuestion', key, answer, gameDate],
     queryFn: async () => {
       output('useQuizQuestion', key + '', answer + '', gameDate || '');
-      return (await getQuizQuestion(key, answer, gameDate));
+      return await getQuizQuestion(key, answer, gameDate);
     },
   });
 

@@ -11,12 +11,12 @@ export const Claim = ({ ticket, claimProps, handleRedeem }: ClaimProps) => {
     <div className={'kl-lotto-row-claim'}>
       <div className={'kl-lotto-row-claim__graphic'}>
         <div className={'kl-lotto-row-claim__graphic-image'}>
-          <img src={image?.src} alt={''}/>
+          <img src={image?.src} alt={''} />
         </div>
       </div>
 
-      <div className={'kl-lotto-row-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
-      <div className={'kl-lotto-row-claim__text'} dangerouslySetInnerHTML={{ __html: text }}/>
+      <div className={'kl-lotto-row-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
+      <div className={'kl-lotto-row-claim__text'} dangerouslySetInnerHTML={{ __html: text }} />
 
       <div className={'kl-lotto-row-claim__total'}>
         <div className={'kl-lotto-row-claim__total-text'}>I alt</div>
@@ -26,10 +26,12 @@ export const Claim = ({ ticket, claimProps, handleRedeem }: ClaimProps) => {
 
       <div className={'kl-lotto-row-claim__countdown'}>
         <div>Udløber om</div>
-        <Countdown dueDate={expires}/>
+        <Countdown dueDate={expires} />
       </div>
       <div className={'kl-lotto-row-claim__cta'}>
-        <Button tracking={{ action: 'lottoRowClaim_claim' }} onClick={handleRedeem}>{ctaLabel}</Button>
+        <Button tracking={{ action: 'lottoRowClaim_claim' }} onClick={handleRedeem}>
+          {ctaLabel}
+        </Button>
       </div>
     </div>
   );

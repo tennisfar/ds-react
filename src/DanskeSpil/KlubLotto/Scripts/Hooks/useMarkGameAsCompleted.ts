@@ -7,7 +7,7 @@ const useMarkGameAsCompleted = () => {
   const { mutate, data, isPending, isError, isSuccess } = useMutation<
     MarkGameCompletedApiResponse,
     Error,
-    { gameId: GameType; success: boolean; launchGameId: string, launchGameDate: string }
+    { gameId: GameType; success: boolean; launchGameId: string; launchGameDate: string }
   >({
     mutationFn: async ({ gameId, success, launchGameId, launchGameDate }) => {
       return (await markGameAsCompleted(gameId, success, launchGameId, launchGameDate)) as MarkGameCompletedApiResponse;

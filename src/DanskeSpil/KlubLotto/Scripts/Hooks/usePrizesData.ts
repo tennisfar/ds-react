@@ -6,7 +6,7 @@ const usePrizesData = () => {
   const { data, isLoading, isError } = useQuery<PrizesApiResponse>({
     queryKey: ['prizesData'],
     queryFn: async () => {
-      return (await getPrizes());
+      return await getPrizes();
     },
   });
 

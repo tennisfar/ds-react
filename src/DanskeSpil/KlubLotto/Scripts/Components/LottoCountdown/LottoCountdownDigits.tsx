@@ -30,8 +30,8 @@ export const LottoCountdownDigits = ({ timeLeft, prevTimeLeft, clearAnimations, 
   return (
     <div className={'kl-lotto-countdown__unit'}>
       <div className={'kl-lotto-countdown__digits'}>
-        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations}/>
-        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations}/>
+        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations} />
+        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations} />
       </div>
       <div className={'kl-lotto-countdown__unit-label'}>{label}</div>
     </div>

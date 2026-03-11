@@ -15,7 +15,7 @@ export const Game = ({ gameType, gameResultTexts, linkBack, successLottie }: Gam
   if (isLoading) {
     return (
       <div className={`kl-game kl-game--${gameType}`}>
-        <Spinner className={`kl-game__spinner kl-game__spinner--${gameType}`} variant={gameType}/>
+        <Spinner className={`kl-game__spinner kl-game__spinner--${gameType}`} variant={gameType} />
       </div>
     );
   }
@@ -24,7 +24,7 @@ export const Game = ({ gameType, gameResultTexts, linkBack, successLottie }: Gam
     trackEvent({ action: 'game_playing_' + gameType, label: 'error' });
     return (
       <div className={`kl-game kl-game--${gameType}`}>
-        <ErrorDefaultOutput className={'kl-game__error'} variant={'light'}/>
+        <ErrorDefaultOutput className={'kl-game__error'} variant={'light'} />
       </div>
     );
   }
@@ -32,7 +32,7 @@ export const Game = ({ gameType, gameResultTexts, linkBack, successLottie }: Gam
   if (iframeUrl) {
     return (
       <div className={`kl-game kl-game--${gameType}`}>
-        <iframe ref={iframeRef} src={iframeUrl} className={'kl-game__iframe'}/>
+        <iframe ref={iframeRef} src={iframeUrl} className={'kl-game__iframe'} />
       </div>
     );
   }

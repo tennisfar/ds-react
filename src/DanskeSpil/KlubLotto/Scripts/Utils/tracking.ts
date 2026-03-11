@@ -5,14 +5,14 @@ type TrackEventProps = {
   label?: string;
   ctaLabel?: string;
   value?: string;
-}
+};
 
 type EventDataProps = {
   action: string;
   label?: string;
   ctaLabel?: string;
   value?: string;
-}
+};
 
 const getEventData = ({ action = '', label = '', ctaLabel = '', value = '' }: EventDataProps) => {
   if (!label && ctaLabel) {

@@ -23,12 +23,17 @@ const Digit = ({ timeLeft, prevTimeLeft, clearAnimations }: GameTypeCountdownDig
   );
 };
 
-export const NumberGamesTypeCountdownDigits = ({ timeLeft, prevTimeLeft, clearAnimations, label }: GameTypeCountdownDigitsProps) => {
+export const NumberGamesTypeCountdownDigits = ({
+  timeLeft,
+  prevTimeLeft,
+  clearAnimations,
+  label,
+}: GameTypeCountdownDigitsProps) => {
   return (
     <div className={'kl-numbergames-countdown__unit'}>
       <div className={'kl-numbergames-countdown__digits'}>
-        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations}/>
-        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations}/>
+        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations} />
+        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations} />
       </div>
       <div className={'kl-numbergames-countdown__unit-label'}>{label}</div>
     </div>

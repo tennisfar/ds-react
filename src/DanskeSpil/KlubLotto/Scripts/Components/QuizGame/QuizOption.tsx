@@ -5,7 +5,7 @@ type QuizOptionProps = {
   index: number;
   selectedOption: string | null;
   setSelectedOption: (option: string) => void;
-}
+};
 
 const QuizOption = ({ option, index, selectedOption, setSelectedOption }: QuizOptionProps) => {
   const letters = ['A', 'B', 'C', 'D', 'E', 'F']; // Add more if needed

@@ -27,30 +27,33 @@ export const Receipt = ({ couponData, receiptProps }: ReceiptProps) => {
 
   return (
     <div className={'kl-lotto-row-claim'}>
-      <img src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/LottoRowClaim/lotto-ball.png'} alt='' className={'kl-lotto-row-claim__ball'}/>
+      <img
+        src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/LottoRowClaim/lotto-ball.png'}
+        alt=""
+        className={'kl-lotto-row-claim__ball'}
+      />
 
-      <LottoCountdown className={'kl-lotto-row-claim__lotto-countdown'} drawDate={drawDate}/>
+      <LottoCountdown className={'kl-lotto-row-claim__lotto-countdown'} drawDate={drawDate} />
 
-      <div className={'kl-lotto-row-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
-      <div className={'kl-lotto-row-claim__text'} dangerouslySetInnerHTML={{ __html: text }}/>
+      <div className={'kl-lotto-row-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
+      <div className={'kl-lotto-row-claim__text'} dangerouslySetInnerHTML={{ __html: text }} />
 
       <div className={'kl-lotto-row-claim__receipt'}>
-        <div className={'kl-lotto-row-claim__receipt-paper'}
-          style={{ backgroundImage: couponBackgroundUrl }}>
-          <img src={lottoLogoUrl} alt={''} className={'kl-lotto-row-claim__receipt-logo'}/>
+        <div className={'kl-lotto-row-claim__receipt-paper'} style={{ backgroundImage: couponBackgroundUrl }}>
+          <img src={lottoLogoUrl} alt={''} className={'kl-lotto-row-claim__receipt-logo'} />
           <div className={'kl-lotto-row-claim__receipt-date'}>
             {transactionDate
               ? new Date(transactionDate).toLocaleDateString('da-DK', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              }) +
-              ' kl.' +
-              new Date(transactionDate).toLocaleTimeString('da-DK', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-              })
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                }) +
+                ' kl.' +
+                new Date(transactionDate).toLocaleTimeString('da-DK', {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false,
+                })
               : ''}
           </div>
           <div className={'kl-lotto-row-claim__receipt-coupon-id'}>Kupon: {couponId}</div>
@@ -75,7 +78,7 @@ export const Receipt = ({ couponData, receiptProps }: ReceiptProps) => {
             <div className={'kl-lotto-row-claim__total-text'}>Samlet v&aelig;rdi</div>
             <div className={'kl-lotto-row-claim__total-price'}>0 kr.</div>
           </div>
-          <div className={'kl-lotto-row-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }}/>
+          <div className={'kl-lotto-row-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }} />
         </div>
       </div>
     </div>

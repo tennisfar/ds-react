@@ -32,7 +32,7 @@ const Popup = () => {
     }
 
     const popupVariant: PopupVariantProps = data.variant;
-    trackEvent({ action: 'popup_' + popupVariant, label: (isOpen ? 'open' : 'close') });
+    trackEvent({ action: 'popup_' + popupVariant, label: isOpen ? 'open' : 'close' });
 
     if (isOpen) {
       document.dispatchEvent(new CustomEvent('klublotto:overlay:show'));
@@ -46,18 +46,18 @@ const Popup = () => {
   const handleModalEvent = (event: CustomEvent<PopupDataProps>) => {
     const popupData = event.detail || {};
     switch (event.type) {
-    case 'klublotto:modal:open':
-      handleModalOpen(popupData);
-      break;
-    case 'klublotto:modal:close':
-      handleModalClose();
-      break;
-    case 'klublotto:overlay:clicked':
-      data?.onOverlayClicked?.();
-      handleModalClose();
-      break;
-    default:
-      break;
+      case 'klublotto:modal:open':
+        handleModalOpen(popupData);
+        break;
+      case 'klublotto:modal:close':
+        handleModalClose();
+        break;
+      case 'klublotto:overlay:clicked':
+        data?.onOverlayClicked?.();
+        handleModalClose();
+        break;
+      default:
+        break;
     }
   };
 
@@ -81,22 +81,22 @@ const Popup = () => {
 
   const getVariant = (variant: PopupVariantProps) => {
     switch (variant) {
-    case 'basic':
-      return 'kl-popup-basic';
-    case 'welcome':
-      return 'kl-popup-welcome';
-    case 'newPrize':
-      return 'kl-popup-new-prize';
-    case 'prizeExpires':
-      return 'kl-popup-prize-expires';
-    case 'error':
-      return 'kl-popup-error';
-    case 'simple':
-      return 'kl-popup-simple';
-    case 'firstLot':
-      return 'kl-popup-first-lot-celebration';
-    default:
-      return '';
+      case 'basic':
+        return 'kl-popup-basic';
+      case 'welcome':
+        return 'kl-popup-welcome';
+      case 'newPrize':
+        return 'kl-popup-new-prize';
+      case 'prizeExpires':
+        return 'kl-popup-prize-expires';
+      case 'error':
+        return 'kl-popup-error';
+      case 'simple':
+        return 'kl-popup-simple';
+      case 'firstLot':
+        return 'kl-popup-first-lot-celebration';
+      default:
+        return '';
     }
   };
 
@@ -104,13 +104,19 @@ const Popup = () => {
     <div className={`kl-popup ${isOpen ? 'kl-popup--open' : ''} ${getVariant(data?.variant)}`}>
       <div className={'kl-popup__container'}>
         <div className={'kl-popup__content'}>
-          {isOpen && data && variant === 'basic' && <PopupBasic data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'simple' && <PopupSimple data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'welcome' && <PopupWelcome data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'newPrize' && <PopupNewPrize data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'prizeExpires' && <PopupPrizeExpires data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'firstLot' && <PopupFirstLotCelebration data={data} handleModalClose={handleModalClose}/>}
-          {isOpen && data && variant === 'error' && <PopupError data={data} handleModalClose={handleModalClose}/>}
+          {isOpen && data && variant === 'basic' && <PopupBasic data={data} handleModalClose={handleModalClose} />}
+          {isOpen && data && variant === 'simple' && <PopupSimple data={data} handleModalClose={handleModalClose} />}
+          {isOpen && data && variant === 'welcome' && <PopupWelcome data={data} handleModalClose={handleModalClose} />}
+          {isOpen && data && variant === 'newPrize' && (
+            <PopupNewPrize data={data} handleModalClose={handleModalClose} />
+          )}
+          {isOpen && data && variant === 'prizeExpires' && (
+            <PopupPrizeExpires data={data} handleModalClose={handleModalClose} />
+          )}
+          {isOpen && data && variant === 'firstLot' && (
+            <PopupFirstLotCelebration data={data} handleModalClose={handleModalClose} />
+          )}
+          {isOpen && data && variant === 'error' && <PopupError data={data} handleModalClose={handleModalClose} />}
         </div>
       </div>
     </div>

@@ -45,7 +45,10 @@ const GameResult = ({ gameType, result, solution = '', gameResultTexts, linkBack
     <div className={'kl-game-result'}>
       {showImage && (
         <div className={'kl-game-result__image'}>
-          <img src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/Game/ticket-celebration.svg'} alt={''}/>
+          <img
+            src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/Game/ticket-celebration.svg'}
+            alt={''}
+          />
         </div>
       )}
 
@@ -53,19 +56,17 @@ const GameResult = ({ gameType, result, solution = '', gameResultTexts, linkBack
       {subtitle && <div className={'kl-game-result__subtitle'} dangerouslySetInnerHTML={{ __html: subtitle }}></div>}
       <div className={'kl-game-result__text'} dangerouslySetInnerHTML={{ __html: text }}></div>
       <div className={'kl-game-result__background'}>
-
         {showAnimation && successLottie?.src && (
           /* @ts-expect-error - lottie-player is a custom web component not recognized by TypeScript */
-          <lottie-player
-            src={successLottie.src}
-            autoplay={true}
-            loop={false}
-          />
+          <lottie-player src={successLottie.src} autoplay={true} loop={false} />
         )}
-
       </div>
       <div className={'kl-game-result__cta'}>
-        <Button tracking={{ action: 'game_result' + (gameType ? '_' + gameType : '') }} href={linkBack?.url} inverted={true}>
+        <Button
+          tracking={{ action: 'game_result' + (gameType ? '_' + gameType : '') }}
+          href={linkBack?.url}
+          inverted={true}
+        >
           {linkBack?.text}
         </Button>
       </div>

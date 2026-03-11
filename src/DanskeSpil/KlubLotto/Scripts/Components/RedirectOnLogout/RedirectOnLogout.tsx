@@ -7,7 +7,7 @@ export const RedirectOnLogout = ({ salesPageLink }: SubscriberDataSettings) => {
       window.DSAPI.Account.subscribeUserLoggedOut({
         callback: function () {
           window.location.href = salesPageLink;
-        }
+        },
       });
     });
   }, []);

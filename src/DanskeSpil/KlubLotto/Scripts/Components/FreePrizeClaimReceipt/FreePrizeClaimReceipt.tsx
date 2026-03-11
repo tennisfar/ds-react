@@ -42,10 +42,7 @@ const formatTransactionDate = (transactionDate: string): string => {
   return `${datePart} kl.${timePart}`;
 };
 
-const resolvePoolText = (
-  text: string,
-  awardClaimType: WalletListAwardClaimType,
-): string => {
+const resolvePoolText = (text: string, awardClaimType: WalletListAwardClaimType): string => {
   const gameType = getNumberGamesType(awardClaimType);
   // const pool = poolFeed.find((p) => p.gameId === gameType);
   const poolSize = getPoolByGameId(gameType)?.poolSizeFormatted || getDefaultPoolSizeFormatted(gameType);
@@ -96,7 +93,7 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
     isLoading: isLoadingNumberGamesCouponData,
     isError: isErrorNumberGamesCouponData,
   } = useNumberGamesCouponGetData(couponId);
-  
+
   // Sync loading state
   useEffect(() => {
     setLoading(isLoadingNumberGamesCouponData);
@@ -144,13 +141,13 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
   if (loading || !couponData) {
     return (
       <div className={'kl-lotto-row-claim__loading'}>
-        <Spinner/>
+        <Spinner />
       </div>
     );
   }
 
   if (error) {
-    return <ErrorDefaultOutput className={'kl-lotto-row-claim__error'} variant={'dark'}/>;
+    return <ErrorDefaultOutput className={'kl-lotto-row-claim__error'} variant={'dark'} />;
   }
 
   const { primaryGame, transactionDate } = couponData;
@@ -160,7 +157,7 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
 
   return (
     <div className={`kl-free-prize-claim-receipt kl-free-prize-claim-receipt--${numberGamesType}`}>
-      <img src={logoUrl} alt="" className={'kl-free-prize-claim-receipt__game-type-logo'}/>
+      <img src={logoUrl} alt="" className={'kl-free-prize-claim-receipt__game-type-logo'} />
 
       <NumberGamesTypeCountdown
         numberGamesType={numberGamesType}
@@ -169,13 +166,13 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
       />
 
       <div>
-        <div className={'kl-free-prize-claim-receipt__title'} dangerouslySetInnerHTML={{ __html: title }}/>
-        <div className={'kl-free-prize-claim-receipt__text'} dangerouslySetInnerHTML={{ __html: text }}/>
+        <div className={'kl-free-prize-claim-receipt__title'} dangerouslySetInnerHTML={{ __html: title }} />
+        <div className={'kl-free-prize-claim-receipt__text'} dangerouslySetInnerHTML={{ __html: text }} />
       </div>
 
       <div className={'kl-free-prize-claim-receipt__receipt'}>
         <div className={'kl-free-prize-claim-receipt__receipt-paper'}>
-          <img src={logoUrl} alt="" className={'kl-free-prize-claim-receipt__receipt-logo'}/>
+          <img src={logoUrl} alt="" className={'kl-free-prize-claim-receipt__receipt-logo'} />
 
           <div className={'kl-free-prize-claim-receipt__receipt-date'}>
             {transactionDate ? formatTransactionDate(transactionDate) : ''}
@@ -187,7 +184,7 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
             {rows.map((row, index) => (
               <div className={'kl-free-prize-claim-receipt__receipt-row'} key={index}>
                 <div className={'kl-free-prize-claim-receipt__receipt-row-prefix'}>{index + 1}.</div>
-                <ReceiptRowNumbers row={row}/>
+                <ReceiptRowNumbers row={row} />
               </div>
             ))}
           </div>
@@ -197,9 +194,9 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
             <div className={'kl-free-prize-claim-receipt__total-price'}>0 kr.</div>
           </div>
 
-          <div className={'kl-free-prize-claim-receipt__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }}/>
+          <div className={'kl-free-prize-claim-receipt__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }} />
         </div>
       </div>
     </div>
   );
-}
+};

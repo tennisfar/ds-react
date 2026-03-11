@@ -29,35 +29,35 @@ export const Receipt = ({ couponData, numberGamesType, poolFeed, receiptProps }:
 
   return (
     <div className={`kl-free-prize-claim kl-free-prize-claim--${numberGamesType}`}>
-      <img
-        src={logoUrl} alt='' className={'kl-free-prize-claim__game-type-logo'}/>
+      <img src={logoUrl} alt="" className={'kl-free-prize-claim__game-type-logo'} />
 
       <NumberGamesTypeCountdown
         numberGamesType={numberGamesType}
         className={'kl-free-prize-claim__numbergames-countdown'}
-        drawDate={drawDate}/>
+        drawDate={drawDate}
+      />
 
       <div>
-        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
-        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: text }}/>
+        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
+        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: text }} />
       </div>
 
       <div className={'kl-free-prize-claim__receipt'}>
         <div className={'kl-free-prize-claim__receipt-paper'}>
-          <img src={logoUrl} alt={''} className={'kl-free-prize-claim__receipt-logo'}/>
+          <img src={logoUrl} alt={''} className={'kl-free-prize-claim__receipt-logo'} />
           <div className={'kl-free-prize-claim__receipt-date'}>
             {transactionDate
               ? new Date(transactionDate).toLocaleDateString('da-DK', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              }) +
-              ' kl.' +
-              new Date(transactionDate).toLocaleTimeString('da-DK', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-              })
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                }) +
+                ' kl.' +
+                new Date(transactionDate).toLocaleTimeString('da-DK', {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false,
+                })
               : ''}
           </div>
           <div className={'kl-free-prize-claim__receipt-coupon-id'}>Kupon: {couponId}</div>
@@ -85,8 +85,6 @@ export const Receipt = ({ couponData, numberGamesType, poolFeed, receiptProps }:
                         ))}
                       </>
                     ) : null}
-
-
                   </div>
                 </div>
               );
@@ -96,7 +94,7 @@ export const Receipt = ({ couponData, numberGamesType, poolFeed, receiptProps }:
             <div className={'kl-free-prize-claim__total-text'}>Samlet v&aelig;rdi</div>
             <div className={'kl-free-prize-claim__total-price'}>0 kr.</div>
           </div>
-          <div className={'kl-free-prize-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }}/>
+          <div className={'kl-free-prize-claim__disclaimer'} dangerouslySetInnerHTML={{ __html: disclaimer }} />
         </div>
       </div>
     </div>

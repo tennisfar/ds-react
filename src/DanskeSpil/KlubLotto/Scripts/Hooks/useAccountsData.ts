@@ -22,4 +22,3 @@ export type TicketsResponseProps = {
   activity: boolean;
   activity_game: boolean;
 }[];
-

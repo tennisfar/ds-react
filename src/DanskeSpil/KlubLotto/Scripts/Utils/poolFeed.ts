@@ -8,7 +8,7 @@ export type PoolInfo = {
   gameStopDate: string;
   gameUrl: string;
   isOpen: boolean;
-}
+};
 
 export const getPoolFeed = (): PoolInfo[] => {
   const element = document.getElementById('jackpot-info');

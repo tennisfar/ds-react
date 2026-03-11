@@ -14,7 +14,7 @@ const PopupError = ({ data, handleModalClose }: PopupProps) => {
 
   return (
     <>
-      {image && <img className={'kl-popup-error__image'} src={image} alt={''}/>}
+      {image && <img className={'kl-popup-error__image'} src={image} alt={''} />}
       {title && <div className={'kl-popup-error__title'}>{title}</div>}
       {subtitle && <div className={'kl-popup-error__subtitle'}>{subtitle}</div>}
       {text && <div className={'kl-popup-error__text'} dangerouslySetInnerHTML={{ __html: text }}></div>}

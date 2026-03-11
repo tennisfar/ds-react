@@ -3,4 +3,4 @@
   popupTitle: string;
   popupText: string;
   popupButtonLabel: string;
-}
+};

@@ -7,8 +7,8 @@ export type CreateAccountApiResponse = {
   profile: {
     user_id: string;
     activemember: boolean;
-  }
-}
+  };
+};
 
 export type RedeemAwardApiResponse = {
   couponId: string;
@@ -76,10 +76,7 @@ export type WalletListAwardClaimType =
 
 export type WalletListAwardApiResponse = {
   type: WalletListAwardClaimType;
-  claimStatus:
-    | 'NotRedeemed'
-    | 'Redeemed'
-    | 'Expired';
+  claimStatus: 'NotRedeemed' | 'Redeemed' | 'Expired';
   id: string;
   reference: string;
   expires: string;

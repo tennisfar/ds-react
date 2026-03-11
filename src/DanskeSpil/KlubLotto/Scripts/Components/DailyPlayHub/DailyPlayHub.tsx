@@ -4,27 +4,26 @@ import { trackEventOnRedirect } from '../../Utils/tracking';
 import { DailyPlayHubDataSettings } from '../../Types/DataSettings/dailyPlayHub';
 import { GamesApiResponse } from '../../Types/ApiResponse/games';
 
-export const DailyPlayHub = (
-  {
-    imageQuiz,
-    imageSudoku,
-    imageOrdknuden,
-    imageOrdklover,
-    imageKrydsord,
-    imagePreviousGames,
-    linkQuiz,
-    linkSudoku,
-    linkOrdknuden,
-    linkOrdklover,
-    linkKrydsord,
-    linkPreviousGames,
-    labelQuiz,
-    labelSudoku,
-    labelOrdknuden,
-    labelOrdklover,
-    labelKrydsord,
-    labelPreviousGames,
-  }: DailyPlayHubDataSettings) => {
+export const DailyPlayHub = ({
+  imageQuiz,
+  imageSudoku,
+  imageOrdknuden,
+  imageOrdklover,
+  imageKrydsord,
+  imagePreviousGames,
+  linkQuiz,
+  linkSudoku,
+  linkOrdknuden,
+  linkOrdklover,
+  linkKrydsord,
+  linkPreviousGames,
+  labelQuiz,
+  labelSudoku,
+  labelOrdknuden,
+  labelOrdklover,
+  labelKrydsord,
+  labelPreviousGames,
+}: DailyPlayHubDataSettings) => {
   const { data } = useGamesData();
   const [games, setGames] = useState<GamesApiResponse>([]);
 
@@ -90,10 +89,13 @@ export const DailyPlayHub = (
         >
           {tile.game !== 'previousGames' && isGameCompleted(tile.game) && (
             <div className={'kl-daily-play-hub__game-checked'}>
-              <img src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/DailyPlayHub/checked.svg'} alt=''/>
+              <img
+                src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/DailyPlayHub/checked.svg'}
+                alt=""
+              />
             </div>
           )}
-          <img src={tile.image?.src} className={'kl-daily-play-hub__game-image'} alt={''}/>
+          <img src={tile.image?.src} className={'kl-daily-play-hub__game-image'} alt={''} />
           <div className={'kl-daily-play-hub__game-label'}>{tile.label}</div>
         </a>
       ))}

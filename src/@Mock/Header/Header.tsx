@@ -11,7 +11,7 @@ import React from 'react';
 export const Header = ({ theme }: { theme: string }) => {
   const hasAppParam = useUrlParam('app');
   const navigate = useNavigate();
-  
+
   if (hasAppParam) {
     return null;
   }

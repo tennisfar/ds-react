@@ -48,10 +48,12 @@ export const RedeemSpot = ({ reference, title, text, ctaLabel, image, linkToRede
   }, [isActive, hasFocus]);
 
   return (
-    <div className={`kl-redeem-spot ${isActive ? 'kl-redeem-spot--active' : ''} ${hasFocus ? 'kl-redeem-spot--bounce' : ''}`}>
+    <div
+      className={`kl-redeem-spot ${isActive ? 'kl-redeem-spot--active' : ''} ${hasFocus ? 'kl-redeem-spot--bounce' : ''}`}
+    >
       <div className={'kl-redeem-spot__inner'}>
         <div className={'kl-redeem-spot__graphics'}>
-          <img className={'kl-redeem-spot__graphics-img'} src={image?.src} alt={image?.alt}/>
+          <img className={'kl-redeem-spot__graphics-img'} src={image?.src} alt={image?.alt} />
         </div>
         <div className={'kl-redeem-spot__card'}>
           <div className={'kl-redeem-spot__bg'}></div>

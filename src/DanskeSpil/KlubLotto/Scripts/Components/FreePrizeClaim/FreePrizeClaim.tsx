@@ -33,12 +33,18 @@ export const FreePrizeClaim = ({ dataComponents }: FreePrizeClaimDataSettings) =
   const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
   const [type, setType] = useState<WalletListAwardClaimType | null>(null);
   const { data: walletList, isLoading: isLoadingWalletList, isError: isErrorWalletList } = useWalletListData();
-  const { data: redeemData, isLoading: isLoadingRedeemAward, isError: isErrorRedeemAward } = useRedeemAwardData(ticketAwardId, redeem && !!ticketAwardId);
+  const {
+    data: redeemData,
+    isLoading: isLoadingRedeemAward,
+    isError: isErrorRedeemAward,
+  } = useRedeemAwardData(ticketAwardId, redeem && !!ticketAwardId);
   const numberGamesCouponData = useNumberGamesCouponData();
 
   useEffect(() => {
     if (!ticket && !isLoadingWalletList && (walletList?.length ?? 0) > 0) {
-      const ticketWithAwardId = (walletList ?? []).find((ticket: WalletListAwardApiResponse) => ticket.id === ticketAwardId);
+      const ticketWithAwardId = (walletList ?? []).find(
+        (ticket: WalletListAwardApiResponse) => ticket.id === ticketAwardId
+      );
       if (ticketWithAwardId) {
         setType(ticketWithAwardId.type);
         setTicket(ticketWithAwardId);
@@ -139,54 +145,44 @@ export const FreePrizeClaim = ({ dataComponents }: FreePrizeClaimDataSettings) =
   if (loading) {
     return (
       <div className={'kl-lotto-row-claim__loading'}>
-        <Spinner/>
+        <Spinner />
       </div>
     );
   }
 
   if (error) {
-    return <ErrorDefaultOutput className={'kl-free-prize-claim__error'} variant={'dark'}/>;
+    return <ErrorDefaultOutput className={'kl-free-prize-claim__error'} variant={'dark'} />;
   }
 
   if (couponData) {
-    return <Receipt
-      couponData={couponData}
-      numberGamesType={gameType}
-      poolFeed={poolFeed}
-      receiptProps={receiptProps}
-    />;
+    return (
+      <Receipt couponData={couponData} numberGamesType={gameType} poolFeed={poolFeed} receiptProps={receiptProps} />
+    );
   }
 
   if (ticket?.claimStatus === 'NotRedeemed') {
-    return <Claim
-      ticket={ticket}
-      numberGamesType={gameType}
-      gameRows={gameRows}
-      handleRedeem={handleRedeem}
-      claimProps={claimProps}
-    />;
+    return (
+      <Claim
+        ticket={ticket}
+        numberGamesType={gameType}
+        gameRows={gameRows}
+        handleRedeem={handleRedeem}
+        claimProps={claimProps}
+      />
+    );
   }
 
   if (ticket?.claimStatus === 'Expired') {
-    return <Expired
-      ticket={ticket}
-      numberGamesType={gameType}
-      expiredProps={expiredProps}
-    />;
+    return <Expired ticket={ticket} numberGamesType={gameType} expiredProps={expiredProps} />;
   }
 
   if (ticket?.claimStatus === 'Redeemed') {
-    return <Redeemed
-      ticket={ticket}
-      numberGamesType={gameType}
-      redeemedProps={redeemedProps}
-    />;
+    return <Redeemed ticket={ticket} numberGamesType={gameType} redeemedProps={redeemedProps} />;
   }
 
   return (
     <div className={'kl-free-prize-claim__loading'}>
-      <Spinner/>
+      <Spinner />
     </div>
   );
-
 };

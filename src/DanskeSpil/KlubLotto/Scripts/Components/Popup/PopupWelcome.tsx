@@ -19,8 +19,7 @@ const PopupWelcome = ({ data, handleModalClose }: PopupProps) => {
 
       {text && <div className={'kl-popup-welcome__text'} dangerouslySetInnerHTML={{ __html: text }}></div>}
 
-      <div
-        className={'kl-popup-welcome__footer'}>
+      <div className={'kl-popup-welcome__footer'}>
         {buttons?.map((button, index) => {
           return (
             <Button
@@ -39,7 +38,7 @@ const PopupWelcome = ({ data, handleModalClose }: PopupProps) => {
         })}
       </div>
 
-      <CelebrateBackground/>
+      <CelebrateBackground />
     </>
   );
 };

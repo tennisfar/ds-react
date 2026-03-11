@@ -17,7 +17,11 @@ export type QuizFlowResult = {
   result?: ResultState;
 };
 
-export const useQuizFlow = (gameType: GameType, gameDate: string | undefined, setGameDate: React.Dispatch<React.SetStateAction<string | undefined>>): QuizFlowResult => {
+export const useQuizFlow = (
+  gameType: GameType,
+  gameDate: string | undefined,
+  setGameDate: React.Dispatch<React.SetStateAction<string | undefined>>
+): QuizFlowResult => {
   const [gameLauncherId, setGameLauncherId] = useState<string | undefined>();
   const [lotStatus, setLotStatus] = useState<MarkGameCompletedStatusApiResponse | undefined>();
   const [currentQuestionKey, setCurrentQuestionKey] = useState<number | undefined>();
