@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
 import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlublottoIndexRoute = KlublottoIndexRouteImport.update({
+  id: '/klublotto/',
+  path: '/klublotto/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KlublottoFreePrizeClaimReceiptRoute =
@@ -27,27 +33,31 @@ const KlublottoFreePrizeClaimReceiptRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
+  '/klublotto': typeof KlublottoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
+  '/klublotto': typeof KlublottoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
+  '/klublotto/': typeof KlublottoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/klublotto/FreePrizeClaimReceipt'
+  fullPaths: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/klublotto/FreePrizeClaimReceipt'
-  id: '__root__' | '/' | '/klublotto/FreePrizeClaimReceipt'
+  to: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto'
+  id: '__root__' | '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute
+  KlublottoIndexRoute: typeof KlublottoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -57,6 +67,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klublotto/': {
+      id: '/klublotto/'
+      path: '/klublotto'
+      fullPath: '/klublotto'
+      preLoaderRoute: typeof KlublottoIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/klublotto/FreePrizeClaimReceipt': {
@@ -72,6 +89,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KlublottoFreePrizeClaimReceiptRoute: KlublottoFreePrizeClaimReceiptRoute,
+  KlublottoIndexRoute: KlublottoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
