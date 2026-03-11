@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { FreePrizeClaimReceipt } from '../../DanskeSpil/KlubLotto/Scripts/Components/FreePrizeClaimReceipt/FreePrizeClaimReceipt.tsx';
-import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts.ts';
+import { WalletListAwardClaimType } from '../../DanskeSpil/KlubLotto/Scripts/Types/ApiResponse/accounts.ts';
+import { CrossSaleSpot } from '../../DanskeSpil/KlubLotto/Views/CrossSaleSpot.tsx';
+import { PageHeader } from '../../DanskeSpil/KlubLotto/Views/PageHeader.tsx';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaimReceipt')({
   component: RouteComponent,
@@ -39,7 +41,11 @@ function RouteComponent() {
 
   return (
     <>
-      <FreePrizeClaimReceipt dataComponents={dataComponents} />
+      <PageHeader>Dine præmier</PageHeader>
+
+      <CrossSaleSpot/>
+
+      <FreePrizeClaimReceipt dataComponents={dataComponents}/>
     </>
   );
 }

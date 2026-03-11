@@ -18,14 +18,15 @@ export const Navigations = ({ children }: { children: React.ReactNode }) => {
         <div className="page-box">
           <div className="outer-container">
             <div className="container">
-              <Header theme={theme} />
+              <Header theme={theme}/>
             </div>
           </div>
         </div>
-        <div className="page-area">
+        {/* @ts-ignore */}
+        <div className="page-area" style={{ '--page-width': '112rem' }}>
           <main className={theme === 'klublotto' ? 'theme-klublotto' : theme}>{children}</main>
         </div>
-        <Footer theme={theme} />
+        <Footer theme={theme}/>
       </div>
     </>
   );
