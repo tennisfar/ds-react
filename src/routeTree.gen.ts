@@ -8,81 +8,80 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
-import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt'
+import { Route as rootRouteImport } from './routes/__root';
+import { Route as IndexRouteImport } from './routes/index';
+import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index';
+import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt';
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const KlublottoIndexRoute = KlublottoIndexRouteImport.update({
   id: '/klublotto/',
   path: '/klublotto/',
   getParentRoute: () => rootRouteImport,
-} as any)
-const KlublottoFreePrizeClaimReceiptRoute =
-  KlublottoFreePrizeClaimReceiptRouteImport.update({
-    id: '/klublotto/FreePrizeClaimReceipt',
-    path: '/klublotto/FreePrizeClaimReceipt',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+} as any);
+const KlublottoFreePrizeClaimReceiptRoute = KlublottoFreePrizeClaimReceiptRouteImport.update({
+  id: '/klublotto/FreePrizeClaimReceipt',
+  path: '/klublotto/FreePrizeClaimReceipt',
+  getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto': typeof KlublottoIndexRoute
+  '/': typeof IndexRoute;
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute;
+  '/klublotto': typeof KlublottoIndexRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto': typeof KlublottoIndexRoute
+  '/': typeof IndexRoute;
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute;
+  '/klublotto': typeof KlublottoIndexRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
-  '/klublotto/': typeof KlublottoIndexRoute
+  __root__: typeof rootRouteImport;
+  '/': typeof IndexRoute;
+  '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute;
+  '/klublotto/': typeof KlublottoIndexRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto'
-  id: '__root__' | '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto/'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto';
+  id: '__root__' | '/' | '/klublotto/FreePrizeClaimReceipt' | '/klublotto/';
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute
-  KlublottoIndexRoute: typeof KlublottoIndexRoute
+  IndexRoute: typeof IndexRoute;
+  KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute;
+  KlublottoIndexRoute: typeof KlublottoIndexRoute;
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/klublotto/': {
-      id: '/klublotto/'
-      path: '/klublotto'
-      fullPath: '/klublotto'
-      preLoaderRoute: typeof KlublottoIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/klublotto/';
+      path: '/klublotto';
+      fullPath: '/klublotto';
+      preLoaderRoute: typeof KlublottoIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     '/klublotto/FreePrizeClaimReceipt': {
-      id: '/klublotto/FreePrizeClaimReceipt'
-      path: '/klublotto/FreePrizeClaimReceipt'
-      fullPath: '/klublotto/FreePrizeClaimReceipt'
-      preLoaderRoute: typeof KlublottoFreePrizeClaimReceiptRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+      id: '/klublotto/FreePrizeClaimReceipt';
+      path: '/klublotto/FreePrizeClaimReceipt';
+      fullPath: '/klublotto/FreePrizeClaimReceipt';
+      preLoaderRoute: typeof KlublottoFreePrizeClaimReceiptRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
@@ -90,7 +89,5 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KlublottoFreePrizeClaimReceiptRoute: KlublottoFreePrizeClaimReceiptRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,
-}
-export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+};
+export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
