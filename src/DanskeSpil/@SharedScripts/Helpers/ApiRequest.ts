@@ -1,6 +1,9 @@
-﻿import ticketsData from '@ApiData/KlubLotto/accounts/tickets.json';
+﻿// @ts-nocheck
+import ticketsData from '@ApiData/KlubLotto/accounts/tickets.json';
 import couponData from '@ApiData/NumberGamesCoupon/coupon.json';
 import PageErrorMessages from '@ApiData/NumberGamesCoupon/PageErrorMessages.json';
+import accountsWalletListData from '@ApiData/KlubLotto/accounts/wallet/list.json';
+import accountsWallet1234RedeemData from '@ApiData/KlubLotto/accounts/wallet/1234/redeem.json';
 
 const ApiRequest = async ({
   url,
@@ -13,7 +16,15 @@ const ApiRequest = async ({
 }) => {
   await new Promise((resolve) => setTimeout(resolve, 500));
 
-  // if (url) console.error('url', url)
+  if (url) console.error('ApiRequest: ', url);
+
+  if (url.includes('dlo/accounts/wallet/1234/redeem')) {
+    return accountsWallet1234RedeemData;
+  }
+
+  if (url.includes('dlo/accounts/wallet/list')) {
+    return accountsWalletListData;
+  }
 
   if (url.includes('/accounts/tickets')) {
     return ticketsData;
