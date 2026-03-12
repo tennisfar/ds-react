@@ -22,7 +22,16 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@ApiData/*": ["src/@ApiData/*"],
+      "@Ensighten/*": ["src/DanskeSpil/@Ensighten/*"],
+      "@ErrorHandling/*": ["src/DanskeSpil/@ErrorHandling/*"],
+      "@KlubLotto/*": ["C:/Projects/danskespil-website/Website/Components/DanskeSpil/Domain/Feature.KlubLotto/*"],
+      "@Mock/*": ["src/@Mock/*"],
+      "@SharedScripts/*": ["src/DanskeSpil/@SharedScripts/*"],
+      "@SharedScripts": ["src/DanskeSpil/@SharedScripts"]
+    }
   },
   "include": ["src"]
 }
