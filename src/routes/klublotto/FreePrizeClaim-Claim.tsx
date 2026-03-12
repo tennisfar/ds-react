@@ -134,7 +134,7 @@ function RouteComponent() {
   // const gameType = 'lotto';
   // const gameType = 'vikinglotto';
   const gameType = 'eurojackpot';
-  
+
   // @ts-ignore
   return (
     <>
