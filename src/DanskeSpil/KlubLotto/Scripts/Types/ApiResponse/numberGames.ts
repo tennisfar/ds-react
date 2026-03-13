@@ -1,4 +1,6 @@
-﻿export type CouponApiPrimaryGameRowResponse = {
+﻿export type CouponApiGameTypeResponse = 'Keno' | 'Lotto' | 'Viking' | 'Eurojackpot' | 'AllOrNothing';
+
+export type CouponApiPrimaryGameRowResponse = {
   numbers: number[];
   extraNumbers: number[];
 };
@@ -10,7 +12,7 @@ export type CouponApiResponse = {
   price: number;
   state: string;
   primaryGame: {
-    gameType: string;
+    gameType: CouponApiGameTypeResponse;
     rows: Array<CouponApiPrimaryGameRowResponse>;
     drawInfo: Array<{
       drawNo: number;

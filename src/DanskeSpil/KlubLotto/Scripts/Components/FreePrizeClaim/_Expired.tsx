@@ -1,7 +1,8 @@
-﻿import React from 'react';
+﻿// @ts-ignore
+import React from 'react';
 import { CountdownDigits } from '../Countdown/CountdownDigits';
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';
-import { NumberGamesType } from '../../Utils/numberGamesType';
+import { NumberGamesType } from '../../Types/numberGames';
 
 export type ExpiredProps = {
   title: string;

@@ -1,7 +1,9 @@
+// @ts-ignore
 import React from 'react';
 import useLottoCountdown from '../../Hooks/useLottoCountdown';
 import { NumberGamesTypeCountdownDigits } from './NumberGamesTypeCountdownDigits';
-import { getNumberGamesTypeLabel, NumberGamesType } from '../../Utils/numberGamesType';
+import { getNumberGamesTypeLabel } from '../../Utils/numberGamesType';
+import { NumberGamesType } from '../../Types/numberGames';
 
 type Props = {
   className?: string;
@@ -11,6 +13,10 @@ type Props = {
 
 export const NumberGamesTypeCountdown = ({ className, drawDate, numberGamesType }: Props) => {
   const { timeLeft, prevTimeLeft, clearAnimations } = useLottoCountdown({ drawDate });
+
+  if (!numberGamesType) {
+    return null;
+  }
 
   return (
     <div className={className}>

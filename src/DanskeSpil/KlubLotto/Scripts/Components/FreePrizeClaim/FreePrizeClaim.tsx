@@ -1,4 +1,5 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿// @ts-ignore
+import React, { useEffect, useState } from 'react';
 import { getUrlParam } from '../../Utils/urlParams';
 import useNumberGamesCouponData from '../../Hooks/useNumberGamesCouponData';
 import useRedeemAwardData from '../../Hooks/useRedeemAwardData';
@@ -11,15 +12,16 @@ import { Redeemed, RedeemedProps } from './_Redeemed';
 import { WalletListAwardApiResponse, WalletListAwardClaimType } from '../../Types/ApiResponse/accounts';
 import { CouponApiResponse } from '../../Types/ApiResponse/numberGames';
 import { FreePrizeClaimDataSettings } from '../../Types/DataSettings/freePrizeClaim';
-import { NumberGamesType, getNumberGamesType } from '../../Utils/numberGamesType';
+import { getNumberGamesType } from '../../Utils/numberGamesType';
 import { getGameRows } from '../../Utils/gameRows';
+import { NumberGamesType } from '../../Types/numberGames';
 
 export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDataSettings) => {
   const ticketAwardId = getUrlParam('id') || '';
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [redeem, setRedeem] = useState(false);
-  const [gameType, setGameType] = useState<NumberGamesType>('unknown');
+  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>(null);
   const [gameRows, setGameRows] = useState<number>(0);
   const [couponId, setCouponId] = useState<string | null>(null);
   const [ticket, setTicket] = useState<WalletListAwardApiResponse | null>(null);
@@ -27,7 +29,7 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   const [expiredProps, setExpiredProps] = useState<ExpiredProps>({ title: '' });
   const [redeemedProps, setRedeemedProps] = useState<RedeemedProps>({ title: '' });
   const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
-  const [type, setType] = useState<WalletListAwardClaimType | null>(null);
+  const [awardClaimType, setAwardClaimType] = useState<WalletListAwardClaimType | null>(null);
   const { data: walletList, isLoading: isLoadingWalletList, isError: isErrorWalletList } = useWalletListData();
   const {
     data: redeemData,
@@ -42,7 +44,7 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
         (ticket: WalletListAwardApiResponse) => ticket.id === ticketAwardId
       );
       if (ticketWithAwardId) {
-        setType(ticketWithAwardId.type);
+        setAwardClaimType(ticketWithAwardId.type);
         setTicket(ticketWithAwardId);
       } else {
         setError(true);
@@ -52,19 +54,19 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   }, [walletList, isLoadingWalletList, ticket]);
 
   useEffect(() => {
-    if (type) {
-      setGameType(getNumberGamesType(type));
-      setGameRows(getGameRows(type));
+    if (awardClaimType) {
+      setNumberGamesType(getNumberGamesType(awardClaimType));
+      setGameRows(getGameRows(awardClaimType));
     }
-  }, [type]);
+  }, [awardClaimType]);
 
   useEffect(() => {
-    if (!ticket || !type) return;
+    if (!ticket || !awardClaimType) return;
 
-    const typeData = dataComponents?.find((data) => data.type === type);
+    const typeData = dataComponents?.find((data) => data.type === awardClaimType);
 
     if (!typeData) {
-      console.error('No matching data found for type:', type);
+      console.error('No matching data found for awardClaimType:', awardClaimType);
       return;
     }
 
@@ -120,16 +122,12 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
     setRedeem(true);
   };
 
-  const showLoading = () => {
+  if (loading) {
     return (
       <div className={'kl-free-prize-claim__loading'}>
         <Spinner />
       </div>
     );
-  };
-
-  if (loading) {
-    showLoading();
   }
 
   if (error) {
@@ -137,15 +135,16 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   }
 
   if (couponData) {
-    location.href = receiptLink.url + `?coupon=${couponData.couponId}&award=${type}`;
-    showLoading();
+    setLoading(true);
+    location.href = receiptLink.url + `?coupon=${couponData.couponId}&type=${numberGamesType}`;
+    return;
   }
 
   if (ticket?.claimStatus === 'NotRedeemed') {
     return (
       <Claim
         ticket={ticket}
-        numberGamesType={gameType}
+        numberGamesType={numberGamesType}
         gameRows={gameRows}
         handleRedeem={handleRedeem}
         claimProps={claimProps}
@@ -154,12 +153,10 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   }
 
   if (ticket?.claimStatus === 'Expired') {
-    return <Expired ticket={ticket} numberGamesType={gameType} expiredProps={expiredProps} />;
+    return <Expired ticket={ticket} numberGamesType={numberGamesType} expiredProps={expiredProps} />;
   }
 
   if (ticket?.claimStatus === 'Redeemed') {
-    return <Redeemed ticket={ticket} numberGamesType={gameType} redeemedProps={redeemedProps} />;
+    return <Redeemed ticket={ticket} numberGamesType={numberGamesType} redeemedProps={redeemedProps} />;
   }
-
-  showLoading();
 };

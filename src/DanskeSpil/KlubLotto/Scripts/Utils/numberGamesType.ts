@@ -1,6 +1,6 @@
 ﻿import { WalletListAwardClaimType } from '../Types/ApiResponse/accounts';
-
-export type NumberGamesType = 'keno' | 'lotto' | 'vikinglotto' | 'eurojackpot' | 'allornothing' | 'unknown';
+import { CouponApiGameTypeResponse } from '../Types/ApiResponse/numberGames';
+import { NumberGamesType } from '../Types/numberGames';
 
 export const getNumberGamesType = (claimType: WalletListAwardClaimType): NumberGamesType => {
   if (claimType.includes('KENO')) return 'keno';
@@ -10,6 +10,16 @@ export const getNumberGamesType = (claimType: WalletListAwardClaimType): NumberG
   if (claimType.includes('ALLORNOTHING')) return 'allornothing';
 
   throw new Error(`Unknown claim type: ${claimType}`);
+};
+
+export const getNumberGamesTypeFromGameRowResponse = (gameRowResponse: CouponApiGameTypeResponse): NumberGamesType => {
+  if (gameRowResponse === 'Keno') return 'keno';
+  if (gameRowResponse === 'Lotto') return 'lotto';
+  if (gameRowResponse === 'Viking') return 'vikinglotto';
+  if (gameRowResponse === 'Eurojackpot') return 'eurojackpot';
+  if (gameRowResponse === 'AllOrNothing') return 'allornothing';
+
+  throw new Error(`Unknown gameRowResponse: ${gameRowResponse}`);
 };
 
 export const getNumberGamesTypeLabel = (numberGamesType: NumberGamesType): string => {

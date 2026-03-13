@@ -1,18 +1,23 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿// @ts-ignore
+import React, { useEffect, useState } from 'react';
 import { getUrlParam } from '../../Utils/urlParams';
 import { useNumberGamesCouponGetData } from '../../Hooks/useNumberGamesCouponData';
 import { Spinner } from '../Spinner/Spinner';
 import { ErrorDefaultOutput } from '../ErrorDefaultOutput/ErrorDefaultOutput';
-import { CouponApiResponse, CouponApiPrimaryGameRowResponse } from '../../Types/ApiResponse/numberGames';
-import { getNumberGamesType, NumberGamesType } from '../../Utils/numberGamesType';
-import { WalletListAwardClaimType } from '../../Types/ApiResponse/accounts';
+import {
+  CouponApiResponse,
+  CouponApiPrimaryGameRowResponse,
+  CouponApiGameTypeResponse,
+} from '../../Types/ApiResponse/numberGames';
+import { getNumberGamesTypeFromGameRowResponse } from '../../Utils/numberGamesType';
 import { NumberGamesTypeCountdown } from '../NumberGamesTypeCountdown/NumberGamesTypeCountdown';
 import { getDefaultPoolSizeFormatted, getPoolByGameId } from '../../Utils/poolFeed';
+import { NumberGamesType } from '../../Types/numberGames';
 
 // --- Types ---
 
 type DataComponent = {
-  type: WalletListAwardClaimType;
+  numberGamesType: NumberGamesType;
   title: string;
   text: string;
   disclaimer: string;
@@ -24,8 +29,8 @@ type Props = {
 
 // --- Helpers ---
 
-const getLogoUrl = (gameType: NumberGamesType): string =>
-  `/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/${gameType}.svg`;
+const getLogoUrl = (numberGamesType: NumberGamesType): string =>
+  `/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/${numberGamesType}.svg`;
 
 const formatTransactionDate = (transactionDate: string): string => {
   const date = new Date(transactionDate);
@@ -42,10 +47,17 @@ const formatTransactionDate = (transactionDate: string): string => {
   return `${datePart} kl.${timePart}`;
 };
 
-const resolvePoolText = (text: string, awardClaimType: WalletListAwardClaimType): string => {
-  const gameType = getNumberGamesType(awardClaimType);
-  // const pool = poolFeed.find((p) => p.gameId === gameType);
-  const poolSize = getPoolByGameId(gameType)?.poolSizeFormatted || getDefaultPoolSizeFormatted(gameType);
+const resolvePoolText = (text: string, numberGamesType: NumberGamesType): string => {
+  if (!numberGamesType) {
+    return text;
+  }
+
+  const poolSize = getPoolByGameId(numberGamesType)?.poolSizeFormatted || getDefaultPoolSizeFormatted(numberGamesType);
+
+  if (!poolSize) {
+    return text;
+  }
+
   return text.replace(/{poolsize}/gi, poolSize);
 };
 
@@ -80,8 +92,7 @@ const ReceiptRowNumbers = ({ row }: { row: CouponApiPrimaryGameRowResponse }) =>
 
 export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
   const couponId = getUrlParam('coupon') || '';
-  const awardClaimType = getUrlParam('award') as WalletListAwardClaimType;
-  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>('unknown');
+  const [numberGamesType, setNumberGamesType] = useState<NumberGamesType>(null);
   const [couponData, setCouponData] = useState<CouponApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -101,40 +112,61 @@ export const FreePrizeClaimReceipt = ({ dataComponents }: Props) => {
 
   // Validate params and determine game type
   useEffect(() => {
-    if (!couponId || !awardClaimType || isErrorNumberGamesCouponData) {
+    if (!couponId || isErrorNumberGamesCouponData) {
       setLoading(false);
       setError(true);
       return;
     }
-    setNumberGamesType(getNumberGamesType(awardClaimType));
-  }, [couponId, awardClaimType, isErrorNumberGamesCouponData]);
+  }, [couponId, isErrorNumberGamesCouponData]);
 
   // Resolve content from dataComponents
   useEffect(() => {
-    if (loading || error || numberGamesType === 'unknown') return;
+    if (loading || error || !numberGamesType) {
+      return;
+    }
 
-    const typeData = dataComponents?.find((d) => d.type === awardClaimType);
+    const typeData = dataComponents?.find((d) => d.numberGamesType === numberGamesType);
+
     if (!typeData) {
-      console.error('No matching data found for awardClaimType:', awardClaimType);
-      setLoading(false);
+      console.error('No matching data found for numberGamesType:', numberGamesType);
       setError(true);
       return;
     }
 
     setTitle(typeData.title);
-    setText(resolvePoolText(typeData.text, awardClaimType));
+    setText(resolvePoolText(typeData.text, numberGamesType));
     setDisclaimer(typeData.disclaimer);
 
     setLoading(false);
     setError(false);
-  }, [loading, error, numberGamesType, couponId, awardClaimType]);
+  }, [loading, error, numberGamesType, couponId, numberGamesType]);
 
   // Store coupon data
   useEffect(() => {
     if (numberGamesCouponData) {
       setCouponData(numberGamesCouponData);
+
+      const gameTypeResponse = numberGamesCouponData.primaryGame?.gameType as CouponApiGameTypeResponse;
+      const gameType = getNumberGamesTypeFromGameRowResponse(gameTypeResponse);
+
+      if (!gameType) {
+        setError(true);
+        return;
+      }
+
+      setNumberGamesType(gameType);
     }
   }, [numberGamesCouponData]);
+
+  useEffect(() => {
+    if (error) {
+      setLoading(false);
+    }
+
+    if (loading) {
+      setError(false);
+    }
+  }, [error, loading]);
 
   // --- Render ---
 

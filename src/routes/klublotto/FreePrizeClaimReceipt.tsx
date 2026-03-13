@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { FreePrizeClaimReceipt } from '../../DanskeSpil/KlubLotto/Scripts/Components/FreePrizeClaimReceipt/FreePrizeClaimReceipt';
-import { WalletListAwardClaimType } from '../../DanskeSpil/KlubLotto/Scripts/Types/ApiResponse/accounts';
 import { CrossSaleSpot } from '../../DanskeSpil/KlubLotto/Views/CrossSaleSpot';
 import { PageHeader } from '../../DanskeSpil/KlubLotto/Views/PageHeader';
+import { NumberGamesType } from '../../DanskeSpil/KlubLotto/Scripts/Types/numberGames';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaimReceipt')({
   component: RouteComponent,
@@ -11,7 +11,7 @@ export const Route = createFileRoute('/klublotto/FreePrizeClaimReceipt')({
 function RouteComponent() {
   const dataComponents = [
     {
-      type: '1_LOTTO_LIGHTNING' as WalletListAwardClaimType,
+      numberGamesType: 'lotto' as NumberGamesType,
       title: 'Din indløsning er gennemført',
       text: 'Du er med i tr&aelig;kningen om {poolsize} mio. kr. og i Million&aelig;rchancen, hvor vi hver uge tr&aelig;kker lod blandt alle r&aelig;kker om 2 x 1 mio. kr.',
       disclaimer:
@@ -20,7 +20,7 @@ function RouteComponent() {
       templateName: 'FreePrizeClaimReceiptData',
     },
     {
-      type: '1_VIKING_LIGHTNING' as WalletListAwardClaimType,
+      numberGamesType: 'vikinglotto' as NumberGamesType,
       title: 'Din indløsning er gennemført',
       text: 'Du er med i tr&aelig;kningen om {poolsize} mio. kr. og i Million&aelig;rchancen, hvor vi hver uge tr&aelig;kker lod blandt alle r&aelig;kker om 2 x 1 mio. kr.',
       disclaimer:
@@ -29,7 +29,7 @@ function RouteComponent() {
       templateName: 'FreePrizeClaimReceiptData',
     },
     {
-      type: '1_EUROJACKPOT_LIGHTNING' as WalletListAwardClaimType,
+      numberGamesType: 'eurojackpot' as NumberGamesType,
       title: 'Din indløsning er gennemført',
       text: 'Du er med i tr&aelig;kningen om {poolsize} mio. kr. og i Million&aelig;rchancen, hvor vi hver uge tr&aelig;kker lod blandt alle r&aelig;kker om 2 x 1 mio. kr.',
       disclaimer:

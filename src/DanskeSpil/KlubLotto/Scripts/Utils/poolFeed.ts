@@ -1,3 +1,5 @@
+import { NumberGamesType } from '../Types/numberGames';
+
 export type PoolInfo = {
   gameId: string;
   poolSizeDecimal: number;
@@ -24,7 +26,7 @@ export const getPoolFeed = (): PoolInfo[] => {
   }
 };
 
-export const getPoolByGameId = (gameId: string): PoolInfo | undefined => {
+export const getPoolByGameId = (gameId: NumberGamesType): PoolInfo | undefined => {
   return getPoolFeed().find((pool) => pool.gameId === gameId);
 };
 
@@ -36,6 +38,10 @@ const defaultPoolSizes: Record<string, string> = {
   altellerintet: '500.000',
 };
 
-export const getDefaultPoolSizeFormatted = (gameId: string): string => {
+export const getDefaultPoolSizeFormatted = (gameId: NumberGamesType): string | null => {
+  if (!gameId) {
+    return null;
+  }
+
   return defaultPoolSizes[gameId];
 };

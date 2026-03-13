@@ -1,8 +1,9 @@
-﻿import React from 'react';
+﻿// @ts-ignore
+import React from 'react';
 import { Button } from '../Button/Button';
 import { Countdown } from '../Countdown/Countdown';
-import { NumberGamesType } from '../../Utils/numberGamesType';
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';
+import { NumberGamesType } from '../../Types/numberGames';
 
 export type ClaimProps = {
   title: string;
