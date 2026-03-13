@@ -12,7 +12,9 @@ class KlubLottoSliderIndicatorEntry extends ComponentLoader {
 
   init() {
     const ReactApp = (props: SliderIndicatorDataSettings) => {
-      return <SliderIndicator {...props} />;
+      return (
+        <SliderIndicator {...props} />
+      );
     };
 
     const root = createRoot(this.element);

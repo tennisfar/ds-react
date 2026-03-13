@@ -1,4 +1,3 @@
-// @ts-ignore
 import React from 'react';
 import useLottoCountdown from '../../Hooks/useLottoCountdown';
 import { NumberGamesTypeCountdownDigits } from './NumberGamesTypeCountdownDigits';

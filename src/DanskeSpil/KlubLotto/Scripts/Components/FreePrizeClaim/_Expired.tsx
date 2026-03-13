@@ -1,5 +1,4 @@
-﻿// @ts-ignore
-import React from 'react';
+﻿import React from 'react';
 import { CountdownDigits } from '../Countdown/CountdownDigits';
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';
 import { NumberGamesType } from '../../Types/numberGames';
@@ -33,12 +32,12 @@ export const Expired = ({ ticket, numberGamesType, expiredProps }: Props) => {
       <div className={'kl-free-prize-claim__expire-date'}>
         {expires
           ? new Date(expires).toLocaleDateString('da-DK', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-            })
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+          })
           : ''}
       </div>
       <div className={'kl-free-prize-claim__countdown'}>

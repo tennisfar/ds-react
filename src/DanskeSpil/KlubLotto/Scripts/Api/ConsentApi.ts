@@ -12,7 +12,7 @@ export const getConsent = async (): Promise<ConsentApiResponse> => {
 type ConsentItem = {
   id: number;
   accepted: boolean;
-};
+}
 
 type SetConsentProps = {
   consentItems: ConsentItem[];

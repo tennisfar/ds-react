@@ -26,8 +26,8 @@ export const getPoolFeed = (): PoolInfo[] => {
   }
 };
 
-export const getPoolByGameId = (gameId: NumberGamesType): PoolInfo | undefined => {
-  return getPoolFeed().find((pool) => pool.gameId === gameId);
+export const getPoolByGameId = (numberGamesType: NumberGamesType): PoolInfo | undefined => {
+  return getPoolFeed().find((pool) => pool.gameId === numberGamesType);
 };
 
 const defaultPoolSizes: Record<string, string> = {
@@ -38,10 +38,10 @@ const defaultPoolSizes: Record<string, string> = {
   altellerintet: '500.000',
 };
 
-export const getDefaultPoolSizeFormatted = (gameId: NumberGamesType): string | null => {
-  if (!gameId) {
+export const getDefaultPoolSizeFormatted = (numberGamesType: NumberGamesType): string | null => {
+  if (!numberGamesType) {
     return null;
   }
 
-  return defaultPoolSizes[gameId];
+  return defaultPoolSizes[numberGamesType];
 };

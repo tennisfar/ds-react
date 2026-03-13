@@ -12,7 +12,9 @@ class KlubLottoSignupPromoEntry extends ComponentLoader {
 
   init() {
     const ReactApp = (props: SignupPromoDataSettings) => {
-      return <SignupPromo {...props} />;
+      return (
+        <SignupPromo {...props} />
+      );
     };
 
     const root = createRoot(this.element);

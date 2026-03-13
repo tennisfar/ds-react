@@ -7,18 +7,19 @@ import { Spinner } from '../Spinner/Spinner';
 import { QuizGameContentProps } from '../../Types/game';
 import { trackEvent } from '../../Utils/tracking';
 
-export const QuizGameContent: React.FC<QuizGameContentProps> = ({
-  currentQuestion,
-  isLoading,
-  error,
-  onSubmitAnswer,
-  gameResultTexts,
-  solution,
-  result,
-  linkBack,
-  successLottie,
-  submitQuizAnswerCtaLabel,
-}) => {
+export const QuizGameContent: React.FC<QuizGameContentProps> = (
+  {
+    currentQuestion,
+    isLoading,
+    error,
+    onSubmitAnswer,
+    gameResultTexts,
+    solution,
+    result,
+    linkBack,
+    successLottie,
+    submitQuizAnswerCtaLabel,
+  }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   useEffect(() => {
@@ -27,17 +28,16 @@ export const QuizGameContent: React.FC<QuizGameContentProps> = ({
     }
   }, [selectedOption]);
 
-  if (error)
-    return (
-      <div className={'kl-game kl-game--quiz'}>
-        <ErrorDefaultOutput className={'kl-game__error'} variant={'light'} />
-      </div>
-    );
+  if (error) return (
+    <div className={'kl-game kl-game--quiz'}>
+      <ErrorDefaultOutput className={'kl-game__error'} variant={'light'}/>
+    </div>
+  );
 
   if (isLoading || (!result && !currentQuestion)) {
     return (
       <div className={'kl-game kl-game--quiz'}>
-        <Spinner className={'kl-game__spinner kl-game__spinner--quiz'} variant={'quiz'} />
+        <Spinner className={'kl-game__spinner kl-game__spinner--quiz'} variant={'quiz'}/>
       </div>
     );
   }
@@ -64,9 +64,7 @@ export const QuizGameContent: React.FC<QuizGameContentProps> = ({
             onClick={() => onSubmitAnswer(selectedOption)}
             inverted={true}
             disabled={!selectedOption || isLoading}
-          >
-            {submitQuizAnswerCtaLabel}
-          </Button>
+          >{submitQuizAnswerCtaLabel}</Button>
         </div>
       </div>
     );
@@ -80,9 +78,7 @@ export const QuizGameContent: React.FC<QuizGameContentProps> = ({
         solution={solution}
         gameResultTexts={gameResultTexts}
         linkBack={linkBack}
-        successLottie={successLottie}
-      />
-      ;
+        successLottie={successLottie}/>;
     </div>
   );
 };

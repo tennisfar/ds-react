@@ -18,13 +18,13 @@ class KlubLottoStarStepEntry extends ComponentLoader {
     const ReactApp = (props: StarStepDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <StarStep {...props} />
+          <StarStep {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

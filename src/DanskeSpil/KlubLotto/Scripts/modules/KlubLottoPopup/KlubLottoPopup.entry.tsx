@@ -14,14 +14,14 @@ class KlubLottoPopupEntry extends ComponentLoader {
     const ReactApp = () => {
       return (
         <>
-          <Popup />
-          <Overlay />
+          <Popup/>
+          <Overlay/>
         </>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp />);
+    root.render(<ReactApp/>);
   }
 }
 

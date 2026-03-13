@@ -11,13 +11,13 @@ type PopupProps = {
   ctaLabel?: string;
   buttons?: PopupButtonProps[];
   onOverlayClicked?: () => void;
-};
+}
 
 type PopupBasicProps = {
   title: string;
   text: string;
   ctaLabel?: string;
-};
+}
 
 type PopupErrorProps = {
   title: string;
@@ -25,21 +25,21 @@ type PopupErrorProps = {
   text: string;
   ctaLabel?: string;
   buttons?: PopupButtonProps[];
-};
+}
 
 type PopupFirstLotProps = {
   title: string;
   text: string;
   image: string;
   image2X: string;
-};
+}
 
 type PopupNewPrizeProps = {
   title: string;
   image: string;
   buttons: PopupButtonProps[];
   onOverlayClicked?: () => void;
-};
+}
 
 type PopupPrizeExpiresProps = {
   title: string;
@@ -47,21 +47,19 @@ type PopupPrizeExpiresProps = {
   image: string;
   buttons: PopupButtonProps[];
   onOverlayClicked?: () => void;
-};
+}
 
 type PopupSimpleProps = {
   title: string;
   text: string;
   buttons: PopupButtonProps[];
   onOverlayClicked?: () => void;
-};
+}
 
 export const openPopup = (props: PopupProps) => {
-  document.dispatchEvent(
-    new CustomEvent('klublotto:modal:open', {
-      detail: { region: 'klublotto', ...props },
-    })
-  );
+  document.dispatchEvent(new CustomEvent('klublotto:modal:open', {
+    detail: { region: 'klublotto', ...props }
+  }));
 };
 
 export const openPopupBasic = ({ title, text, ctaLabel }: PopupBasicProps) => {
@@ -80,13 +78,7 @@ export const openPopupNewPrize = ({ title, buttons, image, onOverlayClicked }: P
   openPopup({ variant: 'newPrize', title, buttons, image, onOverlayClicked });
 };
 
-export const openPopupPrizeExpires = ({
-  title,
-  expireDate,
-  buttons,
-  image,
-  onOverlayClicked,
-}: PopupPrizeExpiresProps) => {
+export const openPopupPrizeExpires = ({ title, expireDate, buttons, image, onOverlayClicked }: PopupPrizeExpiresProps) => {
   openPopup({ variant: 'prizeExpires', title, expireDate, buttons, image, onOverlayClicked });
 };
 

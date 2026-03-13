@@ -16,14 +16,14 @@ type CountdownProps = {
   dueDate?: string;
 };
 
-export const Countdown = ({ dueDate }: CountdownProps) => {
-  const { timeLeft, prevTimeLeft, clearAnimations } = useCountdown({ dueDate });
+export const Countdown = ({dueDate}: CountdownProps) => {
+  const { timeLeft, prevTimeLeft, clearAnimations } = useCountdown({dueDate});
 
   const timeUnits: TimeUnit[] = [
     { key: 'd', label: 'Dage' },
     { key: 'h', label: 'Timer' },
     { key: 'm', label: 'Min' },
-    { key: 's', label: 'Sek' },
+    { key: 's', label: 'Sek' }
   ];
 
   return (

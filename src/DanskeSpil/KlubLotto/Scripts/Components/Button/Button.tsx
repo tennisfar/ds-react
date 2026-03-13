@@ -14,23 +14,24 @@ type ButtonProps = {
   tracking?: {
     action: string;
     ctaLabel?: string;
-  };
+  }
   // FIXME: [KlubLotto] specify correct type
   // ref: https://github.com/ds-itu-frontend-service/shared-documentation/blob/main/Tech/Frontend/TYPESCRIPT.md#type-any-and-unknown
   /* eslint-disable @typescript-eslint/no-explicit-any */
   [key: string]: any; // Allow additional props
 };
 
-export const Button = ({
-  variant = 'primary',
-  inverted = false,
-  disabled = false,
-  isWorking = false,
-  onClick,
-  children,
-  tracking,
-  ...rest
-}: ButtonProps) => {
+export const Button = (
+  {
+    variant = 'primary',
+    inverted = false,
+    disabled = false,
+    isWorking = false,
+    onClick,
+    children,
+    tracking,
+    ...rest
+  }: ButtonProps) => {
   const href = rest.href;
   const Component = href ? 'a' : 'button';
 
@@ -60,8 +61,7 @@ export const Button = ({
     <Component
       onClick={handleClick}
       className={`kl-button kl-button--${variant}${inverted ? '-inverted' : ''}${disabled ? '-disabled' : ''} ${isWorking ? 'kl-button--working' : ''}`}
-      {...rest}
-    >
+      {...rest}>
       {children}
     </Component>
   );

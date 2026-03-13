@@ -6,4 +6,4 @@ export type NewPrizeNotificationDataSettings = {
   referencesToIgnore: string;
   titleNewPrize: string;
   titlePrizeExpires: string;
-};
+}

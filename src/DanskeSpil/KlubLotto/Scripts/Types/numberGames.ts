@@ -1,1 +1,1 @@
-﻿export type NumberGamesType = 'keno' | 'lotto' | 'vikinglotto' | 'eurojackpot' | 'allornothing' | null;
+export type NumberGamesType = 'keno' | 'lotto' | 'vikinglotto' | 'eurojackpot' | 'allornothing' | null;

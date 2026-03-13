@@ -5,4 +5,4 @@ export type FirstLotCelebrationDataSettings = {
   image2X: SitecoreImage;
   text: string;
   title: string;
-};
+}

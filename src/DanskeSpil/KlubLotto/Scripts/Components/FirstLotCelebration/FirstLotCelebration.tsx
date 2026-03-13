@@ -29,7 +29,8 @@ export const FirstLotCelebration = ({ title, text, image, image2X }: FirstLotCel
       }, 5000);
       return () => clearTimeout(timeout);
     }
-  }, [isLoading, isError, data, title, text, refetch]);
+  }, [isLoading, isError, data, title, text, refetch]
+  );
 
   return null;
 };

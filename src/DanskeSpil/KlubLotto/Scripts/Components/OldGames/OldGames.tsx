@@ -5,14 +5,7 @@ import { trackEventOnRedirect } from '../../Utils/tracking';
 import { OldGamesDataSettings } from '../../Types/DataSettings/oldGames';
 import { GameHistoryApiResponse, GameHistoryDayApiResponse } from '../../Types/ApiResponse/games';
 
-export const OldGames = ({
-  quizTitle,
-  quizImage,
-  quizLinkToGame,
-  sudokuTitle,
-  sudokuLinkToGame,
-  sudokuImage,
-}: OldGamesDataSettings) => {
+export const OldGames = ({ quizTitle, quizImage, quizLinkToGame, sudokuTitle, sudokuLinkToGame, sudokuImage, }: OldGamesDataSettings) => {
   // Fetch game data and loading states
   const quiz = useGameHistoryData('quiz');
   const sudoku = useGameHistoryData('sudoku');
@@ -41,7 +34,7 @@ export const OldGames = ({
     <div className={'kl-old-games__sections'}>
       {games.map(({ title, gameType, url, image }) => (
         <div className={'kl-old-games__section'} key={gameType}>
-          <input type={'checkbox'} id={gameType} className={'kl-old-games__toggle'} hidden />
+          <input type={'checkbox'} id={gameType} className={'kl-old-games__toggle'} hidden/>
           <label htmlFor={gameType} className={'kl-old-games__title'}>
             {title}
           </label>
@@ -57,7 +50,7 @@ export const OldGames = ({
                 }}
               >
                 <div className={'kl-old-games__frame'}>
-                  <img src={image} alt={''} />
+                  <img src={image} alt={''}/>
                 </div>
                 <div className={'kl-old-games__weekday'}>{game.weekday}</div>
                 <div className={'kl-old-games__date'}>
@@ -67,18 +60,14 @@ export const OldGames = ({
                   })}
                 </div>
                 <div className={'kl-old-games__status'}>
-                  {game.completed ? (
-                    <img
-                      src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/OldGames/check.svg'}
-                      alt={''}
-                    />
-                  ) : null}
+                  {game.completed ? <img src={'/dlo/Components/DanskeSpil/Domain/Feature.KlubLotto/Graphics/OldGames/check.svg'} alt={''}/> : null}
                 </div>
               </div>
             ))}
           </div>
         </div>
-      ))}
+      ))
+      }
     </div>
   );
 };

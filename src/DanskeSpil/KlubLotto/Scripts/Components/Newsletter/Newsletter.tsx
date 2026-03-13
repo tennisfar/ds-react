@@ -20,15 +20,7 @@ function parseConsentIds(refs: string): number[] {
     .filter((num) => !isNaN(num));
 }
 
-export const Newsletter = ({
-  title,
-  subtitle,
-  disclaimer,
-  ctaAcceptLabel,
-  ctaDeclineLabel,
-  continueLink,
-  consentIds,
-}: NewsletterDataSettings) => {
+export const Newsletter = ({ title, subtitle, disclaimer, ctaAcceptLabel, ctaDeclineLabel, continueLink, consentIds }: NewsletterDataSettings) => {
   const [loading, setLoading] = useState(true);
   const [hasMadeDecisionOnNewsletter, setHasMadeDecisionOnConsent] = useState(false);
   const [consentStates, setConsentStates] = useState<ConsentState[]>([]);
@@ -48,6 +40,7 @@ export const Newsletter = ({
       // Something went wrong, we continue to next page. The show must go on!
       completeCreateAccountFlow();
     }
+
   }, [consentData, consentDataIsError, consentDataIsLoading]);
 
   useEffect(() => {
@@ -60,6 +53,7 @@ export const Newsletter = ({
       // Data is still loading or not available
       return;
     }
+
 
     // If all states in consentStates are 'Accepted', we consider the user has accepted the newsletter.
     const isEveryConsentAccepted = consentStates.every((state) => state === 'Accepted');
@@ -131,12 +125,8 @@ export const Newsletter = ({
       <SubtitleBase className={'kl-newsletter__subtitle'}>{subtitle}</SubtitleBase>
       <DisclaimerBase className={'kl-newsletter__disclaimer'}>{disclaimer}</DisclaimerBase>
       <div className={'kl-newsletter__buttons'}>
-        <Button tracking={{ action: 'newsletter' }} onClick={() => handleConsentClick(true)}>
-          {ctaAcceptLabel}
-        </Button>
-        <Button tracking={{ action: 'newsletter' }} onClick={() => handleConsentClick(false)}>
-          {ctaDeclineLabel}
-        </Button>
+        <Button tracking={{ action: 'newsletter' }} onClick={() => handleConsentClick(true)}>{ctaAcceptLabel}</Button>
+        <Button tracking={{ action: 'newsletter' }} onClick={() => handleConsentClick(false)}>{ctaDeclineLabel}</Button>
       </div>
     </div>
   );

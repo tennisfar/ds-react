@@ -6,7 +6,7 @@ const useDailyLotData = () => {
   const { data, isLoading, isError, refetch } = useQuery<DailyLotApiResponse>({
     queryKey: ['dailyLotData'],
     queryFn: async () => {
-      return await getLotDaily();
+      return (await getLotDaily());
     },
   });
 

@@ -4,16 +4,17 @@ import { Button } from '../Button/Button';
 import { openPopupError, openPopupSimple } from '../../Utils/openPopup';
 import { CancelMembershipDataSettings } from '../../Types/DataSettings/cancelMembership';
 
-export const CancelMembership = ({
-  ctaConfirm,
-  ctaCancel,
-  successPopupTitle,
-  successPopupText,
-  successPopupCtaLabel,
-  errorPopupTitle,
-  errorPopupText,
-  errorPopupCtaLabel,
-}: CancelMembershipDataSettings) => {
+export const CancelMembership = (
+  {
+    ctaConfirm,
+    ctaCancel,
+    successPopupTitle,
+    successPopupText,
+    successPopupCtaLabel,
+    errorPopupTitle,
+    errorPopupText,
+    errorPopupCtaLabel,
+  }: CancelMembershipDataSettings) => {
   const { mutate: cancelAccount, isSuccess, isError } = useCancelAccount();
   const [isWorking, setIsWorking] = useState(false);
   const [isDone, setIsDone] = useState(false);
@@ -59,20 +60,8 @@ export const CancelMembership = ({
 
   return (
     <div className={'kl-cancel-membership__buttons'}>
-      <Button
-        tracking={{ action: 'cancelMembership_confirm' }}
-        onClick={handleConfirm}
-        isWorking={isWorking}
-        disabled={isDone}
-      >
-        {ctaConfirm?.text}
-      </Button>
-      <Button
-        tracking={{ action: 'cancelMembership_keep' }}
-        variant={'secondary'}
-        href={ctaCancel?.url}
-        disabled={isWorking || isDone}
-      >
+      <Button tracking={{ action: 'cancelMembership_confirm' }} onClick={handleConfirm} isWorking={isWorking} disabled={isDone}>{ctaConfirm?.text}</Button>
+      <Button tracking={{ action: 'cancelMembership_keep' }} variant={'secondary'} href={ctaCancel?.url} disabled={isWorking || isDone}>
         {ctaCancel?.text}
       </Button>
     </div>

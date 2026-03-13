@@ -7,11 +7,7 @@ import { ResultState } from '../Types/useGameFlow';
 import { trackEvent } from '../Utils/tracking';
 import { MarkGameCompletedStatusApiResponse } from '../Types/ApiResponse/games';
 
-export const useGameFlow = (
-  gameType: GameType,
-  gameDate: string | undefined,
-  setGameDate: React.Dispatch<React.SetStateAction<string | undefined>>
-) => {
+export const useGameFlow = (gameType: GameType, gameDate: string | undefined, setGameDate: React.Dispatch<React.SetStateAction<string | undefined>>) => {
   const [gameState, setGameState] = useState<GamePostMessageState>();
   const [gameLauncherId, setGameLauncherId] = useState<string | undefined>();
   const [iframeUrl, setIframeUrl] = useState<string | undefined>();
@@ -95,7 +91,12 @@ export const useGameFlow = (
 
         output(`Game state: ${gameState}`);
 
-        if (['gameStarted', 'gameCompleted', 'gameFailed', 'gameClose'].includes(gameState) && data.lotStatus) {
+        if ([
+          'gameStarted',
+          'gameCompleted',
+          'gameFailed',
+          'gameClose'
+        ].includes(gameState) && data.lotStatus) {
           trackEvent({ action: 'game_response' + (gameType ? '_' + gameType : ''), label: gameState });
         }
       }

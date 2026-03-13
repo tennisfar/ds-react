@@ -5,11 +5,7 @@ import { QuizQuestionApiResponse } from '../Types/ApiResponse/quiz';
 const baseUrl = DS.Config.KLUBLOTTO_API_URL;
 const withCredentials = isDevEnvironment();
 
-export const getQuizQuestion = async (
-  key?: number,
-  answer?: number,
-  gameDate?: string
-): Promise<QuizQuestionApiResponse> => {
+export const getQuizQuestion = async (key?: number, answer?: number, gameDate?: string): Promise<QuizQuestionApiResponse> => {
   let requestBody = {};
 
   if (key !== undefined && answer !== undefined) {

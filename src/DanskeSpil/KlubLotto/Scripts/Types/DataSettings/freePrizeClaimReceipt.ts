@@ -1,7 +1,7 @@
-﻿import { WalletListAwardClaimType } from '../ApiResponse/accounts';
+﻿import { NumberGamesType } from '../numberGames';
 
 export type FreePrizeClaimReceiptDataProps = {
-  type: WalletListAwardClaimType;
+  numberGamesType: NumberGamesType;
   title: string;
   text: string;
   disclaimer: string;

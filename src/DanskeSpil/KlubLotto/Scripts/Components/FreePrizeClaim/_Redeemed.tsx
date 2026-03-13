@@ -1,5 +1,4 @@
-﻿// @ts-ignore
-import React from 'react';
+﻿import React from 'react';
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';
 import { NumberGamesType } from '../../Types/numberGames';
 
@@ -32,12 +31,12 @@ export const Redeemed = ({ ticket, numberGamesType, redeemedProps }: Props) => {
       <div className={'kl-free-prize-claim__expire-date'}>
         {redeemed
           ? new Date(redeemed).toLocaleDateString('da-DK', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-            })
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+          })
           : ''}
       </div>
     </div>

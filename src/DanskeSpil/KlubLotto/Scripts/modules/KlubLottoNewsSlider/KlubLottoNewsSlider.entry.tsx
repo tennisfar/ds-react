@@ -12,11 +12,13 @@ class KlubLottoNewsSliderEntry extends ComponentLoader {
 
   init() {
     const ReactApp = (props: NewsSliderDataSettings) => {
-      return <NewsSlider {...props} />;
+      return (
+        <NewsSlider {...props}/>
+      );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

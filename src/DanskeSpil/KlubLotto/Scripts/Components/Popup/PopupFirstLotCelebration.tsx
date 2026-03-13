@@ -20,16 +20,11 @@ const PopupFirstLotCelebration = ({ data, handleModalClose }: PopupProps) => {
   return (
     <div onClick={handleClick}>
       {title && <div className={'kl-popup-first-lot-celebration__title'}>{title}</div>}
-      <img
-        srcSet={`${image}, ${image2X} 2x`}
-        src={image}
-        alt={''}
-        className={'kl-popup-first-lot-celebration__image'}
-      />
+      <img srcSet={`${image}, ${image2X} 2x`} src={image} alt={''} className={'kl-popup-first-lot-celebration__image'}/>
       {text && (
         <div className={'kl-popup-first-lot-celebration__text'} dangerouslySetInnerHTML={{ __html: text }}></div>
       )}
-      <CelebrateBackground />
+      <CelebrateBackground/>
     </div>
   );
 };

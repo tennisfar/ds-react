@@ -47,13 +47,14 @@ function todayKey(): string {
   return `${y}-${m}-${day}`;
 }
 
-export const NewPrizeNotification = ({
-  titleNewPrize,
-  titlePrizeExpires,
-  image,
-  linkToRedeemPage,
-  referencesToIgnore,
-}: NewPrizeNotificationDataSettings) => {
+export const NewPrizeNotification = (
+  {
+    titleNewPrize,
+    titlePrizeExpires,
+    image,
+    linkToRedeemPage,
+    referencesToIgnore
+  }: NewPrizeNotificationDataSettings) => {
   const { data: tickets } = useWalletListData();
 
   // Derived state used for rendering (avoid reading `tickets` directly in render)
@@ -67,9 +68,7 @@ export const NewPrizeNotification = ({
   const [shouldShowExpiresSoon, setShouldShowExpiresSoon] = useState<boolean>(false);
 
   // Daily gating for 'expires soon' (persisted)
-  const [lastSoonDismissedDay, setLastSoonDismissedDay] = useState<string | null>(() =>
-    getCookie(LOCAL_STORAGE_SOON_LAST_DISMISSED)
-  );
+  const [lastSoonDismissedDay, setLastSoonDismissedDay] = useState<string | null>(() => getCookie(LOCAL_STORAGE_SOON_LAST_DISMISSED));
 
   // Update ignore list when prop changes
   useEffect(() => {
@@ -101,12 +100,9 @@ export const NewPrizeNotification = ({
 
     if (hasSoon) {
       // Find the soonest expiry date among valid unseen tickets
-      const soonest =
-        unseen.length > 0
-          ? unseen
-              .map((t) => new Date(t.expires))
-              .reduce((earliest, current) => (current < earliest ? current : earliest))
-          : new Date(valid[0].expires);
+      const soonest = unseen.length > 0
+        ? unseen.map((t) => new Date(t.expires)).reduce((earliest, current) => (current < earliest ? current : earliest))
+        : new Date(valid[0].expires);
       setExpireDate(soonest.toISOString());
     } else {
       setExpireDate(null);
@@ -116,6 +112,7 @@ export const NewPrizeNotification = ({
     setShouldShowNotification(showNew);
     setShouldShowExpiresSoon(showSoon);
   }, [tickets, ignoreRefs, seenIds, lastSoonDismissedDay]);
+
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
@@ -134,7 +131,7 @@ export const NewPrizeNotification = ({
                 setNewPrizeCookies();
                 redirectToRedeemPage();
               },
-            },
+            }
           ],
           onOverlayClicked: setNewPrizeCookies,
         });
@@ -154,7 +151,7 @@ export const NewPrizeNotification = ({
                 setExpiresSoonCookies();
                 redirectToRedeemPage();
               },
-            },
+            }
           ],
           onOverlayClicked: setExpiresSoonCookies,
         });

@@ -1,8 +1,8 @@
 import React from 'react';
 
 type TitleBaseProps = {
-  children: React.ReactNode;
-  className?: string;
+    children: React.ReactNode;
+    className?: string;
 };
 
 export const TitleBase = ({ children, className = '' }: TitleBaseProps) => {

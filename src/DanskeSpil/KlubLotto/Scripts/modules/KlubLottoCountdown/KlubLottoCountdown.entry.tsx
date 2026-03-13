@@ -18,13 +18,13 @@ class KlubLottoCountdownEntry extends ComponentLoader {
     const ReactApp = (props: CountdownDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <Countdown {...props} />
+          <Countdown {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

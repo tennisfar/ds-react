@@ -1,5 +1,4 @@
-﻿// @ts-ignore
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { getUrlParam } from '../../Utils/urlParams';
 import { useNumberGamesCouponGetData } from '../../Hooks/useNumberGamesCouponData';
 import { Spinner } from '../Spinner/Spinner';

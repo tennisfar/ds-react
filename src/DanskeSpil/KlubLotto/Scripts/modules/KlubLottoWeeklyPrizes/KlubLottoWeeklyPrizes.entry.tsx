@@ -18,13 +18,13 @@ class KlubLottoWeeklyPrizesEntry extends ComponentLoader {
     const ReactApp = (props: WeeklyPrizesDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <WeeklyPrizes {...props} />
+          <WeeklyPrizes {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

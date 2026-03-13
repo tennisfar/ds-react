@@ -17,13 +17,13 @@ class KlubLottoYourRewardsEntry extends ComponentLoader {
     const ReactApp = () => {
       return (
         <QueryClientProvider client={queryClient}>
-          <YourRewards />
+          <YourRewards/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

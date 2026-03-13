@@ -18,13 +18,13 @@ class KlubLottoLottoRowClaimEntry extends ComponentLoader {
     const ReactApp = (props: LottoRowClaimDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <LottoRowClaim {...props} />
+          <LottoRowClaim {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

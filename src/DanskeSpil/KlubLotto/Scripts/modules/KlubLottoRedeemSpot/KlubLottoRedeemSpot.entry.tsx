@@ -18,13 +18,13 @@ class KlubLottoRedeemSpotEntry extends ComponentLoader {
     const ReactApp = (props: RedeemSpotDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <RedeemSpot {...props} />
+          <RedeemSpot {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

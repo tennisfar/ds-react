@@ -6,7 +6,7 @@ const useRedeemAwardData = (awardId: string, enabled: boolean) => {
   const { data, isLoading, isError } = useQuery<RedeemAwardApiResponse, Error>({
     queryKey: ['redeemAwardData', awardId],
     queryFn: async () => {
-      return await redeemAward(awardId);
+      return (await redeemAward(awardId));
     },
     enabled,
   });

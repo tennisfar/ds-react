@@ -2,7 +2,7 @@ import ApiRequest from '@SharedScripts/Helpers/ApiRequest';
 import { isDevEnvironment, isTownEnvironment } from '../Utils/environment';
 import { CouponApiResponse } from '../Types/ApiResponse/numberGames';
 
-const baseUrl = '/dlo/webapi/gateway/numbergames-coupon';
+const baseUrl = 'http://localhost:3001/mock' + '/dlo/webapi/gateway/numbergames-coupon';
 const withCredentials = isDevEnvironment();
 
 export const getCoupon = async (couponId: string): Promise<CouponApiResponse> => {

@@ -17,9 +17,10 @@ const PopupNewPrize = ({ data, handleModalClose }: PopupProps) => {
     <>
       {title && <div className={'kl-popup-new-prize__title'}>{title}</div>}
 
-      {image && <img src={image} alt={''} className={'kl-popup-new-prize__image'} />}
+      {image && <img src={image} alt={''} className={'kl-popup-new-prize__image'}/>}
 
-      <div className={'kl-popup-new-prize__footer'}>
+      <div
+        className={'kl-popup-new-prize__footer'}>
         {buttons?.map((button, index) => {
           return (
             <Button
@@ -39,7 +40,7 @@ const PopupNewPrize = ({ data, handleModalClose }: PopupProps) => {
         })}
       </div>
 
-      <CelebrateBackground />
+      <CelebrateBackground/>
     </>
   );
 };

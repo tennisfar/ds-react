@@ -3,7 +3,7 @@ import { getFirstDayOfNextMonth, getServerTime, getTimeLeft, timeObj } from '../
 
 type UseCountdownProps = {
   dueDate?: string;
-};
+}
 
 const useCountdown = ({ dueDate }: UseCountdownProps) => {
   const [drawDate, setDrawDate] = useState(0);

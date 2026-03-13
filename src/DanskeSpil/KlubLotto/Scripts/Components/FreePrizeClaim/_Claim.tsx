@@ -1,5 +1,4 @@
-﻿// @ts-ignore
-import React from 'react';
+﻿import React from 'react';
 import { Button } from '../Button/Button';
 import { Countdown } from '../Countdown/Countdown';
 import { WalletListAwardApiResponse } from '../../Types/ApiResponse/accounts';

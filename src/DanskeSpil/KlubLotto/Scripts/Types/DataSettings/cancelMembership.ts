@@ -9,4 +9,4 @@ export type CancelMembershipDataSettings = {
   successPopupCtaLabel: string;
   successPopupText: string;
   successPopupTitle: string;
-};
+}

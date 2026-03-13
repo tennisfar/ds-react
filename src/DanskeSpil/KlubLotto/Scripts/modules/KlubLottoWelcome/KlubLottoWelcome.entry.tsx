@@ -12,7 +12,9 @@ class KlubLottoWelcomeEntry extends ComponentLoader {
 
   init() {
     const ReactApp = (props: WelcomeDataSettings) => {
-      return <Welcome {...props} />;
+      return (
+        <Welcome {...props} />
+      );
     };
 
     const root = createRoot(this.element);

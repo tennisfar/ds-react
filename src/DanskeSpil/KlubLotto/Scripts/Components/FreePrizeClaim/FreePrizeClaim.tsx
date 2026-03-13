@@ -1,5 +1,4 @@
-﻿// @ts-ignore
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { getUrlParam } from '../../Utils/urlParams';
 import useNumberGamesCouponData from '../../Hooks/useNumberGamesCouponData';
 import useRedeemAwardData from '../../Hooks/useRedeemAwardData';
@@ -116,7 +115,14 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
       setError(true);
       setLoading(false);
     }
-  }, [numberGamesCouponData]);
+  }, [numberGamesCouponData.isSuccess, numberGamesCouponData.isError, numberGamesCouponData.data]);
+
+  useEffect(() => {
+    if (couponData && !loading) {
+      setLoading(true);
+      location.href = receiptLink.url + `?coupon=${couponData.couponId}`;
+    }
+  }, [couponData, loading]);
 
   const handleRedeem = () => {
     setRedeem(true);
@@ -135,9 +141,11 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   }
 
   if (couponData) {
-    setLoading(true);
-    location.href = receiptLink.url + `?coupon=${couponData.couponId}&type=${numberGamesType}`;
-    return;
+    return (
+      <div className={'kl-free-prize-claim__loading'}>
+        <Spinner />
+      </div>
+    );
   }
 
   if (ticket?.claimStatus === 'NotRedeemed') {

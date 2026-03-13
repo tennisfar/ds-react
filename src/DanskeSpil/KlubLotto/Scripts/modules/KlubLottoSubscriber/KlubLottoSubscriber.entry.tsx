@@ -12,11 +12,13 @@ class KlubLottoSubscriberEntry extends ComponentLoader {
 
   init() {
     const ReactApp = (props: SubscriberDataSettings) => {
-      return <RedirectOnLogout {...props} />;
+      return (
+        <RedirectOnLogout {...props}/>
+      );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

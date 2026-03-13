@@ -17,14 +17,15 @@ const PopupPrizeExpires = ({ data, handleModalClose }: PopupProps) => {
   return (
     <>
       {title && <div className={'kl-popup-prize-expires__title'}>{title}</div>}
-      {image && <img src={image} alt={''} className={'kl-popup-prize-expires__image'} />}
+      {image && <img src={image} alt={''} className={'kl-popup-prize-expires__image'}/>}
 
       <div className={'kl-popup-prize-expires__countdown'}>
-        Udløber om
-        <Countdown dueDate={expireDate} />
+        <div>Udløber om</div>
+        <Countdown dueDate={expireDate}/>
       </div>
 
-      <div className={'kl-popup-prize-expires__footer'}>
+      <div
+        className={'kl-popup-prize-expires__footer'}>
         {buttons?.map((button, index) => {
           return (
             <Button
@@ -44,7 +45,7 @@ const PopupPrizeExpires = ({ data, handleModalClose }: PopupProps) => {
         })}
       </div>
 
-      <CelebrateBackground />
+      <CelebrateBackground/>
     </>
   );
 };

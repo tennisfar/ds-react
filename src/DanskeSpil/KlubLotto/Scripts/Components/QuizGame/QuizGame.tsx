@@ -5,19 +5,9 @@ import { output } from '../../Utils/output';
 import { getUrlParam } from '../../Utils/urlParams';
 import { GameDataSettings } from '../../Types/DataSettings/game';
 
-export const QuizGame = ({
-  gameType,
-  gameResultTexts,
-  linkBack,
-  successLottie,
-  submitQuizAnswerCtaLabel,
-}: GameDataSettings) => {
+export const QuizGame = ({ gameType, gameResultTexts, linkBack, successLottie, submitQuizAnswerCtaLabel }: GameDataSettings) => {
   const [gameDate, setGameDate] = useState(getUrlParam('date') || undefined);
-  const { currentQuestion, isLoading, error, submitAnswer, solution, result }: QuizFlowResult = useQuizFlow(
-    gameType,
-    gameDate,
-    setGameDate
-  );
+  const { currentQuestion, isLoading, error, submitAnswer, solution, result }: QuizFlowResult = useQuizFlow(gameType, gameDate, setGameDate);
 
   useEffect(() => {
     output('solution:', solution);

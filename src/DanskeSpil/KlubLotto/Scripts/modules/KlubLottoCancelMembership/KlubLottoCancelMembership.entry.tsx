@@ -18,13 +18,13 @@ class KlubLottoCancelMembershipEntry extends ComponentLoader {
     const ReactApp = (props: CancelMembershipDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <CancelMembership {...props} />
+          <CancelMembership {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

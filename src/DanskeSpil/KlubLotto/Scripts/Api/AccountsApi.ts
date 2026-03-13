@@ -1,15 +1,7 @@
 import ApiRequest from '@SharedScripts/Helpers/ApiRequest';
 import { isDevEnvironment } from '../Utils/environment';
 import { getDeviceType } from '../Utils/device';
-import {
-  CancelAccountApiResponse,
-  CreateAccountApiResponse,
-  RedeemAwardApiResponse,
-  TicketsApiResponse,
-  WalletApiResponse,
-  WalletCountApiResponse,
-  WalletListApiResponse,
-} from '../Types/ApiResponse/accounts';
+import { CancelAccountApiResponse, CreateAccountApiResponse, RedeemAwardApiResponse, TicketsApiResponse, WalletApiResponse, WalletCountApiResponse, WalletListApiResponse } from '../Types/ApiResponse/accounts';
 
 const baseUrl = DS.Config.KLUBLOTTO_API_URL;
 const withCredentials = isDevEnvironment();

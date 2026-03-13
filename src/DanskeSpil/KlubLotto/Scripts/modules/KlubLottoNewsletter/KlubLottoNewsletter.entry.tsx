@@ -18,13 +18,13 @@ class KlubLottoNewsletterEntry extends ComponentLoader {
     const ReactApp = (props: NewsletterDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <Newsletter {...props} />
+          <Newsletter {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

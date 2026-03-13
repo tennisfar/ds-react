@@ -18,13 +18,13 @@ class KlubLottoOldGamesEntry extends ComponentLoader {
     const ReactApp = (props: OldGamesDataSettings) => {
       return (
         <QueryClientProvider client={queryClient}>
-          <OldGames {...props} />
+          <OldGames {...props}/>
         </QueryClientProvider>
       );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

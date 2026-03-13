@@ -8,5 +8,7 @@ export const MyRewards = () => {
     return null;
   }
 
-  return <div className={'kl-my-rewards__content-prize-count'}>{data.count}</div>;
+  return (
+    <div className={'kl-my-rewards__content-prize-count'}>{data.count}</div>
+  );
 };

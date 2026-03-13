@@ -14,8 +14,11 @@ export const GameEntryLink = ({ gamesLink, onboardingLink }: GameEntryLinkDataSe
   }, []);
 
   return (
-    <Button href={link?.url} tracking={{ action: 'gameEntry' }} onClick={hasSeenOnboarding} inverted={true}>
-      {link?.text}
-    </Button>
+    <Button
+      href={link?.url}
+      tracking={{ action: 'gameEntry' }}
+      onClick={hasSeenOnboarding}
+      inverted={true}
+    >{link?.text}</Button>
   );
 };

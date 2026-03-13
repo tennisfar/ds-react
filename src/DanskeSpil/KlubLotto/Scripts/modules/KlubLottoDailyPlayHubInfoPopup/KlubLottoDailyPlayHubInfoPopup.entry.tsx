@@ -12,11 +12,13 @@ class KlubLottoDailyPlayHubInfoPopup extends ComponentLoader {
 
   init() {
     const ReactApp = (props: DailyPlayHubInfoPopupDataSettings) => {
-      return <DailyPlayHubInfoPopup {...props} />;
+      return (
+        <DailyPlayHubInfoPopup {...props}/>
+      );
     };
 
     const root = createRoot(this.element);
-    root.render(<ReactApp {...this.settings} />);
+    root.render(<ReactApp {...this.settings}/>);
   }
 }
 

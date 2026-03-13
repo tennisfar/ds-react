@@ -28,8 +28,8 @@ export const CountdownDigits = ({ timeLeft, prevTimeLeft, clearAnimations, label
   return (
     <div className={'kl-countdown__unit'}>
       <div className={'kl-countdown__digits'}>
-        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations} />
-        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations} />
+        <Digit timeLeft={timeLeft[0]} prevTimeLeft={prevTimeLeft[0]} clearAnimations={clearAnimations}/>
+        <Digit timeLeft={timeLeft[1]} prevTimeLeft={prevTimeLeft[1]} clearAnimations={clearAnimations}/>
       </div>
       <div className={'kl-countdown__unit-label'}>{label}</div>
     </div>

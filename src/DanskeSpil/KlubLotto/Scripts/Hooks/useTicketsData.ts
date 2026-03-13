@@ -6,7 +6,7 @@ const useTicketsData = () => {
   const { data, isLoading, isError, refetch, isRefetching } = useQuery<TicketsApiResponse>({
     queryKey: ['ticketsData'],
     queryFn: async () => {
-      return await getTickets();
+      return (await getTickets());
     },
   });
 
