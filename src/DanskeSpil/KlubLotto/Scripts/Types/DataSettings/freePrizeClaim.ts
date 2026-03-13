@@ -1,4 +1,5 @@
 ﻿import { WalletListAwardClaimType } from '../ApiResponse/accounts';
+import { SitecoreGenericLink } from '../sitecore';
 
 export type FreePrizeClaimDataProps = {
   type: WalletListAwardClaimType;
@@ -6,13 +7,11 @@ export type FreePrizeClaimDataProps = {
   claimText: string;
   claimDisclaimer: string;
   claimCtaLabel: string;
-  receiptTitle: string;
-  receiptText: string;
-  receiptDisclaimer: string;
   expiredTitle: string;
   redeemedTitle: string;
 };
 
 export type FreePrizeClaimDataSettings = {
   dataComponents: FreePrizeClaimDataProps[];
+  receiptLink: SitecoreGenericLink;
 };
