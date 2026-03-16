@@ -14,6 +14,7 @@ import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
 import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt'
 import { Route as KlublottoFreePrizeClaimClaimRouteImport } from './routes/klublotto/FreePrizeClaim-Claim'
 import { Route as KlublottoFreePrizeClaimRouteImport } from './routes/klublotto/FreePrizeClaim'
+import { Route as KlublottoDailyPlayHubRouteImport } from './routes/klublotto/DailyPlayHub'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,9 +43,15 @@ const KlublottoFreePrizeClaimRoute = KlublottoFreePrizeClaimRouteImport.update({
   path: '/klublotto/FreePrizeClaim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KlublottoDailyPlayHubRoute = KlublottoDailyPlayHubRouteImport.update({
+  id: '/klublotto/DailyPlayHub',
+  path: '/klublotto/DailyPlayHub',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
@@ -52,6 +59,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
@@ -60,6 +68,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
@@ -91,6 +103,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KlublottoDailyPlayHubRoute: typeof KlublottoDailyPlayHubRoute
   KlublottoFreePrizeClaimRoute: typeof KlublottoFreePrizeClaimRoute
   KlublottoFreePrizeClaimClaimRoute: typeof KlublottoFreePrizeClaimClaimRoute
   KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute
@@ -134,11 +147,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlublottoFreePrizeClaimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/klublotto/DailyPlayHub': {
+      id: '/klublotto/DailyPlayHub'
+      path: '/klublotto/DailyPlayHub'
+      fullPath: '/klublotto/DailyPlayHub'
+      preLoaderRoute: typeof KlublottoDailyPlayHubRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KlublottoDailyPlayHubRoute: KlublottoDailyPlayHubRoute,
   KlublottoFreePrizeClaimRoute: KlublottoFreePrizeClaimRoute,
   KlublottoFreePrizeClaimClaimRoute: KlublottoFreePrizeClaimClaimRoute,
   KlublottoFreePrizeClaimReceiptRoute: KlublottoFreePrizeClaimReceiptRoute,
