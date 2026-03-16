@@ -1,0 +1,5 @@
+﻿{
+  "paths": ["src/**/*.ts", "src/**/*.tsx"],
+  "ignored": [],
+  "port": 5004
+}

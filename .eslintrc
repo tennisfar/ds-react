@@ -1,0 +1,200 @@
+﻿{
+  "extends": [
+    "eslint:recommended",
+    "plugin:compat/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "polyfills": [
+      "Promise"
+    ]
+  },
+  "ignorePatterns": [],
+  "rules": {
+    "react/jsx-uses-vars": "error",
+    "indent": [ "error", 2 ],
+    "semi": [ "error", "always" ],
+    "no-console": 0,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-extra-semi": 2,
+    "no-empty": [
+      2,
+      { "allowEmptyCatch": true }
+    ],
+    "no-unused-vars": [
+      2,
+      {
+        "caughtErrorsIgnorePattern": "ignore",
+        "varsIgnorePattern": "ignore",
+        "argsIgnorePattern": "ignore"
+      }
+    ],
+
+    "no-eval": [ "error" ],
+    "no-extend-native": [ "error" ],
+    "no-script-url": [ "error" ],
+    "no-self-compare": [ "error" ],
+    "no-void": [ "error" ],
+    "radix": [ "error" ],
+    "camelcase": [ "error" ],
+    "no-sequences": [ "error" ],
+    "no-bitwise": [ "error" ],
+    "no-mixed-operators": [ "error" ],
+    "one-var": [ "error", "never" ],
+
+    "for-direction": "error",
+    "getter-return": "off",
+
+
+    "no-array-constructor": [ "error" ],
+    "no-new-wrappers": [ "error" ],
+
+    "no-prototype-builtins": "off",
+
+
+    "no-global-assign": "error",
+    "no-implicit-globals": "error",
+    "no-restricted-globals": ["error", "Event"],
+    "default-param-last": "error",
+    "no-new-func": "error",
+
+    "arrow-parens": ["error", "always"],
+    "arrow-spacing": ["error", { before: true, after: true }],
+    "no-confusing-arrow": ["error", {
+      allowParens: true,
+    }],
+    "no-useless-constructor": "error",
+    "template-curly-spacing": "error",
+
+    "array-bracket-spacing": ["error", "never"],
+    "block-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs", { allowSingleLine: true }],
+    "comma-spacing": ['error', { before: false, after: true }],
+    "comma-style": ["error", "last", {
+      exceptions: {
+        ArrayExpression: false,
+        ArrayPattern: false,
+        ArrowFunctionExpression: false,
+        CallExpression: false,
+        FunctionDeclaration: false,
+        FunctionExpression: false,
+        ImportDeclaration: false,
+        ObjectExpression: false,
+        ObjectPattern: false,
+        VariableDeclaration: false,
+        NewExpression: false,
+      }
+    }],
+    "computed-property-spacing": ["error", "never"],
+    "func-call-spacing": ["error", "never"],
+    "key-spacing": ["error", { beforeColon: false, afterColon: true }],
+    "keyword-spacing": ["error", {
+      before: true,
+      after: true,
+      overrides: {
+        return: { after: true },
+        throw: { after: true },
+        case: { after: true }
+      }
+    }],
+	"no-new-object": "error",
+    "no-trailing-spaces": ["error", {
+      skipBlankLines: false,
+      ignoreComments: false,
+    }],
+    "nonblock-statement-body-position": ["error", "beside", { overrides: {} }],
+    "object-curly-spacing": ["error", "always"],
+    "prefer-object-spread": "error",
+    "space-before-blocks": "error",
+    "space-before-function-paren": ["error", {
+      anonymous: "always",
+      named: "never",
+      asyncArrow: "always"
+    }],
+    "space-in-parens": ["error", "never"],
+    "space-infix-ops": "error",
+    "spaced-comment": ["error", "always", {
+      line: {
+        exceptions: ["-", "+"],
+        markers: ["=", "!", "/"],
+      },
+      block: {
+        exceptions: ["-", "+"],
+        markers: ["=", "!", ":", "::"],
+        balanced: true,
+      }
+    }],
+    "quote-props": ["error", "as-needed", { keywords: false, unnecessary: true, numbers: false }],
+    "quotes": ["error", "single", { avoidEscape: true }],
+    "jsx-quotes": ["error", "prefer-single"],
+  },
+  "globals": {
+    "defineDs": false,
+    "requireDs": false,
+    "DS": false,
+    "DSAPI": false,
+    "include": false,
+    "jasmine": false,
+    "Promise" : false,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "beforeEach": false
+  },
+  "overrides": [
+    {
+      "files": [],
+      "parserOptions": {
+        "ecmaVersion": 6
+      },
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": [],
+      "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+      },
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "excludedFiles": ["*.test*"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          2,
+          {
+            "caughtErrorsIgnorePattern": "ignore",
+            "varsIgnorePattern": "ignore",
+            "argsIgnorePattern": "ignore"
+          }
+        ]
+      }
+    }
+  ]
+}

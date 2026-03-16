@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "lint": "eslint .",
     "preview": "vite preview",
     "generate:styles": "npm run generate:styles:klublotto",
     "generate:styles:klublotto": "node ./src/ds-imports/klublotto-style-imports.js",
@@ -17,7 +16,10 @@
     "klublotto:copy:scripts:modules": "node ./src/ds-imports/klublotto-modules-imports.js",
     "klublotto:copy:scripts:types": "node ./src/ds-imports/klublotto-types-imports.js",
     "klublotto:copy:scripts:utils": "node ./src/ds-imports/klublotto-utils-imports.js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint": "npm run lint:js",
+    "lint:js": "npx esprint check",
+    "lint:js:fix": "npx esprint --fix check "
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
@@ -36,9 +38,12 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.17.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-compat": "^7.0.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "esprint": "^3.6.0",
     "globals": "^15.14.0",
     "less": "^4.2.2",
     "postcss": "^8.5.1",
