@@ -10,11 +10,12 @@ export type GameDataSettings = {
     gameFailedLotNotGranted: string;
   };
   gameType:
-    | 'quiz'
-    | 'ordknuden'
-    | 'sudoku'
+    | 'block'
     | 'krydsord'
-    | 'ordklover';
+    | 'ordklover'
+    | 'ordknuden'
+    | 'quiz'
+    | 'sudoku';
   linkBack: SitecoreGenericLink;
   submitQuizAnswerCtaLabel: string;
   successLottie: SitecoreFile;
