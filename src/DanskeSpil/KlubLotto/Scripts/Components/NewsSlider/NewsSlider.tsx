@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, useCallback } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NewsSliderDataSettings } from '../../Types/DataSettings/newsSlider';
 
 export const NewsSlider = ({ sliderSelector }: NewsSliderDataSettings) => {

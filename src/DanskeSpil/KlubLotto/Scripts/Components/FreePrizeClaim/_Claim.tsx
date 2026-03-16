@@ -34,8 +34,8 @@ export const Claim = ({ ticket, numberGamesType, gameRows, handleRedeem, claimPr
       </div>
 
       <div>
-        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
-        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: text }} />
+        <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
+        <div className={'kl-free-prize-claim__text'} dangerouslySetInnerHTML={{ __html: text }}/>
       </div>
 
       <div>
@@ -86,7 +86,7 @@ export const Claim = ({ ticket, numberGamesType, gameRows, handleRedeem, claimPr
 
       <div className={'kl-free-prize-claim__countdown'}>
         <div>Udløber om</div>
-        <Countdown dueDate={expires} />
+        <Countdown dueDate={expires}/>
       </div>
       <div className={'kl-free-prize-claim__cta'}>
         <Button tracking={{ action: 'lottoRowClaim_claim' }} onClick={handleRedeem}>

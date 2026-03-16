@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useGameLauncherData from './useGameLauncherData';
-import { useQuizQuestion, QuizQuestionResult } from './useQuizQuestionData';
+import { QuizQuestionResult, useQuizQuestion } from './useQuizQuestionData';
 import useMarkGameAsCompleted from './useMarkGameAsCompleted';
 import { GamePostMessageState, GameType } from '../Types/game';
 import { ResultState } from '../Types/useGameFlow';

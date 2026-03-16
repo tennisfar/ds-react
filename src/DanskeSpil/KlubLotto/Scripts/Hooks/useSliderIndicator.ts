@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const useSliderIndicatorCountdown = (querySelector: string) => {
   const [dotSelected, setDotSelected] = useState<number | null>(null);

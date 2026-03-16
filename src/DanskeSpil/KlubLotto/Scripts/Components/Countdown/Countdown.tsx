@@ -16,8 +16,8 @@ type CountdownProps = {
   dueDate?: string;
 };
 
-export const Countdown = ({dueDate}: CountdownProps) => {
-  const { timeLeft, prevTimeLeft, clearAnimations } = useCountdown({dueDate});
+export const Countdown = ({ dueDate }: CountdownProps) => {
+  const { timeLeft, prevTimeLeft, clearAnimations } = useCountdown({ dueDate });
 
   const timeUnits: TimeUnit[] = [
     { key: 'd', label: 'Dage' },

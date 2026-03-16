@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useGameLauncherData from './useGameLauncherData';
 import useMarkGameAsCompleted from './useMarkGameAsCompleted';
 import { output } from '../Utils/output';

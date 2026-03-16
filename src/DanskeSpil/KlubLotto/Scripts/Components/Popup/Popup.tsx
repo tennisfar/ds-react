@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIsMount } from '../../Hooks/useIsMount';
 import { PopupDataProps, PopupVariantProps } from '../../Types/popup';
 import PopupBasic from './PopupBasic';
@@ -46,18 +45,18 @@ const Popup = () => {
   const handleModalEvent = (event: CustomEvent<PopupDataProps>) => {
     const popupData = event.detail || {};
     switch (event.type) {
-    case 'klublotto:modal:open':
-      handleModalOpen(popupData);
-      break;
-    case 'klublotto:modal:close':
-      handleModalClose();
-      break;
-    case 'klublotto:overlay:clicked':
-      data?.onOverlayClicked?.();
-      handleModalClose();
-      break;
-    default:
-      break;
+      case 'klublotto:modal:open':
+        handleModalOpen(popupData);
+        break;
+      case 'klublotto:modal:close':
+        handleModalClose();
+        break;
+      case 'klublotto:overlay:clicked':
+        data?.onOverlayClicked?.();
+        handleModalClose();
+        break;
+      default:
+        break;
     }
   };
 
@@ -81,22 +80,22 @@ const Popup = () => {
 
   const getVariant = (variant: PopupVariantProps) => {
     switch (variant) {
-    case 'basic':
-      return 'kl-popup-basic';
-    case 'welcome':
-      return 'kl-popup-welcome';
-    case 'newPrize':
-      return 'kl-popup-new-prize';
-    case 'prizeExpires':
-      return 'kl-popup-prize-expires';
-    case 'error':
-      return 'kl-popup-error';
-    case 'simple':
-      return 'kl-popup-simple';
-    case 'firstLot':
-      return 'kl-popup-first-lot-celebration';
-    default:
-      return '';
+      case 'basic':
+        return 'kl-popup-basic';
+      case 'welcome':
+        return 'kl-popup-welcome';
+      case 'newPrize':
+        return 'kl-popup-new-prize';
+      case 'prizeExpires':
+        return 'kl-popup-prize-expires';
+      case 'error':
+        return 'kl-popup-error';
+      case 'simple':
+        return 'kl-popup-simple';
+      case 'firstLot':
+        return 'kl-popup-first-lot-celebration';
+      default:
+        return '';
     }
   };
 

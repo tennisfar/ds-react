@@ -26,7 +26,7 @@ export const Redeemed = ({ ticket, numberGamesType, redeemedProps }: Props) => {
         />
       </div>
 
-      <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
+      <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
 
       <div className={'kl-free-prize-claim__expire-date'}>
         {redeemed

@@ -131,19 +131,19 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   if (loading) {
     return (
       <div className={'kl-free-prize-claim__loading'}>
-        <Spinner />
+        <Spinner/>
       </div>
     );
   }
 
   if (error) {
-    return <ErrorDefaultOutput className={'kl-free-prize-claim__error'} variant={'dark'} />;
+    return <ErrorDefaultOutput className={'kl-free-prize-claim__error'} variant={'dark'}/>;
   }
 
   if (couponData) {
     return (
       <div className={'kl-free-prize-claim__loading'}>
-        <Spinner />
+        <Spinner/>
       </div>
     );
   }
@@ -161,10 +161,10 @@ export const FreePrizeClaim = ({ dataComponents, receiptLink }: FreePrizeClaimDa
   }
 
   if (ticket?.claimStatus === 'Expired') {
-    return <Expired ticket={ticket} numberGamesType={numberGamesType} expiredProps={expiredProps} />;
+    return <Expired ticket={ticket} numberGamesType={numberGamesType} expiredProps={expiredProps}/>;
   }
 
   if (ticket?.claimStatus === 'Redeemed') {
-    return <Redeemed ticket={ticket} numberGamesType={numberGamesType} redeemedProps={redeemedProps} />;
+    return <Redeemed ticket={ticket} numberGamesType={numberGamesType} redeemedProps={redeemedProps}/>;
   }
 };

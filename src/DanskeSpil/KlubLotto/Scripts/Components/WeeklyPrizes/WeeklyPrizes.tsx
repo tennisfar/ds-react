@@ -24,11 +24,11 @@ export const WeeklyPrizes = ({ linkToPrizePage }: WeeklyPrizesDataSettings) => {
           const typedPrize = prize as PrizeApiResponse;
           return (
             <a href={`${linkToPrizePage?.url}?praemie=${key}`}
-              onClick={() => {
-                trackEventOnRedirect({ action: 'weeklyPrizes_click', label: typedPrize.title });
-              }}
-              key={key}
-              className={'kl-weekly-prizes__item'}>
+               onClick={() => {
+                 trackEventOnRedirect({ action: 'weeklyPrizes_click', label: typedPrize.title });
+               }}
+               key={key}
+               className={'kl-weekly-prizes__item'}>
               <div className={'kl-weekly-prizes__background'}></div>
               <div className={'kl-weekly-prizes__image'}>
                 <img src={typedPrize.sprite} alt={typedPrize.title}/>

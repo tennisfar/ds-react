@@ -36,7 +36,7 @@ export const Receipt = ({ couponData, receiptProps }: ReceiptProps) => {
 
       <div className={'kl-lotto-row-claim__receipt'}>
         <div className={'kl-lotto-row-claim__receipt-paper'}
-          style={{ backgroundImage: couponBackgroundUrl }}>
+             style={{ backgroundImage: couponBackgroundUrl }}>
           <img src={lottoLogoUrl} alt={''} className={'kl-lotto-row-claim__receipt-logo'}/>
           <div className={'kl-lotto-row-claim__receipt-date'}>
             {transactionDate

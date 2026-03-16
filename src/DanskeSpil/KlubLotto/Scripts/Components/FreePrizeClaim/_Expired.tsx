@@ -27,7 +27,7 @@ export const Expired = ({ ticket, numberGamesType, expiredProps }: Props) => {
         />
       </div>
 
-      <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }} />
+      <div className={'kl-free-prize-claim__title'} dangerouslySetInnerHTML={{ __html: title }}/>
 
       <div className={'kl-free-prize-claim__expire-date'}>
         {expires
@@ -44,11 +44,11 @@ export const Expired = ({ ticket, numberGamesType, expiredProps }: Props) => {
         Udløber om
         <div className={'kl-countdown'}>
           <div className={'kl-countdown__unit-group'}>
-            <CountdownDigits timeLeft={'00'} prevTimeLeft={'00'} clearAnimations={true} label={'Min'} />
+            <CountdownDigits timeLeft={'00'} prevTimeLeft={'00'} clearAnimations={true} label={'Min'}/>
           </div>
 
           <div className={'kl-countdown__unit-group'}>
-            <CountdownDigits timeLeft={'00'} prevTimeLeft={'00'} clearAnimations={true} label={'Sek'} />
+            <CountdownDigits timeLeft={'00'} prevTimeLeft={'00'} clearAnimations={true} label={'Sek'}/>
           </div>
         </div>
       </div>
