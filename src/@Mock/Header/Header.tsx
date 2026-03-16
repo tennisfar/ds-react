@@ -4,7 +4,7 @@ import dsLogo from './logo-ds.svg';
 import klublottoLogo from './logo-klublotto.svg';
 import middle from './middle.svg';
 import user from './user.svg';
-import { useUrlParam } from '../Hooks/useUrlParam.ts';
+import { useUrlParam } from '../Hooks/useUrlParam';
 import { useNavigate } from '@tanstack/react-router';
 import React from 'react';
 
@@ -25,7 +25,7 @@ export const Header = ({ theme }: { theme: string }) => {
 
     // Navigate with the updated search params
     navigate({
-      // @ts-ignore
+      // @ts-expect-error - Object.fromEntries is not recognized by the type system
       search: Object.fromEntries(searchParams),
       replace: true,
     });
@@ -39,10 +39,10 @@ export const Header = ({ theme }: { theme: string }) => {
 
       <div className={`ds-navigation ds-navigation--${theme}`} onClick={handleNavigationClick}>
         <div className="ds-navigation-main-menu">
-          <img src={burger} className="ds-navigation__burger" alt="" />
-          <img src={logo} className="ds-navigation__logo" alt="" />
-          <img src={middle} className="ds-navigation__middle" alt="" />
-          <img src={user} className="ds-navigation__user" alt="" />
+          <img src={burger} className="ds-navigation__burger" alt=""/>
+          <img src={logo} className="ds-navigation__logo" alt=""/>
+          <img src={middle} className="ds-navigation__middle" alt=""/>
+          <img src={user} className="ds-navigation__user" alt=""/>
         </div>
       </div>
     </>

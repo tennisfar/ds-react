@@ -50,7 +50,7 @@ export const AppToggle = () => {
         strokeLinejoin="round"
         className="lucide lucide-chevron-down-icon lucide-chevron-down"
       >
-        <path d="m6 9 6 6 6-6" />
+        <path d="m6 9 6 6 6-6"/>
       </svg>
     </div>
   );
