@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": 34,
+    "url": "https://uat-block.klublotto.danskespil.mgame.nu/",
+    "game_id": "block",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "url": "internal",
+    "game_id": "quiz",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "url": "https://klub-lotto.immerspiele.com/games/present/clover",
+    "game_id": "ordklover",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "url": "https://iframes.krydsord.dk/?s=Danske_Spil_Daglig&prod=0",
+    "game_id": "krydsord",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": false
+  },
+  {
+    "id": 1,
+    "url": "https://klub-lotto.immerspiele.com/games/present/ordknuden",
+    "game_id": "ordknuden",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "url": "https://uat-sudoku.klublotto.danskespil.mgame.nu/?difficulty=40",
+    "game_id": "sudoku",
+    "start": "2025-02-06T15:24:13+01:00",
+    "end": "2125-02-06T15:24:13+01:00",
+    "completed": false
+  }
+]

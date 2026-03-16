@@ -4,12 +4,13 @@ import couponData from '@ApiData/NumberGamesCoupon/coupon.json';
 import PageErrorMessages from '@ApiData/NumberGamesCoupon/PageErrorMessages.json';
 import accountsWalletListData from '@ApiData/KlubLotto/accounts/wallet/list.json';
 import accountsWallet1234RedeemData from '@ApiData/KlubLotto/accounts/wallet/1234/redeem.json';
+import gamesData from '@ApiData/KlubLotto/games.json';
 
 const ApiRequest = async ({
-  url,
-  withCredentials,
-  timeout = 20,
-}: {
+                            url,
+                            withCredentials,
+                            timeout = 20,
+                          }: {
   url: string;
   withCredentials?: boolean;
   timeout?: number;
@@ -28,6 +29,10 @@ const ApiRequest = async ({
 
   if (url.includes('/accounts/tickets')) {
     return ticketsData;
+  }
+
+  if (url.includes('dlo/games')) {
+    return gamesData;
   }
 
   if (url.includes('numbergames-coupon/v2/coupon')) {
