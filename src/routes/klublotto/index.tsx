@@ -13,5 +13,6 @@ function RouteComponent() {
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Claim">FreePrizeClaim Claim</Link>
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim">FreePrizeClaim</Link>
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaimReceipt">FreePrizeClaimReceipt</Link>
+<Link className="dsr-routes__link" to="/klublotto/PromotionBanner">PromotionBanner</Link>
   </div>
 }
