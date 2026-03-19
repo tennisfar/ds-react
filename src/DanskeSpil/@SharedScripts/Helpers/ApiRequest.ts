@@ -3,24 +3,23 @@ import ticketsData from '@ApiData/KlubLotto/accounts/tickets.json';
 import couponData from '@ApiData/NumberGamesCoupon/coupon.json';
 import PageErrorMessages from '@ApiData/NumberGamesCoupon/PageErrorMessages.json';
 import accountsWalletListData from '@ApiData/KlubLotto/accounts/wallet/list.json';
+import accountsWalletCountData from '@ApiData/KlubLotto/accounts/wallet/count.json';
 import accountsWallet1234RedeemData from '@ApiData/KlubLotto/accounts/wallet/1234/redeem.json';
 import gamesData from '@ApiData/KlubLotto/games.json';
 
-const ApiRequest = async ({
-                            url,
-                            withCredentials,
-                            timeout = 20,
-                          }: {
-  url: string;
-  withCredentials?: boolean;
-  timeout?: number;
+const ApiRequest = async ({ url, withCredentials, timeout = 20, }: {
+  url: string; withCredentials?: boolean; timeout?: number;
 }) => {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 10));
 
   if (url) console.error('ApiRequest: ', url);
 
   if (url.includes('dlo/accounts/wallet/1234/redeem')) {
     return accountsWallet1234RedeemData;
+  }
+
+  if (url.includes('dlo/accounts/wallet/count')) {
+    return accountsWalletCountData;
   }
 
   if (url.includes('dlo/accounts/wallet/list')) {
