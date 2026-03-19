@@ -1,10 +1,8 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
-import './styles/index.less';
-import './styles/tailwind.less';
-import './styles/klublotto.less';
-
+import './styles/App.less';
+import './styles/DanskeSpil/KlubLotto.less';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,7 +26,7 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
       </QueryClientProvider>
     </StrictMode>
   );

@@ -1,11 +1,19 @@
 const dsPath = 'C:/Projects/danskespil-website/';
-const repPath = 'C:/Projects/ds-react/';
+const mockedPath = 'C:/Projects/ds-react/';
 
-export const PATHS = {
-  KlubLotto: dsPath + 'Website/Components/DanskeSpil/Domain/Feature.KlubLotto',
-  ApiData: repPath + 'src/@ApiData',
-  Ensighten: repPath + 'src/DanskeSpil/@Ensighten',
-  ErrorHandling: repPath + 'src/DanskeSpil/@ErrorHandling',
-  Mock: repPath + 'src/@Mock',
-  SharedScripts: repPath + 'src/DanskeSpil/@SharedScripts',
-};
+export const PATH = {
+  DS: {
+    COMPONENTS: dsPath + 'Website/Components',
+    KLUBLOTTO: dsPath + 'Website/Components/DanskeSpil/Domain/Feature.KlubLotto',
+  },
+  MOCK: {
+    API_DATA: mockedPath + 'src/@ApiData',
+    ENSIGHTEN: mockedPath + 'src/DanskeSpil/@Ensighten',
+    ERRORHANDLING: mockedPath + 'src/DanskeSpil/@ErrorHandling',
+    SHARED_SCRIPTS: mockedPath + 'src/DanskeSpil/@SharedScripts',
+    MOCK: mockedPath + 'src/@Mock',
+    KLUBLOTTO: {
+      VIEWS: mockedPath + 'src/DanskeSpil/KlubLotto/Views',
+    },
+  }
+}

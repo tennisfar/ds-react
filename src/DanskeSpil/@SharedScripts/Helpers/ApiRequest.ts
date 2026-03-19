@@ -1,11 +1,11 @@
 ﻿// @ts-nocheck
-import ticketsData from '@ApiData/KlubLotto/accounts/tickets.json';
-import couponData from '@ApiData/NumberGamesCoupon/coupon.json';
-import PageErrorMessages from '@ApiData/NumberGamesCoupon/PageErrorMessages.json';
-import accountsWalletListData from '@ApiData/KlubLotto/accounts/wallet/list.json';
-import accountsWalletCountData from '@ApiData/KlubLotto/accounts/wallet/count.json';
-import accountsWallet1234RedeemData from '@ApiData/KlubLotto/accounts/wallet/1234/redeem.json';
-import gamesData from '@ApiData/KlubLotto/games.json';
+import ticketsData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/tickets.json';
+import couponData from '@PATH.MOCK.API_DATA/NumberGamesCoupon/coupon.json';
+import PageErrorMessages from '@PATH.MOCK.API_DATA/NumberGamesCoupon/PageErrorMessages.json';
+import accountsWalletListData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/wallet/list.json';
+import accountsWalletCountData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/wallet/count.json';
+import accountsWallet1234RedeemData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/wallet/1234/redeem.json';
+import gamesData from '@PATH.MOCK.API_DATA/KlubLotto/games.json';
 
 const ApiRequest = async ({ url, withCredentials, timeout = 20, }: {
   url: string; withCredentials?: boolean; timeout?: number;

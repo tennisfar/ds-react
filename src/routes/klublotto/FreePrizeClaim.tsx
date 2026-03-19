@@ -1,10 +1,10 @@
 // @ts-nocheck
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { useEffect } from 'react';
-import { FreePrizeClaim } from '@KlubLotto/Scripts/Components/FreePrizeClaim/FreePrizeClaim';
-import { PageHeader } from '../../DanskeSpil/KlubLotto/Views/PageHeader';
-import { WalletListAwardClaimType } from '@KlubLotto/Scripts/Types/ApiResponse/accounts';
-import { SitecoreGenericLink } from '@KlubLotto/Scripts/Types/sitecore';
+import { FreePrizeClaim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/FreePrizeClaim';
+import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { WalletListAwardClaimType } from '@PATH.DS.KLUBLOTTO/Scripts/Types/ApiResponse/accounts';
+import { SitecoreGenericLink } from '@PATH.DS.KLUBLOTTO/Scripts/Types/sitecore';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaim')({
   component: RouteComponent,

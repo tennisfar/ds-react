@@ -1,5 +1,6 @@
-﻿import './app-toggle.less';
-import { useUrlParam } from '@Mock/Hooks/useUrlParam';
+﻿// @ts-nocheck
+import './app-toggle.less';
+import { useUrlParam } from '@PATH.MOCK.MOCK/Hooks/useUrlParam';
 import { useNavigate } from '@tanstack/react-router';
 
 export const AppToggle = () => {

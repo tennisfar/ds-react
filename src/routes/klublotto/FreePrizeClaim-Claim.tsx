@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
-import { Claim } from '@KlubLotto/Scripts/Components/FreePrizeClaim/_Claim';
-import { PageHeader } from '../../DanskeSpil/KlubLotto/Views/PageHeader';
-import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@Mock/Utils/dates';
+import { Claim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/_Claim';
+import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@PATH.MOCK.MOCK/Utils/dates';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaim-Claim')({
   component: RouteComponent,

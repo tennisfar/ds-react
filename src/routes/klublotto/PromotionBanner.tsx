@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
-import { ContestOverview } from '../../DanskeSpil/KlubLotto/Views/ContestOverview';
-import { PromotionBanner } from '../../DanskeSpil/KlubLotto/Views/PromotionBanner';
+import { ContestOverview } from '@PATH.KLUBLOTTO.VIEWS/ContestOverview';
+import { PromotionBanner } from '@PATH.KLUBLOTTO.VIEWS/PromotionBanner';
 
 export const Route = createFileRoute('/klublotto/PromotionBanner')({
   component: RouteComponent,
@@ -13,10 +13,8 @@ export const Route = createFileRoute('/klublotto/PromotionBanner')({
 function RouteComponent() {
   return (
     <>
-
       <PromotionBanner/>
       <ContestOverview/>
-
     </>
   );
 }

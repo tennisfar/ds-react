@@ -1,11 +1,9 @@
-@import 'ds-core/Default-page';
-@import 'ds-core/Grid';
+﻿@import "@PATH.DS.COMPONENTS/DanskeSpil/Project/Design/Styles/Framework/Default-page.less";
 @import 'ds-core/Fonts';
+@import './tailwind.less';
 
 :root {
-  --header-height: calc(
-    ~'var(--navigation-compliance-bar-height, 0rem) + var(--navigation-main-menu-height, 0rem) + var(--navigation-sub-menu-height, 0rem)'
-  );
+  --header-height: calc(~'var(--navigation-compliance-bar-height, 0rem) + var(--navigation-main-menu-height, 0rem) + var(--navigation-sub-menu-height, 0rem)');
 }
 
 :root:has(.responsible-gaming__top) {
