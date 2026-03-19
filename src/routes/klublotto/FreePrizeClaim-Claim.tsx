@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
-import { Claim } from '../../DanskeSpil/KlubLotto/Scripts/Components/FreePrizeClaim/_Claim';
+import { Claim } from '@KlubLotto/Scripts/Components/FreePrizeClaim/_Claim';
 import { PageHeader } from '../../DanskeSpil/KlubLotto/Views/PageHeader';
 import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@Mock/Utils/dates';
 
