@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "preview": "vite preview",
-    "generate:styles": "npm run generate:styles:klublotto && npm run generate:styles:quick && npm run generate:styles:avalon-components",
+    "generate:styles": "npm run generate:styles:klublotto && npm run generate:styles:quick",
     "generate:styles:klublotto": "node ./src/ds-imports/klublotto-style-imports.js",
     "generate:styles:quick": "node ./src/ds-imports/quick-style-imports.js",
     "generate:styles:avalon-components": "node ./src/ds-imports/avalon-components-style-imports.js",
