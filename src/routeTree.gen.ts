@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
 import { Route as KlublottoTitleRouteImport } from './routes/klublotto/Title'
 import { Route as KlublottoPromotionBannerRouteImport } from './routes/klublotto/PromotionBanner'
+import { Route as KlublottoNewPrizeNotificationRouteImport } from './routes/klublotto/NewPrizeNotification'
 import { Route as KlublottoMyRewardsRouteImport } from './routes/klublotto/MyRewards'
 import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klublotto/FreePrizeClaimReceipt'
 import { Route as KlublottoFreePrizeClaimClaimRouteImport } from './routes/klublotto/FreePrizeClaim-Claim'
@@ -38,6 +39,12 @@ const KlublottoPromotionBannerRoute =
   KlublottoPromotionBannerRouteImport.update({
     id: '/klublotto/PromotionBanner',
     path: '/klublotto/PromotionBanner',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KlublottoNewPrizeNotificationRoute =
+  KlublottoNewPrizeNotificationRouteImport.update({
+    id: '/klublotto/NewPrizeNotification',
+    path: '/klublotto/NewPrizeNotification',
     getParentRoute: () => rootRouteImport,
   } as any)
 const KlublottoMyRewardsRoute = KlublottoMyRewardsRouteImport.update({
@@ -75,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
   '/klublotto/MyRewards': typeof KlublottoMyRewardsRoute
+  '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto': typeof KlublottoIndexRoute
@@ -86,6 +94,7 @@ export interface FileRoutesByTo {
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
   '/klublotto/MyRewards': typeof KlublottoMyRewardsRoute
+  '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto': typeof KlublottoIndexRoute
@@ -98,6 +107,7 @@ export interface FileRoutesById {
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
   '/klublotto/FreePrizeClaimReceipt': typeof KlublottoFreePrizeClaimReceiptRoute
   '/klublotto/MyRewards': typeof KlublottoMyRewardsRoute
+  '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/': typeof KlublottoIndexRoute
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
     | '/klublotto/MyRewards'
+    | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto'
@@ -122,6 +133,7 @@ export interface FileRouteTypes {
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
     | '/klublotto/MyRewards'
+    | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto'
@@ -133,6 +145,7 @@ export interface FileRouteTypes {
     | '/klublotto/FreePrizeClaim-Claim'
     | '/klublotto/FreePrizeClaimReceipt'
     | '/klublotto/MyRewards'
+    | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto/'
@@ -145,6 +158,7 @@ export interface RootRouteChildren {
   KlublottoFreePrizeClaimClaimRoute: typeof KlublottoFreePrizeClaimClaimRoute
   KlublottoFreePrizeClaimReceiptRoute: typeof KlublottoFreePrizeClaimReceiptRoute
   KlublottoMyRewardsRoute: typeof KlublottoMyRewardsRoute
+  KlublottoNewPrizeNotificationRoute: typeof KlublottoNewPrizeNotificationRoute
   KlublottoPromotionBannerRoute: typeof KlublottoPromotionBannerRoute
   KlublottoTitleRoute: typeof KlublottoTitleRoute
   KlublottoIndexRoute: typeof KlublottoIndexRoute
@@ -178,6 +192,13 @@ declare module '@tanstack/react-router' {
       path: '/klublotto/PromotionBanner'
       fullPath: '/klublotto/PromotionBanner'
       preLoaderRoute: typeof KlublottoPromotionBannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klublotto/NewPrizeNotification': {
+      id: '/klublotto/NewPrizeNotification'
+      path: '/klublotto/NewPrizeNotification'
+      fullPath: '/klublotto/NewPrizeNotification'
+      preLoaderRoute: typeof KlublottoNewPrizeNotificationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/klublotto/MyRewards': {
@@ -225,6 +246,7 @@ const rootRouteChildren: RootRouteChildren = {
   KlublottoFreePrizeClaimClaimRoute: KlublottoFreePrizeClaimClaimRoute,
   KlublottoFreePrizeClaimReceiptRoute: KlublottoFreePrizeClaimReceiptRoute,
   KlublottoMyRewardsRoute: KlublottoMyRewardsRoute,
+  KlublottoNewPrizeNotificationRoute: KlublottoNewPrizeNotificationRoute,
   KlublottoPromotionBannerRoute: KlublottoPromotionBannerRoute,
   KlublottoTitleRoute: KlublottoTitleRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,
