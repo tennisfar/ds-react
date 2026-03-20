@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite --host",
     "preview": "vite preview",
-    "generate:styles": "npm run generate:styles:klublotto",
+    "generate:styles": "npm run generate:styles:klublotto && npm run generate:styles:quick && npm run generate:styles:avalon-components",
     "generate:styles:klublotto": "node ./src/ds-imports/klublotto-style-imports.js",
+    "generate:styles:quick": "node ./src/ds-imports/quick-style-imports.js",
+    "generate:styles:avalon-components": "node ./src/ds-imports/avalon-components-style-imports.js",
     "generate:routes": "node ./src/ds-imports/route-index-generator.js",
     "klublotto:copy:scripts": "npm run klublotto:copy:scripts:components && npm run klublotto:copy:scripts:hooks && npm run klublotto:copy:scripts:types && npm run klublotto:copy:scripts:utils && npm run klublotto:copy:scripts:api && npm run klublotto:copy:scripts:modules",
     "klublotto:copy:scripts:api": "node ./src/ds-imports/klublotto-api-imports.js",

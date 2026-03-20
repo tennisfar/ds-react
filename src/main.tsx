@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import './styles/App.less';
 import './styles/DanskeSpil/KlubLotto.less';
+import './styles/DanskeSpil/AvalonComponents.less';
+import './styles/DanskeSpil/Quick.less';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
