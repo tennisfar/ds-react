@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
+import { Route as KlublottoWelcomeRouteImport } from './routes/klublotto/Welcome'
 import { Route as KlublottoTitleRouteImport } from './routes/klublotto/Title'
 import { Route as KlublottoPromotionBannerRouteImport } from './routes/klublotto/PromotionBanner'
 import { Route as KlublottoNewPrizeNotificationRouteImport } from './routes/klublotto/NewPrizeNotification'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const KlublottoIndexRoute = KlublottoIndexRouteImport.update({
   id: '/klublotto/',
   path: '/klublotto/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlublottoWelcomeRoute = KlublottoWelcomeRouteImport.update({
+  id: '/klublotto/Welcome',
+  path: '/klublotto/Welcome',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KlublottoTitleRoute = KlublottoTitleRouteImport.update({
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/klublotto': typeof KlublottoIndexRoute
 }
 export interface FileRoutesByTo {
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/klublotto': typeof KlublottoIndexRoute
 }
 export interface FileRoutesById {
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/klublotto/NewPrizeNotification': typeof KlublottoNewPrizeNotificationRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/klublotto/': typeof KlublottoIndexRoute
 }
 export interface FileRouteTypes {
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/Welcome'
     | '/klublotto'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/Welcome'
     | '/klublotto'
   id:
     | '__root__'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '/klublotto/NewPrizeNotification'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/Welcome'
     | '/klublotto/'
   fileRoutesById: FileRoutesById
 }
@@ -161,6 +173,7 @@ export interface RootRouteChildren {
   KlublottoNewPrizeNotificationRoute: typeof KlublottoNewPrizeNotificationRoute
   KlublottoPromotionBannerRoute: typeof KlublottoPromotionBannerRoute
   KlublottoTitleRoute: typeof KlublottoTitleRoute
+  KlublottoWelcomeRoute: typeof KlublottoWelcomeRoute
   KlublottoIndexRoute: typeof KlublottoIndexRoute
 }
 
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       path: '/klublotto'
       fullPath: '/klublotto'
       preLoaderRoute: typeof KlublottoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klublotto/Welcome': {
+      id: '/klublotto/Welcome'
+      path: '/klublotto/Welcome'
+      fullPath: '/klublotto/Welcome'
+      preLoaderRoute: typeof KlublottoWelcomeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/klublotto/Title': {
@@ -249,6 +269,7 @@ const rootRouteChildren: RootRouteChildren = {
   KlublottoNewPrizeNotificationRoute: KlublottoNewPrizeNotificationRoute,
   KlublottoPromotionBannerRoute: KlublottoPromotionBannerRoute,
   KlublottoTitleRoute: KlublottoTitleRoute,
+  KlublottoWelcomeRoute: KlublottoWelcomeRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,
 }
 export const routeTree = rootRouteImport

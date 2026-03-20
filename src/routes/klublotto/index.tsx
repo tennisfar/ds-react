@@ -17,5 +17,6 @@ function RouteComponent() {
 <Link className="dsr-routes__link" to="/klublotto/NewPrizeNotification">NewPrizeNotification</Link>
 <Link className="dsr-routes__link" to="/klublotto/PromotionBanner">PromotionBanner</Link>
 <Link className="dsr-routes__link" to="/klublotto/Title">Title</Link>
+<Link className="dsr-routes__link" to="/klublotto/Welcome">Welcome</Link>
   </div>
 }
