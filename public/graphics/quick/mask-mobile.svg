@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333 130">
+    <!-- Everything hidden -->
+    <rect width="100%" height="100%" fill="black"/>
+
+    <!-- The visible "window" -->
+    <rect x="0" y="0" width="333" height="130" rx="26" ry="26" fill="white"/>
+</svg>

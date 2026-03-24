@@ -1,10 +1,55 @@
 import { createFileRoute } from '@tanstack/react-router'
+import './HeroDeckSliderSpot.less'
 
 export const Route = createFileRoute('/quick/HeroDeckSliderSpot')({
   component: RouteComponent,
 })
 
-const html = `
+const newHtml = `
+<div class="quick-games">
+<div class="hero-deck__background xxx__background" style="background-image: url('https://ds-static.dk/dlo/-/media/a332a93629bd4664b54c3a87b6b69cfe.jpg')">
+<div class="container hero-deck__slider-container xxx__slider-container">
+
+         <div class="tns-outerZZZ" id="tns1-ow">
+            <div id="tns1-mwZZZ" class="tns-ovh">
+               <div class="tns-innerZZZ" id="tns1-iw">
+               
+    <div class="xxx">
+
+    <div class="hero-deck__slider xxx__inner">
+        ${`
+          <div class="card card--micro card--no-meta has-events xxx__card" data-description="Vind op til 500.000 kr. ">
+             <a href="/quick/spil/fuglevenner-droemmeland" data-href="/quick/spil/fuglevenner-droemmeland" class="card__link">
+                <div class="ribbon ribbon-top-left" title="Top 10"><span>Top 10</span></div>
+                <div class="card__wrapper">
+                   <div class="card__images">
+                      <img class="card-image__overlay" loading="lazy" src="https://ds-static.dk/dlo/-/media/3db7b1085d224716a1b5ce58ecea8fba.png" alt="Fuglevenner Drømmeland">                 
+                      <img class="card-image__background" loading="lazy" src="https://ds-static.dk/dlo/-/media/04c4ea06d8f14486b9af24e67bb5b20d.jpg" alt="Fuglevenner Drømmeland">
+                   </div>
+                   <div class="card__content">
+                      <div class="card__labels">
+                         <div class="card__label card__label--price"><span class="price">SPIL NU - 5 kr.</span></div>
+                      </div>
+                   </div>
+                </div>
+             </a>
+             <span class="card__counter"></span>
+             <div class="card__meta"><span class="card__meta-1">Vind op til <span>500.000</span> kr.</span><span class="card__meta-2 js-card-title">Fuglevenner Drømmeland</span><span class="card__meta-3">Skrabespil</span></div>
+          </div>
+        `.repeat(20)}
+    </div>
+    
+    </div>
+    
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+`;
+
+const originalHtml = `
 <div class="quick-games">
    <div class="hero-deck__background" style="background-image: url('https://ds-static.dk/dlo/-/media/a332a93629bd4664b54c3a87b6b69cfe.jpg')">
       <div class="container hero-deck__hero-container">
@@ -430,5 +475,10 @@ const html = `
 `;
 
 function RouteComponent() {
-  return <div dangerouslySetInnerHTML={{ __html: html }}/>;
+  return (
+    <div>
+      <div style={{ margin: '0 auto 20px', backgroundColor: '#2a6156' }} dangerouslySetInnerHTML={{ __html: newHtml }}/>
+      <div dangerouslySetInnerHTML={{ __html: originalHtml }}/>
+    </div>
+  )
 }

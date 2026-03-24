@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QuickIndexRouteImport } from './routes/quick/index'
 import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
+import { Route as QuickSliderSpotRouteImport } from './routes/quick/SliderSpot'
 import { Route as QuickHeroDeckSliderSpotRouteImport } from './routes/quick/HeroDeckSliderSpot'
 import { Route as KlublottoWelcomeRouteImport } from './routes/klublotto/Welcome'
 import { Route as KlublottoTitleRouteImport } from './routes/klublotto/Title'
@@ -36,6 +37,11 @@ const QuickIndexRoute = QuickIndexRouteImport.update({
 const KlublottoIndexRoute = KlublottoIndexRouteImport.update({
   id: '/klublotto/',
   path: '/klublotto/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuickSliderSpotRoute = QuickSliderSpotRouteImport.update({
+  id: '/quick/SliderSpot',
+  path: '/quick/SliderSpot',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuickHeroDeckSliderSpotRoute = QuickHeroDeckSliderSpotRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
+  '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto': typeof KlublottoIndexRoute
   '/quick': typeof QuickIndexRoute
 }
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
+  '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto': typeof KlublottoIndexRoute
   '/quick': typeof QuickIndexRoute
 }
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
+  '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto/': typeof KlublottoIndexRoute
   '/quick/': typeof QuickIndexRoute
 }
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/klublotto/Title'
     | '/klublotto/Welcome'
     | '/quick/HeroDeckSliderSpot'
+    | '/quick/SliderSpot'
     | '/klublotto'
     | '/quick'
   fileRoutesByTo: FileRoutesByTo
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/klublotto/Title'
     | '/klublotto/Welcome'
     | '/quick/HeroDeckSliderSpot'
+    | '/quick/SliderSpot'
     | '/klublotto'
     | '/quick'
   id:
@@ -183,6 +194,7 @@ export interface FileRouteTypes {
     | '/klublotto/Title'
     | '/klublotto/Welcome'
     | '/quick/HeroDeckSliderSpot'
+    | '/quick/SliderSpot'
     | '/klublotto/'
     | '/quick/'
   fileRoutesById: FileRoutesById
@@ -199,6 +211,7 @@ export interface RootRouteChildren {
   KlublottoTitleRoute: typeof KlublottoTitleRoute
   KlublottoWelcomeRoute: typeof KlublottoWelcomeRoute
   QuickHeroDeckSliderSpotRoute: typeof QuickHeroDeckSliderSpotRoute
+  QuickSliderSpotRoute: typeof QuickSliderSpotRoute
   KlublottoIndexRoute: typeof KlublottoIndexRoute
   QuickIndexRoute: typeof QuickIndexRoute
 }
@@ -224,6 +237,13 @@ declare module '@tanstack/react-router' {
       path: '/klublotto'
       fullPath: '/klublotto'
       preLoaderRoute: typeof KlublottoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quick/SliderSpot': {
+      id: '/quick/SliderSpot'
+      path: '/quick/SliderSpot'
+      fullPath: '/quick/SliderSpot'
+      preLoaderRoute: typeof QuickSliderSpotRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quick/HeroDeckSliderSpot': {
@@ -311,6 +331,7 @@ const rootRouteChildren: RootRouteChildren = {
   KlublottoTitleRoute: KlublottoTitleRoute,
   KlublottoWelcomeRoute: KlublottoWelcomeRoute,
   QuickHeroDeckSliderSpotRoute: QuickHeroDeckSliderSpotRoute,
+  QuickSliderSpotRoute: QuickSliderSpotRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,
   QuickIndexRoute: QuickIndexRoute,
 }
