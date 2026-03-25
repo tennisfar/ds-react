@@ -99,6 +99,7 @@
 
         @media (min-width: 1220px) {
           transform: scale(1.5) translateY(-3px) rotateX(-6deg);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
       }
 
@@ -112,7 +113,7 @@
 
         @media (min-width: 1220px) {
           transform: rotateY(20deg) rotateZ(1deg) scale(1.25) translateY(-3px) translateX(12px);
-          box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
         }
       }
 
@@ -125,7 +126,7 @@
 
           @media (min-width: 1220px) {
             transform: rotateY(5deg) rotateZ(1deg) scale(1.12) translateY(-1px) translateX(10px);
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: -2px 0 15px rgba(0, 0, 0, 0.3);
           }
         }
       }
@@ -140,7 +141,7 @@
 
         @media (min-width: 1220px) {
           transform: rotateY(-20deg) rotateZ(-1deg) scale(1.25) translateY(-3px) translateX(-12px);
-          box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
         }
       }
     }
@@ -154,7 +155,7 @@
 
         @media (min-width: 1220px) {
           transform: rotateY(-5deg) rotateZ(-1deg) scale(1.12) translateY(-1px) translateX(-10px);
-          box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
         }
       }
     }
@@ -163,8 +164,11 @@
 
 .slider__slide-card {
   position: relative;
-  transition: all 200ms ease-out;
+  transition: all 220ms ease-out;
   transform-origin: bottom center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
   border: 0 solid white;
   display: flex;
   justify-content: center;
