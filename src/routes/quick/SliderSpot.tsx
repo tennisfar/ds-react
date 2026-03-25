@@ -58,6 +58,17 @@ const images = [
 function RouteComponent() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const updateScrollButtons = () => {
+    const container = scrollRef.current
+    if (!container) return
+    setCanScrollLeft(container.scrollLeft > 1)
+    setCanScrollRight(
+      container.scrollLeft + container.clientWidth < container.scrollWidth - 1
+    )
+  }
 
   const scroll = (direction: 1 | -1) => {
     const container = scrollRef.current
@@ -71,6 +82,19 @@ function RouteComponent() {
     })
   }
 
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    updateScrollButtons()
+    container.addEventListener('scroll', updateScrollButtons, { passive: true })
+    window.addEventListener('resize', updateScrollButtons)
+
+    return () => {
+      container.removeEventListener('scroll', updateScrollButtons)
+      window.removeEventListener('resize', updateScrollButtons)
+    }
+  }, [])
 
   useEffect(() => {
     const container = scrollRef.current
@@ -135,9 +159,15 @@ function RouteComponent() {
             )
           })}
         </div>
-        <button className={'slider__prev'} onClick={() => scroll(-1)}>&lt;</button>
-        <button className={'slider__next'} onClick={() => scroll(1)}>&gt;</button>
+        <button
+          className={`slider__prev${!canScrollLeft ? ' slider__prev--hidden' : ''}`}
+          onClick={() => scroll(-1)}
+        >&lt;</button>
 
+        <button
+          className={`slider__next${!canScrollRight ? ' slider__next--hidden' : ''}`}
+          onClick={() => scroll(1)}
+        >&gt;</button>
 
       </div>
     </div>
