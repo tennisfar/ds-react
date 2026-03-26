@@ -8,6 +8,9 @@ export const Footer = ({ theme }: { theme: string }) => {
         <Link to="/klublotto" className="global-footer__link">
           Klublotto
         </Link>
+        <Link to="/quick" className="global-footer__link">
+          Quick
+        </Link>
       </div>
     </footer>
   );
