@@ -23,6 +23,7 @@ import { Route as KlublottoFreePrizeClaimReceiptRouteImport } from './routes/klu
 import { Route as KlublottoFreePrizeClaimClaimRouteImport } from './routes/klublotto/FreePrizeClaim-Claim'
 import { Route as KlublottoFreePrizeClaimRouteImport } from './routes/klublotto/FreePrizeClaim'
 import { Route as KlublottoDailyPlayHubRouteImport } from './routes/klublotto/DailyPlayHub'
+import { Route as KlublottoCrossSaleSpotRouteImport } from './routes/klublotto/CrossSaleSpot'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -98,9 +99,15 @@ const KlublottoDailyPlayHubRoute = KlublottoDailyPlayHubRouteImport.update({
   path: '/klublotto/DailyPlayHub',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KlublottoCrossSaleSpotRoute = KlublottoCrossSaleSpotRouteImport.update({
+  id: '/klublotto/CrossSaleSpot',
+  path: '/klublotto/CrossSaleSpot',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/klublotto/CrossSaleSpot': typeof KlublottoCrossSaleSpotRoute
   '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
@@ -117,6 +124,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/klublotto/CrossSaleSpot': typeof KlublottoCrossSaleSpotRoute
   '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
@@ -134,6 +142,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/klublotto/CrossSaleSpot': typeof KlublottoCrossSaleSpotRoute
   '/klublotto/DailyPlayHub': typeof KlublottoDailyPlayHubRoute
   '/klublotto/FreePrizeClaim': typeof KlublottoFreePrizeClaimRoute
   '/klublotto/FreePrizeClaim-Claim': typeof KlublottoFreePrizeClaimClaimRoute
@@ -152,6 +161,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/klublotto/CrossSaleSpot'
     | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/klublotto/CrossSaleSpot'
     | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/klublotto/CrossSaleSpot'
     | '/klublotto/DailyPlayHub'
     | '/klublotto/FreePrizeClaim'
     | '/klublotto/FreePrizeClaim-Claim'
@@ -201,6 +213,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KlublottoCrossSaleSpotRoute: typeof KlublottoCrossSaleSpotRoute
   KlublottoDailyPlayHubRoute: typeof KlublottoDailyPlayHubRoute
   KlublottoFreePrizeClaimRoute: typeof KlublottoFreePrizeClaimRoute
   KlublottoFreePrizeClaimClaimRoute: typeof KlublottoFreePrizeClaimClaimRoute
@@ -316,11 +329,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KlublottoDailyPlayHubRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/klublotto/CrossSaleSpot': {
+      id: '/klublotto/CrossSaleSpot'
+      path: '/klublotto/CrossSaleSpot'
+      fullPath: '/klublotto/CrossSaleSpot'
+      preLoaderRoute: typeof KlublottoCrossSaleSpotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KlublottoCrossSaleSpotRoute: KlublottoCrossSaleSpotRoute,
   KlublottoDailyPlayHubRoute: KlublottoDailyPlayHubRoute,
   KlublottoFreePrizeClaimRoute: KlublottoFreePrizeClaimRoute,
   KlublottoFreePrizeClaimClaimRoute: KlublottoFreePrizeClaimClaimRoute,

@@ -44,7 +44,7 @@ function RouteComponent() {
     <>
       <PageHeader>Dine præmier</PageHeader>
 
-      <CrossSaleSpot/>
+      <CrossSaleSpot type={'eurojackpot'} backgroundColor={'black'}/>
 
       <FreePrizeClaimReceipt dataComponents={dataComponents}/>
     </>

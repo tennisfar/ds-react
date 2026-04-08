@@ -9,7 +9,8 @@ export const Route = createFileRoute('/klublotto/')({
 
 function RouteComponent() {
   return <div className="dsr-routes">
-<Link className="dsr-routes__link dsr-routes__link--back" to="/">&larr;&nbsp; Back</Link><Link className="dsr-routes__link" to="/klublotto/DailyPlayHub">DailyPlayHub</Link>
+<Link className="dsr-routes__link dsr-routes__link--back" to="/">&larr;&nbsp; Back</Link><Link className="dsr-routes__link" to="/klublotto/CrossSaleSpot">CrossSaleSpot</Link>
+<Link className="dsr-routes__link" to="/klublotto/DailyPlayHub">DailyPlayHub</Link>
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim-Claim">FreePrizeClaim Claim</Link>
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaim">FreePrizeClaim</Link>
 <Link className="dsr-routes__link" to="/klublotto/FreePrizeClaimReceipt">FreePrizeClaimReceipt</Link>
