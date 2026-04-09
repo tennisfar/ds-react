@@ -1,4 +1,17 @@
-﻿export const CrossSaleSpot = ({ type, backgroundColor, backgroundImage, foregroundImage, ctaLabel = 'Køb flere rækker' }: { type: 'eurojackpot' | 'lotto' | 'quick', backgroundColor: string, backgroundImage: string, foregroundImage: string, ctaLabel: string }) => {
+﻿export const CrossSaleSpot = (
+  {
+    type,
+    backgroundColor,
+    backgroundImage,
+    foregroundImage,
+    ctaLabel = 'Køb flere rækker'
+  }: {
+    type: 'eurojackpot' | 'lotto' | 'quick',
+    backgroundColor: string,
+    backgroundImage: string,
+    foregroundImage: string,
+    ctaLabel: string
+  }) => {
   return <div dangerouslySetInnerHTML={{
     __html: `
 <a href="/${type}" class="kl-cross-sale-spot kl-cross-sale-spot--${type}" data-tracking-label="cta: /${type}" data-tracking="CrossSaleSpot" style="background-color: ${backgroundColor}; background-image: url(${backgroundImage})">

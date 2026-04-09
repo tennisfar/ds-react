@@ -2,8 +2,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { CrossSaleSpot } from '@PATH.KLUBLOTTO.VIEWS/CrossSaleSpot';
 import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
-import lottoBg from '../../../public/graphics/klublotto/crosssalespot/bg-lotto.png'
-import eurojackpotBg from '../../../public/graphics/klublotto/crosssalespot/bg-eurojackpot.svg'
+import lottoBg from '/graphics/klublotto/crosssalespot/bg-lotto.png'
+import eurojackpotBg from '/graphics/klublotto/crosssalespot/bg-eurojackpot.svg'
 import quickBg from '/graphics/klublotto/crosssalespot/bg-quick.png'
 import quickFg from '/graphics/klublotto/crosssalespot/fg-quick.png'
 
