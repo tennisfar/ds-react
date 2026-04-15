@@ -2,16 +2,16 @@
 
 const town41QuickGamesHtml = `
 <div class="quick-games">
-   <div class="hero-deck__background" style="background-image: url('https://town41.danskespil.dk/dlo/-/media/373bbb49278446b1a2c301995bfb6a35.jpg')">
+   <div class="hero-deck__background" style="background-image: url('https://town41.danskespil.dk/dlo/-/media/640d8bb6fdbf4fc6b042be887dd5c24f.jpg')">
       <div class="container hero-deck__hero-container">
          <div class="hero-deck__hero">
-            <img class="hero-deck__hero-image" src="https://town41.danskespil.dk/dlo/-/media/36d4fba060604b7b8cdd6b53dbed1d9b.png">
+            <img class="hero-deck__hero-image" src="https://town41.danskespil.dk/dlo/-/media/5eb53a27773140b1b94d3af381e54c8f.png">
             <div class="hero-deck__hero-additional-images">
-               <div class="float additional-images additional-images--position-1"><img src="https://town41.danskespil.dk/dlo/-/media/440e2c6eac4941fe8335051c16631b75.png">                        </div>
-               <div class="float additional-images additional-images--position-2"><img src="https://town41.danskespil.dk/dlo/-/media/c6d6793d24c44e9eb8a0cf4544aabf2f.png">                        </div>
-               <div class="float additional-images additional-images--position-3"><img src="https://town41.danskespil.dk/dlo/-/media/9800274f05fd47bd80573f6247e77c6c.png">                        </div>
-               <div class="float additional-images additional-images--position-4"><img src="https://town41.danskespil.dk/dlo/-/media/7a08388e18704cac97c775f0e0afc999.png">                        </div>
-               <div class="float additional-images additional-images--position-5"><img src="https://town41.danskespil.dk/dlo/-/media/f6174b8fbeac4dd79c9969d8f403b129.png">                        </div>
+               <div class="float additional-images additional-images--position-1"><img src="https://town41.danskespil.dk/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png">                        </div>
+               <div class="float additional-images additional-images--position-2"><img src="https://town41.danskespil.dk/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png">                        </div>
+               <div class="float additional-images additional-images--position-3"><img src="https://town41.danskespil.dk/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png">                        </div>
+               <div class="float additional-images additional-images--position-4"><img src="https://town41.danskespil.dk/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png">                        </div>
+               <div class="float additional-images additional-images--position-5"><img src="https://town41.danskespil.dk/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png">                        </div>
             </div>
          </div>
          <div class="hero-deck__hero-texts-wrapper">
@@ -28,7 +28,14 @@ const town41QuickGamesHtml = `
       </div>
       <div class="hero-deck-slider">
          <div class="hero-deck-slider__inner">
-            <!-- HeroDeckSliderCard dsxofnc2025-->
+            <!-- HeroDeckSliderCard dshallohviin2023-->
+            <div class="hero-deck-slider__slide " data-description="" data-categories="[&quot;2dea5aab18ef43068102501f6464499c&quot;,&quot;053fea011c954b2aa7c093c54bc70070&quot;]" data-tags="[]" data-card-price="SPIL NU - 25 kr." data-meta-1="Vind op til &lt;span&gt;250.000&lt;/span&gt; kr." data-meta-2="Hallohviin" data-meta-3="Skrabespil">
+               <a href="/quick/spil/hallohviin" class="hero-deck-slider__slide-card" data-href="/quick/spil/hallohviin" data-additional="{&quot;gameId&quot;:null,&quot;promoBackgroundImage&quot;:&quot;/dlo/-/media/640d8bb6fdbf4fc6b042be887dd5c24f.jpg&quot;,&quot;promoForegroundImage&quot;:&quot;/dlo/-/media/5eb53a27773140b1b94d3af381e54c8f.png&quot;,&quot;additionalImages&quot;:[{&quot;imageUrl&quot;:&quot;/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png&quot;,&quot;position&quot;:1,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/80dec45fc74d484f851b7476efaf84a1.png&quot;,&quot;position&quot;:2,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/2d966503d5d24cf7bef016a700134a29.png&quot;,&quot;position&quot;:3,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/c46b7ffdf54a4a629b27a284b704792f.png&quot;,&quot;position&quot;:4,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/8d69ef2e4c6842f4a9bfb72034e67335.png&quot;,&quot;position&quot;:5,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}}]}">
+                  <div class="hero-deck-slider__ribbon hero-deck-slider__ribbon--top-left" title="Top 10"><span>Top 10</span></div>
+                  <img class="hero-deck-slider__slide-card-fg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/cf6b7d15a8e140f1b5cc758dcf8eef92.png" alt="Hallohviin">                 <img class="hero-deck-slider__slide-card-bg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/381ee15d4f944a2788fa10c396a26f7d.jpg" alt="Hallohviin">
+               </a>
+            </div>
+            <!-- /HeroDeckSliderCard --><!-- HeroDeckSliderCard dsxofnc2025-->
             <div class="hero-deck-slider__slide " data-description="Vind op til 250.000 kr. " data-categories="[&quot;bee9d74e97654cfdb5d7bc257a6e3d53&quot;,&quot;51fb7989cfda43d9bae4255dbbde7d8c&quot;]" data-tags="[]" data-card-price="SPIL NU - 2 kr." data-meta-1="Vind op til &lt;span&gt;250.000&lt;/span&gt; kr." data-meta-2="XO" data-meta-3="Skrabespil">
                <a href="/quick/spil/xo" class="hero-deck-slider__slide-card" data-href="/quick/spil/xo" data-additional="{&quot;gameId&quot;:null,&quot;promoBackgroundImage&quot;:&quot;/dlo/-/media/373bbb49278446b1a2c301995bfb6a35.jpg&quot;,&quot;promoForegroundImage&quot;:&quot;/dlo/-/media/36d4fba060604b7b8cdd6b53dbed1d9b.png&quot;,&quot;additionalImages&quot;:[{&quot;imageUrl&quot;:&quot;/dlo/-/media/440e2c6eac4941fe8335051c16631b75.png&quot;,&quot;position&quot;:1,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;float&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/c6d6793d24c44e9eb8a0cf4544aabf2f.png&quot;,&quot;position&quot;:2,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;float&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/9800274f05fd47bd80573f6247e77c6c.png&quot;,&quot;position&quot;:3,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;float&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/7a08388e18704cac97c775f0e0afc999.png&quot;,&quot;position&quot;:4,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;float&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/f6174b8fbeac4dd79c9969d8f403b129.png&quot;,&quot;position&quot;:5,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;float&quot;}}]}">
                   <div class="hero-deck-slider__ribbon hero-deck-slider__ribbon--top-left" title="Nyhed"><span>Nyhed</span></div>
@@ -49,13 +56,6 @@ const town41QuickGamesHtml = `
                <a href="/quick/spil/halloween-quick" class="hero-deck-slider__slide-card" data-href="/quick/spil/halloween-quick" data-additional="{&quot;gameId&quot;:null,&quot;promoBackgroundImage&quot;:&quot;/dlo/-/media/a8a0a5a55cef48ff839d6d6cdee61e5b.jpg&quot;,&quot;promoForegroundImage&quot;:&quot;/dlo/-/media/1e4339d7906d48ce8c3f5227ca3a7a2e.png&quot;,&quot;additionalImages&quot;:[{&quot;imageUrl&quot;:&quot;/dlo/-/media/33d0c5270c9d46cdb94f808de0e704c3.png&quot;,&quot;position&quot;:1,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/69c7252c14ab44b7a6ed06e0452c2d2c.png&quot;,&quot;position&quot;:2,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/0a2a3fcf8c9c40a0923b3cfef477dbe1.png&quot;,&quot;position&quot;:3,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/98efff73cfe244cb952f530f44aed956.png&quot;,&quot;position&quot;:4,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/2f773bc5f52e446a8226976484f9a113.png&quot;,&quot;position&quot;:5,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}}]}">
                   <div class="hero-deck-slider__ribbon hero-deck-slider__ribbon--top-left" title="Nyhed"><span>Nyhed</span></div>
                   <img class="hero-deck-slider__slide-card-fg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/5384d44e33194c4a9021b8219413d355.png" alt="Halloween Quick">                 <img class="hero-deck-slider__slide-card-bg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/da9400c75e874caf9d1efb930a695225.jpg" alt="Halloween Quick">
-               </a>
-            </div>
-            <!-- /HeroDeckSliderCard --><!-- HeroDeckSliderCard dshallohviin2023-->
-            <div class="hero-deck-slider__slide " data-description="" data-categories="[&quot;2dea5aab18ef43068102501f6464499c&quot;,&quot;053fea011c954b2aa7c093c54bc70070&quot;]" data-tags="[]" data-card-price="SPIL NU - 25 kr." data-meta-1="Vind op til &lt;span&gt;250.000&lt;/span&gt; kr." data-meta-2="Hallohviin" data-meta-3="Skrabespil">
-               <a href="/quick/spil/hallohviin" class="hero-deck-slider__slide-card" data-href="/quick/spil/hallohviin" data-additional="{&quot;gameId&quot;:null,&quot;promoBackgroundImage&quot;:&quot;/dlo/-/media/640d8bb6fdbf4fc6b042be887dd5c24f.jpg&quot;,&quot;promoForegroundImage&quot;:&quot;/dlo/-/media/5eb53a27773140b1b94d3af381e54c8f.png&quot;,&quot;additionalImages&quot;:[{&quot;imageUrl&quot;:&quot;/dlo/-/media/0de64cbf44b646658f36dd545e1b103d.png&quot;,&quot;position&quot;:1,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/80dec45fc74d484f851b7476efaf84a1.png&quot;,&quot;position&quot;:2,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/2d966503d5d24cf7bef016a700134a29.png&quot;,&quot;position&quot;:3,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/c46b7ffdf54a4a629b27a284b704792f.png&quot;,&quot;position&quot;:4,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}},{&quot;imageUrl&quot;:&quot;/dlo/-/media/8d69ef2e4c6842f4a9bfb72034e67335.png&quot;,&quot;position&quot;:5,&quot;svgContent&quot;:null,&quot;quickStylingClass&quot;:{&quot;classname&quot;:&quot;blink-with-pause&quot;}}]}">
-                  <div class="hero-deck-slider__ribbon hero-deck-slider__ribbon--top-left" title="Top 10"><span>Top 10</span></div>
-                  <img class="hero-deck-slider__slide-card-fg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/cf6b7d15a8e140f1b5cc758dcf8eef92.png" alt="Hallohviin">                 <img class="hero-deck-slider__slide-card-bg" loading="lazy" src="https://town41.danskespil.dk/dlo/-/media/381ee15d4f944a2788fa10c396a26f7d.jpg" alt="Hallohviin">
                </a>
             </div>
             <!-- /HeroDeckSliderCard --><!-- HeroDeckSliderCard dshulenshemmelighederfnc2023-->
@@ -91,10 +91,14 @@ const town41QuickGamesHtml = `
             <!-- /HeroDeckSliderCard -->
          </div>
          <svg class="hero-deck-slider__controls hero-deck-slider__controls--prev">
-            <use xlink:href="#chevron-left"></use>
+            <svg width="35" height="35" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.51465 18L1.02937 9.51472L9.51465 1.02944" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
          </svg>
          <svg class="hero-deck-slider__controls hero-deck-slider__controls--next">
-            <use xlink:href="#chevron-right"></use>
+            <svg width="35" height="35" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 18L9.48528 9.51472L1 1.02944" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
          </svg>
       </div>
       <div class="container hero-deck__hero-texts container hero-deck__hero-texts--mobile">

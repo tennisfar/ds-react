@@ -14,6 +14,7 @@ import { Route as QuickIndexRouteImport } from './routes/quick/index'
 import { Route as KlublottoIndexRouteImport } from './routes/klublotto/index'
 import { Route as QuickSliderSpotRouteImport } from './routes/quick/SliderSpot'
 import { Route as QuickHeroDeckSliderSpotRouteImport } from './routes/quick/HeroDeckSliderSpot'
+import { Route as QuickFrontpageRouteImport } from './routes/quick/Frontpage'
 import { Route as KlublottoWelcomeRouteImport } from './routes/klublotto/Welcome'
 import { Route as KlublottoTitleRouteImport } from './routes/klublotto/Title'
 import { Route as KlublottoPromotionBannerRouteImport } from './routes/klublotto/PromotionBanner'
@@ -48,6 +49,11 @@ const QuickSliderSpotRoute = QuickSliderSpotRouteImport.update({
 const QuickHeroDeckSliderSpotRoute = QuickHeroDeckSliderSpotRouteImport.update({
   id: '/quick/HeroDeckSliderSpot',
   path: '/quick/HeroDeckSliderSpot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuickFrontpageRoute = QuickFrontpageRouteImport.update({
+  id: '/quick/Frontpage',
+  path: '/quick/Frontpage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KlublottoWelcomeRoute = KlublottoWelcomeRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
+  '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
   '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto': typeof KlublottoIndexRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
+  '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
   '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto': typeof KlublottoIndexRoute
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
+  '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
   '/quick/SliderSpot': typeof QuickSliderSpotRoute
   '/klublotto/': typeof KlublottoIndexRoute
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto/Welcome'
+    | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
     | '/quick/SliderSpot'
     | '/klublotto'
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto/Welcome'
+    | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
     | '/quick/SliderSpot'
     | '/klublotto'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
     | '/klublotto/Welcome'
+    | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
     | '/quick/SliderSpot'
     | '/klublotto/'
@@ -223,6 +235,7 @@ export interface RootRouteChildren {
   KlublottoPromotionBannerRoute: typeof KlublottoPromotionBannerRoute
   KlublottoTitleRoute: typeof KlublottoTitleRoute
   KlublottoWelcomeRoute: typeof KlublottoWelcomeRoute
+  QuickFrontpageRoute: typeof QuickFrontpageRoute
   QuickHeroDeckSliderSpotRoute: typeof QuickHeroDeckSliderSpotRoute
   QuickSliderSpotRoute: typeof QuickSliderSpotRoute
   KlublottoIndexRoute: typeof KlublottoIndexRoute
@@ -264,6 +277,13 @@ declare module '@tanstack/react-router' {
       path: '/quick/HeroDeckSliderSpot'
       fullPath: '/quick/HeroDeckSliderSpot'
       preLoaderRoute: typeof QuickHeroDeckSliderSpotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quick/Frontpage': {
+      id: '/quick/Frontpage'
+      path: '/quick/Frontpage'
+      fullPath: '/quick/Frontpage'
+      preLoaderRoute: typeof QuickFrontpageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/klublotto/Welcome': {
@@ -351,6 +371,7 @@ const rootRouteChildren: RootRouteChildren = {
   KlublottoPromotionBannerRoute: KlublottoPromotionBannerRoute,
   KlublottoTitleRoute: KlublottoTitleRoute,
   KlublottoWelcomeRoute: KlublottoWelcomeRoute,
+  QuickFrontpageRoute: QuickFrontpageRoute,
   QuickHeroDeckSliderSpotRoute: QuickHeroDeckSliderSpotRoute,
   QuickSliderSpotRoute: QuickSliderSpotRoute,
   KlublottoIndexRoute: KlublottoIndexRoute,

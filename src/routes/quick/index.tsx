@@ -9,7 +9,8 @@ export const Route = createFileRoute('/quick/')({
 
 function RouteComponent() {
   return <div className="dsr-routes">
-<Link className="dsr-routes__link dsr-routes__link--back" to="/">&larr;&nbsp; Back</Link><Link className="dsr-routes__link" to="/quick/HeroDeckSliderSpot">HeroDeckSliderSpot</Link>
+<Link className="dsr-routes__link dsr-routes__link--back" to="/">&larr;&nbsp; Back</Link><Link className="dsr-routes__link" to="/quick/Frontpage">Frontpage</Link>
+<Link className="dsr-routes__link" to="/quick/HeroDeckSliderSpot">HeroDeckSliderSpot</Link>
 <Link className="dsr-routes__link" to="/quick/SliderSpot">SliderSpot</Link>
   </div>
 }
