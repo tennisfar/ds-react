@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>DS React</title>
 </head>
-<body class="region-klublottoXXX region-avalon-quick">
+<body class="region-klublotto region-avalon-quickXXX">
 <script>
   const body = document.querySelector('body');
   const pad = (num, size = 2) => String(num).padStart(size, '0');
@@ -39,9 +39,11 @@
   };
 </script>
 
-<div class="avalon-area">
+<div id="root"></div>
+
+<!-- <div class="avalon-area">
     <div id="root"></div>
-</div>
+</div> -->
 
 <script id="jackpot-info" type="application/json">
     [
