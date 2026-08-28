@@ -14,6 +14,16 @@ export default defineConfig({
       allow: ['..'],
     },
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        // Lets AvalonComponents.less resolve its plain relative "@import"s (see
+        // avalon-components-style-imports.js) against the real Styles folder,
+        // since Vite's Less alias resolution breaks on nested aliased imports.
+        paths: [path.resolve(__dirname, PATH.DS.AVALONCOMPONENTS, 'Styles')],
+      },
+    },
+  },
   resolve: {
     alias: {
       '@PATH.DS.COMPONENTS': path.resolve(__dirname, PATH.DS.COMPONENTS),

@@ -20,8 +20,11 @@ const files = fs.readdirSync(stylesDir, { recursive: true })
 .map((file) => file.toString().replace(/\\/g, '/'));  // normalize Windows backslashes
 
 // 🧵 Generate `@import` lines (file already includes relative subfolder path)
+// Note: plain relative paths (not the "@PATH..." alias) are used here because Vite's
+// Less alias resolution mangles nested (2+ levels deep) aliased imports. Resolution
+// instead relies on the `css.preprocessorOptions.less.paths` entry in vite.config.ts.
 const imports = files
-.map((file) => `@import "@PATH.DS.AVALONCOMPONENTS/Styles/${file}";`)
+.map((file) => `@import "${file}";`)
 .join('\n');
 
 // ✍️ Write them into the output file
