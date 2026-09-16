@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useResetKeyState } from './useResetKeyState';
 import { useWindowWidth } from './useWindowWidth';
 
@@ -32,14 +33,16 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
 
   return (
     <>
-      {activeVariant && (
-        <img
-          src={activeVariant.src}
-          alt={alt}
-          style={{ opacity: shouldShow ? opacity : 0, top }}
-          className="pointer-events-none absolute inset-x-0 z-[9999] w-full select-none"
-        />
-      )}
+      {activeVariant &&
+        createPortal(
+          <img
+            src={activeVariant.src}
+            alt={alt}
+            style={{ opacity: shouldShow ? opacity : 0, top, left: 0, width: windowWidth, maxWidth: 'none' }}
+            className="pointer-events-none absolute z-[9999] select-none"
+          />,
+          document.body,
+        )}
       <div className="fixed bottom-[16px] left-[16px] right-[16px] z-[10000] flex flex-col gap-[8px] rounded-[6px] bg-black/75 px-[12px] py-[8px] text-[12px] text-white sm:left-auto sm:w-auto sm:flex-row sm:items-center sm:gap-[10px]">
         <label className="flex items-center gap-[6px]">
           <input type="checkbox" checked={visible} onChange={(e) => setVisible(e.target.checked)} />
