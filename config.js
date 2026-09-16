@@ -14,8 +14,5 @@ export const PATH = {
     ERRORHANDLING: mockedPath + 'src/DanskeSpil/@ErrorHandling',
     SHARED_SCRIPTS: mockedPath + 'src/DanskeSpil/@SharedScripts',
     MOCK: mockedPath + 'src/@Mock',
-    KLUBLOTTO: {
-      VIEWS: mockedPath + 'src/DanskeSpil/KlubLotto/Views',
-    },
   }
 }

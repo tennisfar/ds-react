@@ -1,4 +1,4 @@
-﻿const html = `
+const html = `
     <div class="kl-gradient-background">
         <div class="kl-gradient-background__gradient"></div>
     </div>

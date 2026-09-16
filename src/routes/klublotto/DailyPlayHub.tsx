@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
 import { DailyPlayHub } from '@PATH.DS.KLUBLOTTO/Scripts/Components/DailyPlayHub/DailyPlayHub';
-import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { PageHeader } from '../../Feature.KlubLotto/Scripts/Components/PageHeader/PageHeader';
 
 export const Route = createFileRoute('/klublotto/DailyPlayHub')({
   component: RouteComponent,

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Claim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/_Claim';
 import Overlay from '@PATH.DS.KLUBLOTTO/Scripts/Components/Popup/Overlay';
-import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { PageHeader } from '../../Feature.KlubLotto/Scripts/Components/PageHeader/PageHeader';
 import { TopUpPrompt } from '../../Feature.KlubLotto/Scripts/Components/TopUpPrompt/TopUpPrompt';
 import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@PATH.MOCK.MOCK/Utils/dates';
 

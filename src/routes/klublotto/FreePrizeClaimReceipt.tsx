@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
 import { FreePrizeClaimReceipt } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaimReceipt/FreePrizeClaimReceipt';
-import { CrossSaleSpot } from '@PATH.KLUBLOTTO.VIEWS/CrossSaleSpot';
-import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { CrossSaleSpot } from '../../Feature.KlubLotto/Scripts/Components/CrossSaleSpot/CrossSaleSpot';
+import { PageHeader } from '../../Feature.KlubLotto/Scripts/Components/PageHeader/PageHeader';
 import { NumberGamesType } from '@PATH.DS.KLUBLOTTO/Scripts/Types/numberGames';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaimReceipt')({

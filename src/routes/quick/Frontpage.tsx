@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { HeroDeckSliderSpot } from '../../DanskeSpil/Quick/HeroDeckSliderSpot/HeroDeckSliderSpot';
-import { GameSectionSpot } from '../../DanskeSpil/Quick/GameSectionSpot/GameSectionSpot';
+import { HeroDeckSliderSpot } from '../../AvalonQuick/Scripts/HeroDeckSliderSpot';
+import { GameSectionSpot } from '../../AvalonQuick/Scripts/GameSectionSpot';
 
 export const Route = createFileRoute('/quick/Frontpage')({
   component: RouteComponent,

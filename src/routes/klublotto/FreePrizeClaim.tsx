@@ -2,7 +2,7 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { useEffect } from 'react';
 import { FreePrizeClaim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/FreePrizeClaim';
-import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { PageHeader } from '../../Feature.KlubLotto/Scripts/Components/PageHeader/PageHeader';
 import { WalletListAwardClaimType } from '@PATH.DS.KLUBLOTTO/Scripts/Types/ApiResponse/accounts';
 import { SitecoreGenericLink } from '@PATH.DS.KLUBLOTTO/Scripts/Types/sitecore';
 

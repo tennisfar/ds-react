@@ -33,7 +33,6 @@ export default defineConfig({
 
       '@PATH.MOCK.API_DATA': path.resolve(__dirname, PATH.MOCK.API_DATA),
       '@PATH.MOCK.MOCK': path.resolve(__dirname, PATH.MOCK.MOCK),
-      '@PATH.KLUBLOTTO.VIEWS': path.resolve(__dirname, PATH.MOCK.KLUBLOTTO.VIEWS),
 
       // Overwrite certain Danske Spil paths to hijack API and shared scripts
       '@Ensighten': path.resolve(__dirname, PATH.MOCK.ENSIGHTEN),

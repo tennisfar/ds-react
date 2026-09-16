@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { createFileRoute } from '@tanstack/react-router';
-import { ContestOverview } from '@PATH.KLUBLOTTO.VIEWS/ContestOverview';
-import { PromotionBanner } from '@PATH.KLUBLOTTO.VIEWS/PromotionBanner';
+import { ContestOverview } from '../../Feature.KlubLotto/Scripts/Components/ContestOverview/ContestOverview';
+import { PromotionBanner } from '../../Feature.KlubLotto/Scripts/Components/PromotionBanner/PromotionBanner';
 import { RedeemSpot } from '@PATH.DS.KLUBLOTTO/Scripts/Components/RedeemSpot/RedeemSpot';
 
 export const Route = createFileRoute('/klublotto/PromotionBanner')({

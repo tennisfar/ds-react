@@ -1,4 +1,6 @@
-﻿export const PageHeader = ({ children }: { children: any }) => {
+import { PageHeaderProps } from '../../Types/pageHeader';
+
+export const PageHeader = ({ children }: PageHeaderProps) => {
   const html = `
 <div data-component="PageHeader" class="group w-full" data-tracking="PageHeader">
   <div
