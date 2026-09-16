@@ -14,6 +14,7 @@ type FigmaOverlayProps = {
 };
 
 const TOP_RANGE = 300;
+const SUPPORTED_BREAKPOINTS = [375, 768, 1220];
 
 // Dev-only helper: overlays a Figma design screenshot on top of a component for visual comparison.
 // Each variant is only shown when the window width exactly matches its breakpoint.
@@ -24,6 +25,10 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
   const activeVariant = variants.find((variant) => variant.breakpoint === windowWidth);
   const shouldShow = visible && !!activeVariant;
   const [top, setTop] = useResetKeyState(activeVariant?.breakpoint, activeVariant?.top ?? 0);
+
+  if (!SUPPORTED_BREAKPOINTS.includes(windowWidth)) {
+    return null;
+  }
 
   return (
     <>
