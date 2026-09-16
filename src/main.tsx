@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
+import '@lottiefiles/lottie-player';
 import './styles/App.less';
 import './styles/DanskeSpil/KlubLotto.less';
 import './styles/DanskeSpil/AvalonComponents.less';
