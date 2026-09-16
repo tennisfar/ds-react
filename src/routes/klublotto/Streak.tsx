@@ -23,7 +23,7 @@ function RouteComponent() {
       <Streak />
       <FigmaOverlay
         variants={[
-          { breakpoint: 375, src: figmaMobile, top: 25 },
+          { breakpoint: 375, src: figmaMobile, top: 22 },
           { breakpoint: 1220, src: figmaDesktop },
         ]}
       />
