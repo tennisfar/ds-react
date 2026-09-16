@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import Overlay from '@PATH.DS.KLUBLOTTO/Scripts/Components/Popup/Overlay';
-import { TopUpPrompt } from '../../DanskeSpil/KlubLotto/Views/TopUpPrompt';
+import { TopUpPrompt } from '../../Feature.KlubLotto/Scripts/Components/TopUpPrompt/TopUpPrompt';
 
 export const Route = createFileRoute('/klublotto/TopUpPrompt')({
   component: RouteComponent,

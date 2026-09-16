@@ -1,17 +1,6 @@
 import { useEffect, useState } from 'react';
-import './TopUpPrompt.less';
-
-type TopUpPromptProps = {
-  isOpen: boolean;
-  logo: string;
-  logoAlt: string;
-  title?: string;
-  subtitle?: string;
-  onClose: () => void;
-  onDecline: () => void;
-};
-
-type Step = 'prompt' | 'add-rows';
+import { TopUpPromptProps, TopUpPromptStep } from '../../Types/topUpPrompt';
+import '../../../Styles/TopUpPrompt.less';
 
 export const TopUpPrompt = ({
   isOpen,
@@ -22,7 +11,7 @@ export const TopUpPrompt = ({
   onClose,
   onDecline,
 }: TopUpPromptProps) => {
-  const [step, setStep] = useState<Step>('prompt');
+  const [step, setStep] = useState<TopUpPromptStep>('prompt');
 
   // Always land back on the initial prompt next time it's opened
   useEffect(() => {

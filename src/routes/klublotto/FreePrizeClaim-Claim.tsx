@@ -4,7 +4,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Claim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/_Claim';
 import Overlay from '@PATH.DS.KLUBLOTTO/Scripts/Components/Popup/Overlay';
 import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
-import { TopUpPrompt } from '@PATH.KLUBLOTTO.VIEWS/TopUpPrompt';
+import { TopUpPrompt } from '../../Feature.KlubLotto/Scripts/Components/TopUpPrompt/TopUpPrompt';
 import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@PATH.MOCK.MOCK/Utils/dates';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaim-Claim')({
