@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "streak": {
+      "current": 1,
+      "days_to_next": 2
+    },
+    "primary_stat": {
+      "key": "answered_correct",
+      "value": true,
+      "percentile": 100
+    },
+    "secondary_stat": {
+      "key": "correct_total",
+      "value": 1,
+      "percentile": null
+    },
+    "module": {
+      "type": "distribution",
+      "data": {
+        "correct": 100,
+        "incorrect": 0
+      }
+    }
+  }
+}

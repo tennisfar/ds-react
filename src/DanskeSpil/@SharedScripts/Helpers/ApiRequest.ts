@@ -6,6 +6,7 @@ import accountsWalletListData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/walle
 import accountsWalletCountData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/wallet/count.json';
 import accountsWallet1234RedeemData from '@PATH.MOCK.API_DATA/KlubLotto/accounts/wallet/1234/redeem.json';
 import gamesData from '@PATH.MOCK.API_DATA/KlubLotto/games.json';
+import blockResultData from '@PATH.MOCK.API_DATA/KlubLotto/games/block/result.json';
 
 const ApiRequest = async ({ url, withCredentials, timeout = 20, }: {
   url: string; withCredentials?: boolean; timeout?: number;
@@ -32,6 +33,10 @@ const ApiRequest = async ({ url, withCredentials, timeout = 20, }: {
 
   if (url.includes('dlo/games')) {
     return gamesData;
+  }
+
+  if (url.includes('games/block/result')) {
+    return blockResultData;
   }
 
   if (url.includes('numbergames-coupon/v2/coupon')) {
