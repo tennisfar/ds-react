@@ -31,8 +31,8 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
         <img
           src={activeVariant.src}
           alt={alt}
-          style={{ opacity: shouldShow ? opacity : 0, width: 'auto', top }}
-          className="pointer-events-none absolute left-1/2 z-[9999] max-w-none -translate-x-1/2 select-none"
+          style={{ opacity: shouldShow ? opacity : 0, top }}
+          className="pointer-events-none absolute inset-x-0 z-[9999] w-full select-none"
         />
       )}
       <div className="fixed bottom-[16px] left-[16px] right-[16px] z-[10000] flex flex-col gap-[8px] rounded-[6px] bg-black/75 px-[12px] py-[8px] text-[12px] text-white sm:left-auto sm:w-auto sm:flex-row sm:items-center sm:gap-[10px]">
@@ -48,10 +48,10 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
           value={opacity}
           disabled={!visible}
           onChange={(e) => setOpacity(Number(e.target.value))}
-          className="w-full sm:w-[90px]"
+          className="w-full min-w-0 sm:w-[90px]"
         />
         {activeVariant && (
-          <label className="flex items-center gap-[6px]">
+          <label className="flex min-w-0 items-center gap-[6px]">
             top
             <input
               type="range"
@@ -61,9 +61,9 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
               value={top}
               disabled={!visible}
               onChange={(e) => setTop(Number(e.target.value))}
-              className="w-full sm:w-[90px]"
+              className="w-full min-w-0 sm:w-[90px]"
             />
-            <span className="w-[42px]">{top}px</span>
+            <span className="w-[42px] shrink-0">{top}px</span>
           </label>
         )}
         <span className={activeVariant ? 'text-green-400' : 'text-white/60'}>
