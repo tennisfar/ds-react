@@ -1,7 +1,10 @@
 // @ts-nocheck
+import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Claim } from '@PATH.DS.KLUBLOTTO/Scripts/Components/FreePrizeClaim/_Claim';
+import Overlay from '@PATH.DS.KLUBLOTTO/Scripts/Components/Popup/Overlay';
 import { PageHeader } from '@PATH.KLUBLOTTO.VIEWS/PageHeader';
+import { TopUpPrompt } from '@PATH.KLUBLOTTO.VIEWS/TopUpPrompt';
 import { getFirstDayOfNextMonth, getNextEurojackpotDrawDate, getNextLottoDrawDate } from '@PATH.MOCK.MOCK/Utils/dates';
 
 export const Route = createFileRoute('/klublotto/FreePrizeClaim-Claim')({
@@ -127,7 +130,14 @@ function RouteComponent() {
     },
   };
 
-  const handleRedeem = () => alert('Redeem');
+  const [isTopUpOpen, setIsTopUpOpen] = useState(false);
+
+  // CTA in `Claim` opens the prompt first; declining it runs the actual redeem
+  const handleRedeem = () => setIsTopUpOpen(true);
+  const confirmRedeem = () => {
+    setIsTopUpOpen(false);
+    alert('Redeem');
+  };
 
   // const gameType = 'allornothing';
   // const gameType = 'keno';
@@ -147,6 +157,15 @@ function RouteComponent() {
         claimProps={props[gameType].claimProps}
         handleRedeem={handleRedeem}
       />
+
+      <TopUpPrompt
+        isOpen={isTopUpOpen}
+        logo={`/dlo/Components/DanskeSpil/Domain/Feature.Components/Graphics/BrandLogos/${gameType}.svg`}
+        logoAlt={props[gameType].claimProps.title}
+        onClose={() => setIsTopUpOpen(false)}
+        onDecline={confirmRedeem}
+      />
+      <Overlay />
     </>
   );
 }

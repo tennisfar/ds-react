@@ -1,0 +1,135 @@
+.kl-top-up-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  visibility: hidden;
+  pointer-events: none;
+
+  &--open {
+    visibility: visible;
+
+    .kl-top-up-prompt__sheet {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .kl-top-up-prompt__sheet {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.kl-top-up-prompt__sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.6rem 2rem 3.2rem;
+  background: #fff;
+  border-radius: 1.6rem 1.6rem 0 0;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  pointer-events: auto;
+
+  @media (min-width: 768px) {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    width: 90%;
+    max-width: 44rem;
+    padding: 4rem 3.2rem 3.2rem;
+    border-radius: 1.6rem;
+    transform: translate(-50%, -60%);
+  }
+}
+
+.kl-top-up-prompt__handle {
+  display: block;
+  width: 3.6rem;
+  height: 0.4rem;
+  margin: 0 auto 2rem;
+  border-radius: 100rem;
+  background: #d9d9d9;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.kl-top-up-prompt__close {
+  display: none;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+
+.kl-top-up-prompt__content {
+  text-align: center;
+}
+
+.kl-top-up-prompt__logo {
+  display: block;
+  height: 2.4rem;
+  margin: 0 auto 1.6rem;
+}
+
+.kl-top-up-prompt__title {
+  margin-bottom: 0.8rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.kl-top-up-prompt__subtitle {
+  margin-bottom: 2.4rem;
+  font-size: 1.4rem;
+  color: #6b6b6b;
+}
+
+.kl-top-up-prompt__placeholder {
+  margin-bottom: 2.4rem;
+  font-size: 1.4rem;
+  color: #6b6b6b;
+}
+
+.kl-top-up-prompt__buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.kl-top-up-prompt__button {
+  flex: 1;
+  height: 4.8rem;
+  border: none;
+  border-radius: 100rem;
+  background-color: #feb700;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#feb700, 5%);
+  }
+}
+

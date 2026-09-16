@@ -16,6 +16,7 @@ import { Route as QuickSliderSpotRouteImport } from './routes/quick/SliderSpot'
 import { Route as QuickHeroDeckSliderSpotRouteImport } from './routes/quick/HeroDeckSliderSpot'
 import { Route as QuickFrontpageRouteImport } from './routes/quick/Frontpage'
 import { Route as KlublottoWelcomeRouteImport } from './routes/klublotto/Welcome'
+import { Route as KlublottoTopUpPromptRouteImport } from './routes/klublotto/TopUpPrompt'
 import { Route as KlublottoTitleRouteImport } from './routes/klublotto/Title'
 import { Route as KlublottoPromotionBannerRouteImport } from './routes/klublotto/PromotionBanner'
 import { Route as KlublottoPrizeDrawExperienceRouteImport } from './routes/klublotto/PrizeDrawExperience'
@@ -60,6 +61,11 @@ const QuickFrontpageRoute = QuickFrontpageRouteImport.update({
 const KlublottoWelcomeRoute = KlublottoWelcomeRouteImport.update({
   id: '/klublotto/Welcome',
   path: '/klublotto/Welcome',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KlublottoTopUpPromptRoute = KlublottoTopUpPromptRouteImport.update({
+  id: '/klublotto/TopUpPrompt',
+  path: '/klublotto/TopUpPrompt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KlublottoTitleRoute = KlublottoTitleRouteImport.update({
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/klublotto/PrizeDrawExperience': typeof KlublottoPrizeDrawExperienceRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/TopUpPrompt': typeof KlublottoTopUpPromptRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/klublotto/PrizeDrawExperience': typeof KlublottoPrizeDrawExperienceRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/TopUpPrompt': typeof KlublottoTopUpPromptRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/klublotto/PrizeDrawExperience': typeof KlublottoPrizeDrawExperienceRoute
   '/klublotto/PromotionBanner': typeof KlublottoPromotionBannerRoute
   '/klublotto/Title': typeof KlublottoTitleRoute
+  '/klublotto/TopUpPrompt': typeof KlublottoTopUpPromptRoute
   '/klublotto/Welcome': typeof KlublottoWelcomeRoute
   '/quick/Frontpage': typeof QuickFrontpageRoute
   '/quick/HeroDeckSliderSpot': typeof QuickHeroDeckSliderSpotRoute
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/klublotto/PrizeDrawExperience'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/TopUpPrompt'
     | '/klublotto/Welcome'
     | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/klublotto/PrizeDrawExperience'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/TopUpPrompt'
     | '/klublotto/Welcome'
     | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/klublotto/PrizeDrawExperience'
     | '/klublotto/PromotionBanner'
     | '/klublotto/Title'
+    | '/klublotto/TopUpPrompt'
     | '/klublotto/Welcome'
     | '/quick/Frontpage'
     | '/quick/HeroDeckSliderSpot'
@@ -248,6 +260,7 @@ export interface RootRouteChildren {
   KlublottoPrizeDrawExperienceRoute: typeof KlublottoPrizeDrawExperienceRoute
   KlublottoPromotionBannerRoute: typeof KlublottoPromotionBannerRoute
   KlublottoTitleRoute: typeof KlublottoTitleRoute
+  KlublottoTopUpPromptRoute: typeof KlublottoTopUpPromptRoute
   KlublottoWelcomeRoute: typeof KlublottoWelcomeRoute
   QuickFrontpageRoute: typeof QuickFrontpageRoute
   QuickHeroDeckSliderSpotRoute: typeof QuickHeroDeckSliderSpotRoute
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/klublotto/Welcome'
       fullPath: '/klublotto/Welcome'
       preLoaderRoute: typeof KlublottoWelcomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/klublotto/TopUpPrompt': {
+      id: '/klublotto/TopUpPrompt'
+      path: '/klublotto/TopUpPrompt'
+      fullPath: '/klublotto/TopUpPrompt'
+      preLoaderRoute: typeof KlublottoTopUpPromptRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/klublotto/Title': {
@@ -392,6 +412,7 @@ const rootRouteChildren: RootRouteChildren = {
   KlublottoPrizeDrawExperienceRoute: KlublottoPrizeDrawExperienceRoute,
   KlublottoPromotionBannerRoute: KlublottoPromotionBannerRoute,
   KlublottoTitleRoute: KlublottoTitleRoute,
+  KlublottoTopUpPromptRoute: KlublottoTopUpPromptRoute,
   KlublottoWelcomeRoute: KlublottoWelcomeRoute,
   QuickFrontpageRoute: QuickFrontpageRoute,
   QuickHeroDeckSliderSpotRoute: QuickHeroDeckSliderSpotRoute,
