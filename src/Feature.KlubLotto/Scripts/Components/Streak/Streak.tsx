@@ -88,10 +88,6 @@ export const Streak = ({ game = 'block' }: { game?: string }) => {
           ))}
         </ul>
       </div>
-
-      <a className="kl-streak__cta" href="#">
-        Tilbage til spil &amp; quiz
-      </a>
     </div >
   );
 };
