@@ -5,7 +5,6 @@
   gap: 3.7rem;
   padding: 2.4rem 0 2.8rem;
   border-radius: 1.6rem;
-  // background: #b51800;
 
   @media (min-width: 768px) {
     padding: 2.8rem 2.4rem 3.2rem;
@@ -45,20 +44,31 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
   width: 100%;
+
+  margin-top: 0.7rem;
 }
 
 .kl-streak__stat-card {
-  padding: 2.05rem;
+  padding: 2.1rem;
   border: 0.05rem solid #fea500;
-  border-left-width: 0.2rem;
   border-radius: 1.6rem;
-  background: rgba(181, 24, 0, 0.6);
+  background: rgba(149, 0, 4, 1);
+  backdrop-filter: blur(4px)
+}
+
+.kl-streak__stat-frame {
+  border: 0 solid #fea500;
+  border-left-width: 0.2rem;
+  padding: 0 1.2rem 0.2rem;
+  display: grid;
+  gap: 0.6rem;
 }
 
 .kl-streak__stat-label {
   font-style: italic;
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1.2;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: #fff;
@@ -68,10 +78,14 @@
   font-style: italic;
   font-weight: 800;
   font-size: 2.4rem;
+  line-height: 1.2;
   color: #fff;
 }
 
 .kl-streak__stat-percentile {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-top: 1.2rem;
   font-style: italic;
   font-weight: 700;
@@ -80,22 +94,40 @@
   color: #fff;
 }
 
+.kl-streak__stat-percentile-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 .kl-streak__leaderboard {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
   width: 100%;
-  padding: 2.45rem 0 1.65rem;
+  padding: 2.5rem 0 1.65rem;
   border: 0.05rem solid #fea500;
   border-radius: 1.6rem;
-  background: #b51800;
+  // background: #b51800;
+  background: rgba(149, 0, 4, 1);
+  backdrop-filter: blur(4px)
 }
 
 .kl-streak__leaderboard-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2.4rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1.4rem;
+    right: 2rem;
+    left: 2rem;
+    height: 0.2rem;
+    background: #fea500;
+  }
 }
 
 .kl-streak__leaderboard-title {
@@ -117,6 +149,7 @@
   font-style: italic;
   font-weight: 800;
   font-size: 1.4rem;
+  line-height: 1.2;
   color: #f8a010;
 }
 
@@ -145,6 +178,7 @@
   font-style: italic;
   font-weight: 600;
   font-size: 1.3rem;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
 
   &--current {
@@ -158,6 +192,7 @@
 
 .kl-streak__leaderboard-rank {
   text-transform: uppercase;
+  word-spacing: 0.6rem;
 }
 
 .kl-streak__cta {

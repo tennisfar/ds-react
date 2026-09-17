@@ -12,7 +12,7 @@
     },
     "secondary_stat": {
       "key": "correct_total",
-      "value": 1,
+      "value": 4850,
       "percentile": null
     },
     "module": {

@@ -1,9 +1,10 @@
 import useGameResultData from '../../Hooks/useGameResultData';
+import lightning from '../../../Graphics/Streak/lightning.svg';
 import '../../../Styles/Streak.less';
 
 // Static placeholder data — no leaderboard endpoint exists yet, mirrors the Figma reference values.
 const leaderboard = [
-  { rank: 15, score: 1495 },
+  { rank: 16, score: 1495 },
   { rank: 17, score: 1390 },
   { rank: 18, score: 1365 },
   { rank: 19, score: 1348, isCurrentUser: true },
@@ -34,18 +35,30 @@ export const Streak = ({ game = 'block' }: { game?: string }) => {
 
       <div className="kl-streak__stats">
         <div className="kl-streak__stat-card">
-          <div className="kl-streak__stat-label">Din score idag</div>
-          <div className="kl-streak__stat-value">{String(primary_stat.value)}</div>
+          <div className="kl-streak__stat-frame">
+            <div className="kl-streak__stat-label">Din score idag</div>
+            <div className="kl-streak__stat-value">{String(primary_stat.value)}</div>
+          </div>
           {primary_stat.percentile !== null && (
-            <div className="kl-streak__stat-percentile">Top {primary_stat.percentile}%</div>
+            <div className="kl-streak__stat-percentile">
+              <img className="kl-streak__stat-percentile-icon" src={lightning} alt="" />
+              Top {primary_stat.percentile}%
+            </div>
           )}
         </div>
         <div className="kl-streak__stat-card">
-          <div className="kl-streak__stat-label">Din bedste</div>
-          <div className="kl-streak__stat-value">{String(secondary_stat.value)}</div>
-          {secondary_stat.percentile !== null && (
-            <div className="kl-streak__stat-percentile">Top {secondary_stat.percentile}%</div>
-          )}
+          <div className="kl-streak__stat-frame">
+            <div className="kl-streak__stat-label">Din bedste</div>
+            <div className="kl-streak__stat-value">
+              {typeof secondary_stat.value === 'number' ? formatNumber(secondary_stat.value) : String(secondary_stat.value)}
+            </div>
+            {secondary_stat.percentile !== null && (
+              <div className="kl-streak__stat-percentile">
+                <img className="kl-streak__stat-percentile-icon" src={lightning} alt="" />
+                Top {secondary_stat.percentile}%
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -79,6 +92,6 @@ export const Streak = ({ game = 'block' }: { game?: string }) => {
       <a className="kl-streak__cta" href="#">
         Tilbage til spil &amp; quiz
       </a>
-    </div>
+    </div >
   );
 };
