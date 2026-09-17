@@ -24,7 +24,7 @@ function RouteComponent() {
       <FigmaOverlay
         variants={[
           { breakpoint: 375, src: figmaMobile, top: 143 },
-          { breakpoint: 1220, src: figmaDesktop },
+          { breakpoint: 1220, src: figmaDesktop, left: -120 },
         ]}
       />
     </div>

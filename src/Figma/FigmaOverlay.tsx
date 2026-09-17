@@ -7,6 +7,7 @@ type FigmaOverlayVariant = {
   breakpoint: number;
   src: string;
   top?: number;
+  left?: number;
 };
 
 type FigmaOverlayProps = {
@@ -38,7 +39,7 @@ export const FigmaOverlay = ({ variants, alt = 'Figma reference overlay' }: Figm
           <img
             src={activeVariant.src}
             alt={alt}
-            style={{ opacity: shouldShow ? opacity : 0, top, left: 0, width: windowWidth, maxWidth: 'none' }}
+            style={{ opacity: shouldShow ? opacity : 0, top, left: activeVariant.left ?? 0, width: 'auto', maxWidth: 'none' }}
             className="pointer-events-none absolute z-[9999] select-none"
           />,
           document.body,
