@@ -1,26 +1,35 @@
 {
   "success": true,
+  "message": "Lot granted.",
   "data": {
     "streak": {
-      "current": 12,
-      "days_to_next": 2
+      "current": 0,
+      "days_to_next": 3
     },
     "primary_stat": {
-      "key": "answered_correct",
-      "value": true,
-      "percentile": 100
+      "key": "score",
+      "value": 432,
+      "percentile": null
     },
     "secondary_stat": {
-      "key": "correct_total",
-      "value": 4850,
+      "key": "best_score",
+      "value": 432,
       "percentile": null
     },
     "module": {
-      "type": "distribution",
+      "type": "leaderboard",
       "data": {
-        "correct": 100,
-        "incorrect": 0
+        "highlight": {
+          "key": "best_today",
+          "value": null
+        },
+        "top": [],
+        "player": {
+          "rank": null,
+          "value": 432
+        }
       }
     }
-  }
+  },
+  "status": "LotGranted"
 }

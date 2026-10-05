@@ -18,9 +18,12 @@ function RouteComponent() {
     };
   }, []);
 
+  // Preview other games via ?game=quiz
+  const game = new URLSearchParams(window.location.search).get('game') ?? 'block';
+
   return (
     <div className="relative min-h-screen bg-[#C50005]">
-      <Streak />
+      <Streak game={game} />
       <FigmaOverlay
         variants={[
           { breakpoint: 375, src: figmaMobile, top: 143 },

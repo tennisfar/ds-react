@@ -4,8 +4,32 @@ export type StreakStat = {
   percentile: number | null;
 };
 
+export type StreakLeaderboardEntry = {
+  rank: number | null;
+  value: number;
+};
+
+export type StreakModule =
+  | {
+      type: 'distribution';
+      data: number[];
+    }
+  | {
+      type: 'leaderboard';
+      data: {
+        highlight: {
+          key: string;
+          value: number | null;
+        };
+        top: StreakLeaderboardEntry[];
+        player: StreakLeaderboardEntry;
+      };
+    };
+
 export type StreakResult = {
   success: boolean;
+  message?: string;
+  status?: string;
   data: {
     streak: {
       current: number;
@@ -13,9 +37,6 @@ export type StreakResult = {
     };
     primary_stat: StreakStat;
     secondary_stat: StreakStat;
-    module: {
-      type: string;
-      data: Record<string, number>;
-    };
+    module: StreakModule;
   };
 };
