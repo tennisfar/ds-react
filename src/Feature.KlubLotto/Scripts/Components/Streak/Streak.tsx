@@ -9,9 +9,12 @@ const statLabels: Record<string, string> = {
   answered_correct: 'Dit svar idag',
   best_score: 'Din bedste',
   correct_total: 'Rigtige i alt',
+  solved: 'Løst idag',
+  total_solved: 'Løst i alt',
 };
 
-const formatStatValue = (value: number | boolean) => {
+const formatStatValue = (value: number | boolean | null) => {
+  if (value === null) return '-';
   if (typeof value === 'boolean') return value ? 'Rigtigt' : 'Forkert';
   return formatNumber(value);
 };

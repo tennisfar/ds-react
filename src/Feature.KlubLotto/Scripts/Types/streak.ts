@@ -1,6 +1,6 @@
 export type StreakStat = {
   key: string;
-  value: number | boolean;
+  value: number | boolean | null;
   percentile: number | null;
 };
 
@@ -12,7 +12,7 @@ export type StreakLeaderboardEntry = {
 export type StreakModule =
   | {
       type: 'distribution';
-      data: number[];
+      data: number[] | Record<string, number>;
     }
   | {
       type: 'leaderboard';

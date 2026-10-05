@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "message": "Lot already granted.",
+  "data": {
+    "streak": {
+      "current": 0,
+      "days_to_next": 3
+    },
+    "primary_stat": {
+      "key": "solved",
+      "value": null,
+      "percentile": null
+    },
+    "secondary_stat": {
+      "key": "total_solved",
+      "value": 0,
+      "percentile": null
+    },
+    "module": {
+      "type": "distribution",
+      "data": {}
+    }
+  },
+  "status": "AlreadyGranted"
+}
